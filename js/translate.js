@@ -1,22 +1,26 @@
 const textTranslations = [
-    "Narzędzia"
+    "Narzędzia",
+    "Wersja",
+    "Autor",
+    "Profil GitHub",
+    "Repozytorium GitHub",
+    "Informacje",
+    "Matematyczne",
+    "Kalkulator",
+    "Przelicznik jednostek",
+    "Przelicznik systemów liczbowych",
+    "Przelicznik liczb rzymskich",
 ];
 
 const titleTranslations = {
-    "Tools": "Narzędzia"
+    Tools: "Narzędzia",
 };
 
-const placeholdersTranslations = {
-    
-};
+const placeholdersTranslations = {};
 
-const alternativeTextTranslations = {
-    
-};
+const alternativeTextTranslations = {};
 
-const elementsTitlesTranslations = {
-    
-};
+const elementsTitlesTranslations = {};
 
 if (window.navigator.language.split("-")[0] == "pl") {
     document.querySelector("html").lang = "pl";

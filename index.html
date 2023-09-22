@@ -28,8 +28,98 @@
     <!-- Windows Phone -->
     <meta name="msapplication-navbutton-color" content="#0d6efd">
 </head>
-<body>
-    <span text-id="0">Tools</span>
+<body class="px-3 pt-2">
+    <div class="text-light-emphasis h2 text-center">
+        <span text-id="0">Tools</span>
+        <i class="bi bi-tools"></i>
+    </div>
+
+    <div id="tools">
+        <div class="tools-group blue">
+            <div class="h3">
+                <i class="bi bi-calculator-fill"></i>
+                <span text-id="6">Mathematical</span>
+            </div>
+
+            <div class="tools">
+                <a href="/tools/calculator" class="tool tool-works-offline">
+                    <div class="tool-body">
+                        <div class="tool-icon-div">
+                            <i class="bi bi-calculator-fill tool-icon"></i>
+                        </div>
+                        <div class="tool-name">
+                            <span class="tool-name-text" text-id="7">Calculator</span>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+
+                <a href="/tools/unit_conventer" class="tool works-offline">
+                    <div class="tool-body">
+                        <div class="tool-icon-div">
+                            <i class="bi bi-arrow-repeat tool-icon"></i>
+                        </div>
+                        <div class="tool-name">
+                            <span class="tool-name-text" text-id="8">Unit converter</span>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+
+                <a href="/tools/number_system_converter" class="tool works-offline">
+                    <div class="tool-body">
+                        <div class="tool-icon-div">
+                            <i class="bi bi-123 tool-icon"></i>
+                        </div>
+                        <div class="tool-name">
+                            <span class="tool-name-text" text-id="9">Number system converter</span>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+
+                <a href="/tools/roman_numeral_converter" class="tool works-offline">
+                    <div class="tool-body">
+                        <div class="tool-icon-div">
+                            <i class="bi bi-bank tool-icon"></i>
+                        </div>
+                        <div class="tool-name">
+                            <span class="tool-name-text" text-id="10">Roman numeral converter</span>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="w-100 p-2 ps-3 bg-body-secondary text-white position-absolute bottom-0 start-0">
+        <div class="fs-4 fw-medium">
+            <span text-id="0">Tools</span>
+        </div>
+        <div class="fs-6">
+            <span text-id="1" class="fw-medium">Version</span>:
+            <span id="version">1.0</span>
+        </div>
+        <div class="fs-6">
+            <span text-id="2" class="fw-medium">Author</span>:
+            <span id="author">Bartek L</span>
+            <a href="https://github.com/bartekl1" target="_blank" rel="noopener" class="btn btn-dark btn-sm ms-1">
+                <i class="bi bi-github"></i>
+                <span text-id="3">GitHub profile</span>
+            </a>
+        </div>
+        <div class="mt-1">
+            <a href="https://github.com/bartekl1/tools" target="_blank" rel="noopener" class="btn btn-secondary btn-sm mb-1">
+                <i class="bi bi-github"></i>
+                <span text-id="4">GitHub repository</span>
+            </a>
+            <a href="/tools/info" class="btn btn-secondary btn-sm mb-1">
+                <i class="bi bi-info-circle"></i>
+                <span text-id="5">Information</span>
+            </a>
+        </div>
+    </footer>
 
     <script src="/tools/js/theme.js"></script>
     <script src="/tools/js/translate.js"></script>
