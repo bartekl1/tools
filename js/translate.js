@@ -10,6 +10,8 @@ const textTranslations = [
     "Przelicznik jednostek",
     "Przelicznik systemów liczbowych",
     "Przelicznik liczb rzymskich",
+    "Informatyczne",
+    "Klient HTTP (REST)",
 ];
 
 const titleTranslations = {
