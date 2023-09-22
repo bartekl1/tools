@@ -12,6 +12,9 @@ const textTranslations = [
     "Przelicznik liczb rzymskich",
     "Informatyczne",
     "Klient HTTP (REST)",
+    "Ogólne",
+    "Rejestr zmian",
+    "Biblioteki",
 ];
 
 const titleTranslations = {
