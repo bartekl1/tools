@@ -11,7 +11,6 @@ const precacheResources = [
     "/tools/img/icons/elephant.png",
     "/tools/js/theme.js",
     "/tools/js/translate.js",
-    "/tools/js/footer.js",
     "/tools/js/index.js",
     "/tools/info.html",
     "/tools/js/info.js",
