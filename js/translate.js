@@ -16,6 +16,7 @@ const textTranslations = [
 
 const titleTranslations = {
     Tools: "Narzędzia",
+    Information: "Informacje",
 };
 
 const placeholdersTranslations = {};

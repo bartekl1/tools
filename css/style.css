@@ -164,3 +164,8 @@ html[data-bs-theme="dark"] {
 footer {
     background-color: var(--bs-gray-700);
 }
+
+.home-link {
+    color: unset;
+    text-decoration: unset;
+}
