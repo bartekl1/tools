@@ -1,6 +1,7 @@
 const version = "1.0";
 // Choose a cache name
-const cacheName = `cache-tools-v${version}`;
+const cacheNamePrefix = "cache-tools";
+const cacheName = `${cacheNamePrefix}-v${version}`;
 // List the files to precache
 const precacheResources = [
     "/tools/",
@@ -16,6 +17,18 @@ const precacheResources = [
 // When the service worker is installing, open the cache and add the precache resources to it
 self.addEventListener("install", (event) => {
     console.log("Service worker install event!");
+
+    event.waitUntil(
+        caches.keys().then((keyList) =>
+            Promise.all(
+                keyList.map((key) => {
+                    if (key != cacheName && key.startsWith(cacheNamePrefix)) {
+                        return caches.delete(key);
+                    }
+                })
+            )
+        )
+    );
 
     event.waitUntil(
         caches.open(cacheName).then((cache) => cache.addAll(precacheResources))
