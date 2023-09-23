@@ -17,6 +17,8 @@ const precacheResources = [
     "/tools/CHANGELOG.md",
     "/tools/CHANGELOG_PL.md",
     "/tools/LIBRARIES.md",
+    "/tools/calculator.html",
+    "/tools/js/calculator.js",
 ];
 
 // When the service worker is installing, open the cache and add the precache resources to it
