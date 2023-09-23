@@ -161,11 +161,29 @@ html[data-bs-theme="dark"] {
     top: -2px;
 }
 
-footer {
-    background-color: var(--bs-gray-700);
-}
-
 .home-link {
     color: unset;
     text-decoration: unset;
+}
+
+.search.input-group {
+    width: 300px;
+}
+
+@media (max-width: 490px) {
+    .search.input-group {
+        width: 100%;
+    }
+    .search-div {
+        margin-bottom: 5px;
+    }
+}
+
+@media (min-width: 491px) {
+    .search-div {
+        float: left;
+    }
+    .info-div {
+        float: right;
+    }
 }

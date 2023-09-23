@@ -22,7 +22,9 @@ const titleTranslations = {
     Information: "Informacje",
 };
 
-const placeholdersTranslations = {};
+const placeholdersTranslations = {
+    Search: "Szukaj",
+};
 
 const alternativeTextTranslations = {};
 
