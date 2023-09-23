@@ -15,6 +15,7 @@ const textTranslations = [
     "Ogólne",
     "Rejestr zmian",
     "Biblioteki",
+    "Jesteś offline. Niektóre narzędzia będą niedostępne.",
 ];
 
 const titleTranslations = {
