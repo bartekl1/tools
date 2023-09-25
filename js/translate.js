@@ -16,12 +16,16 @@ const textTranslations = [
     "Rejestr zmian",
     "Biblioteki",
     "Jesteś offline. Niektóre narzędzia będą niedostępne.",
+    "Standardowy",
+    "Naukowy",
+    "Programisty",
+    "Typ kalkulatora",
 ];
 
 const titleTranslations = {
     Tools: "Narzędzia",
     Information: "Informacje",
-    "Calculator": "Kalkulator"
+    Calculator: "Kalkulator",
 };
 
 const placeholdersTranslations = {

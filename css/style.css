@@ -188,8 +188,13 @@ html[data-bs-theme="dark"] {
     }
 }
 
-.calc-btn {
-    height: 50px;
+.calc-btn,
+#calc-solve {
+    height: 60px;
     aspect-ratio: 1 / 1;
-    font-size: 24px !important;
+    font-size: 20px !important;
+}
+
+#calc-input {
+    font-size: 24px;
 }

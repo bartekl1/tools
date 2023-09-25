@@ -41,11 +41,59 @@
         <span text-id="7">Calculator</span>
     </div>
 
-    <table>
-        <tr>
+    <div class="input-group">
+        <span class="input-group-text" id="calculator-icon">
+            <i class="bi bi-calculator"></i>
+        </span>
+        <div class="form-floating">
+            <select class="form-select" id="calculator-select">
+                <option value="standard" text-id="17">Standard</option>
+                <option value="science" text-id="18">Science</option>
+                <option value="programmer" text-id="19">Programmer</option>
+            </select>
+            <label for="calculator-select" text-id="20">Calculator type</label>
+        </div>
+    </div>
 
+    <div id="standard-calculator">
+        standard
+    </div>
+
+    <div id="science-calculator" class="d-none">
+        science
+    </div>
+
+    <div id="programmer-calculator" class="d-none">
+        programmer
+    </div>
+
+    <!-- <table>
+        <tr>
+            <td colspan="5">
+                <input type="text" id="calc-input" class="form-control">
+            </td>
         </tr>
         <tr>
+            <td>
+                <button class="btn btn-secondary calc-btn">&#60;&#60;</button>
+            </td>
+            <td>
+                <button class="btn btn-secondary calc-btn">**</button>
+            </td>
+            <td>
+                <button class="btn btn-secondary calc-btn">&#40;</button>
+            </td>
+            <td>
+                <button class="btn btn-secondary calc-btn">&#41;</button>
+            </td>
+            <td>
+                <button class="btn btn-secondary calc-btn">/</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="btn btn-secondary calc-btn">&#62;&#62;</button>
+            </td>
             <td>
                 <button class="btn btn-primary calc-btn">7</button>
             </td>
@@ -56,10 +104,13 @@
                 <button class="btn btn-primary calc-btn">9</button>
             </td>
             <td>
-                <button class="btn btn-primary calc-btn">/</button>
+                <button class="btn btn-secondary calc-btn">*</button>
             </td>
         </tr>
         <tr>
+            <td>
+                <button class="btn btn-secondary calc-btn">&&</button>
+            </td>
             <td>
                 <button class="btn btn-primary calc-btn">4</button>
             </td>
@@ -70,10 +121,13 @@
                 <button class="btn btn-primary calc-btn">6</button>
             </td>
             <td>
-                <button class="btn btn-primary calc-btn">*</button>
+                <button class="btn btn-secondary calc-btn">-</button>
             </td>
         </tr>
         <tr>
+            <td>
+                <button class="btn btn-secondary calc-btn">||</button>
+            </td>
             <td>
                 <button class="btn btn-primary calc-btn">1</button>
             </td>
@@ -84,11 +138,15 @@
                 <button class="btn btn-primary calc-btn">3</button>
             </td>
             <td>
-                <button class="btn btn-primary calc-btn">-</button>
+                <button class="btn btn-secondary calc-btn">+</button>
             </td>
         </tr>
         <tr>
             <td>
+                <button class="btn btn-secondary calc-btn">^</button>
+            </td>
+            <td>
+                <button class="btn btn-secondary calc-btn">%</button>
             </td>
             <td>
                 <button class="btn btn-primary calc-btn">0</button>
@@ -97,10 +155,10 @@
                 <button class="btn btn-primary calc-btn">.</button>
             </td>
             <td>
-                <button class="btn btn-primary calc-btn">+</button>
+                <button class="btn btn-success" id="calc-solve">=</button>
             </td>
         </tr>
-    </table>
+    </table> -->
 
     <script src="/tools/js/theme.js"></script>
     <script src="/tools/js/translate.js"></script>
