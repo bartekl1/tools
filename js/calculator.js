@@ -55,6 +55,9 @@ document.querySelectorAll(".calc-btn.standard-calc").forEach((e) => {
             ) {
                 document.querySelector(".calc-result.standard-calc").innerHTML =
                     "0";
+                document.querySelector(
+                    ".calc-operation.standard-calc"
+                ).innerHTML = "";
             }
 
             if (
