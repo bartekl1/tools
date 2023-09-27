@@ -46,6 +46,18 @@ document.querySelectorAll(".calc-btn.standard-calc").forEach((e) => {
     e.addEventListener("click", (evt) => {
         if (evt.currentTarget.classList.contains("calc-number")) {
             if (
+                document
+                    .querySelector(".calc-operation.standard-calc")
+                    .innerHTML.substring(
+                        document.querySelector(".calc-operation.standard-calc")
+                            .innerHTML.length - 1
+                    ) === "="
+            ) {
+                document.querySelector(".calc-result.standard-calc").innerHTML =
+                    "0";
+            }
+
+            if (
                 document.querySelector(".calc-result.standard-calc")
                     .innerHTML !== "0"
             ) {
@@ -57,6 +69,18 @@ document.querySelectorAll(".calc-btn.standard-calc").forEach((e) => {
                     evt.currentTarget.innerHTML;
             }
         } else if (evt.currentTarget.classList.contains("calc-comma")) {
+            if (
+                document
+                    .querySelector(".calc-operation.standard-calc")
+                    .innerHTML.substring(
+                        document.querySelector(".calc-operation.standard-calc")
+                            .innerHTML.length - 1
+                    ) === "="
+            ) {
+                document.querySelector(".calc-result.standard-calc").innerHTML =
+                    "0";
+            }
+
             if (
                 !document
                     .querySelector(".calc-result.standard-calc")
@@ -127,6 +151,27 @@ document.querySelectorAll(".calc-btn.standard-calc").forEach((e) => {
             mathOperation = mathOperation.replaceAll("÷", "/");
             document.querySelector(".calc-result.standard-calc").innerHTML =
                 eval(mathOperation);
+        } else if (evt.currentTarget.classList.contains("calc-clear")) {
+            document.querySelector(".calc-result.standard-calc").innerHTML =
+                "0";
+        } else if (evt.currentTarget.classList.contains("calc-clear-all")) {
+            document.querySelector(".calc-result.standard-calc").innerHTML =
+                "0";
+            document.querySelector(".calc-operation.standard-calc").innerHTML =
+                "";
+        } else if (evt.currentTarget.classList.contains("calc-delete")) {
+            if (
+                document.querySelector(".calc-result.standard-calc").innerHTML
+                    .length !== 1
+            ) {
+                document.querySelector(".calc-result.standard-calc").innerHTML =
+                    document
+                        .querySelector(".calc-result.standard-calc")
+                        .innerHTML.slice(0, -1);
+            } else {
+                document.querySelector(".calc-result.standard-calc").innerHTML =
+                    "0";
+            }
         }
     });
 });
