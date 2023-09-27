@@ -41,3 +41,92 @@ document
 
 switchCalculator();
 addEventListener("hashchange", switchCalculator);
+
+document.querySelectorAll(".calc-btn.standard-calc").forEach((e) => {
+    e.addEventListener("click", (evt) => {
+        if (evt.currentTarget.classList.contains("calc-number")) {
+            if (
+                document.querySelector(".calc-result.standard-calc")
+                    .innerHTML !== "0"
+            ) {
+                document.querySelector(
+                    ".calc-result.standard-calc"
+                ).innerHTML += evt.currentTarget.innerHTML;
+            } else {
+                document.querySelector(".calc-result.standard-calc").innerHTML =
+                    evt.currentTarget.innerHTML;
+            }
+        } else if (evt.currentTarget.classList.contains("calc-comma")) {
+            if (
+                !document
+                    .querySelector(".calc-result.standard-calc")
+                    .innerHTML.includes(",")
+            ) {
+                document.querySelector(
+                    ".calc-result.standard-calc"
+                ).innerHTML += ",";
+            }
+        } else if (
+            evt.currentTarget.classList.contains("calc-basic-operation")
+        ) {
+            if (
+                document
+                    .querySelector(".calc-operation.standard-calc")
+                    .innerHTML.substring(
+                        document.querySelector(".calc-operation.standard-calc")
+                            .innerHTML.length - 1
+                    ) === "="
+            ) {
+                document.querySelector(
+                    ".calc-operation.standard-calc"
+                ).innerHTML =
+                    document.querySelector(".calc-result.standard-calc")
+                        .innerHTML +
+                    " " +
+                    evt.currentTarget.innerHTML;
+                document.querySelector(".calc-result.standard-calc").innerHTML =
+                    "0";
+            } else {
+                if (
+                    document.querySelector(".calc-operation.standard-calc")
+                        .innerHTML !== ""
+                ) {
+                    document.querySelector(
+                        ".calc-operation.standard-calc"
+                    ).innerHTML += " ";
+                }
+                document.querySelector(
+                    ".calc-operation.standard-calc"
+                ).innerHTML +=
+                    document.querySelector(".calc-result.standard-calc")
+                        .innerHTML +
+                    " " +
+                    evt.currentTarget.innerHTML;
+                document.querySelector(".calc-result.standard-calc").innerHTML =
+                    "0";
+            }
+        } else if (evt.currentTarget.classList.contains("calc-solve")) {
+            if (
+                document.querySelector(".calc-operation.standard-calc")
+                    .innerHTML !== ""
+            ) {
+                document.querySelector(
+                    ".calc-operation.standard-calc"
+                ).innerHTML += " ";
+            }
+            document.querySelector(".calc-operation.standard-calc").innerHTML +=
+                document.querySelector(".calc-result.standard-calc").innerHTML +
+                " =";
+
+            var mathOperation = document.querySelector(
+                ".calc-operation.standard-calc"
+            ).innerHTML;
+            mathOperation = mathOperation.slice(0, -2);
+            mathOperation = mathOperation.replaceAll(",", ".");
+            mathOperation = mathOperation.replaceAll("x", "*");
+            mathOperation = mathOperation.replaceAll("÷", "/");
+            document.querySelector(".calc-result.standard-calc").innerHTML =
+                eval(mathOperation);
+        }
+    });
+});

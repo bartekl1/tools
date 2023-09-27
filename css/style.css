@@ -188,15 +188,24 @@ html[data-bs-theme="dark"] {
     }
 }
 
-.calc-btn,
-#calc-solve {
-    height: 60px;
+.calc-btn {
+    height: 70px;
     aspect-ratio: 1 / 1;
-    font-size: 20px !important;
+    font-size: 24px !important;
 }
 
-#calc-input {
-    font-size: 24px;
+.calc-result {
+    width: 288px;
+    font-size: 50px;
+    text-align: right;
+}
+
+.calc-operation {
+    width: 288px;
+    font-size: 18px;
+    text-align: right;
+    color: var(--bs-secondary-color);
+    min-height: 3ch;
 }
 
 #calculator-select {
