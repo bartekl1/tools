@@ -152,6 +152,7 @@ document.querySelectorAll(".calc-btn.standard-calc").forEach((e) => {
             mathOperation = mathOperation.replaceAll(",", ".");
             mathOperation = mathOperation.replaceAll("x", "*");
             mathOperation = mathOperation.replaceAll("÷", "/");
+            mathOperation = mathOperation.replaceAll("^", "**");
             mathOperation += " ";
             if (/\/ 0(?:\.0+)* /.test(mathOperation)) {
                 document.querySelector(".calc-result.standard-calc").innerHTML =
@@ -183,6 +184,12 @@ document.querySelectorAll(".calc-btn.standard-calc").forEach((e) => {
                 document.querySelector(".calc-result.standard-calc").innerHTML =
                     "0";
             }
+        } else if (evt.currentTarget.classList.contains("calc-square")) {
+            document.querySelector(".calc-result.standard-calc").innerHTML =
+                eval(
+                    document.querySelector(".calc-result.standard-calc")
+                        .innerHTML + " ** 2"
+                );
         }
     });
 });
