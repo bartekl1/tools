@@ -190,6 +190,24 @@ document.querySelectorAll(".calc-btn.standard-calc").forEach((e) => {
                     document.querySelector(".calc-result.standard-calc")
                         .innerHTML + " ** 2"
                 );
+        } else if (evt.currentTarget.classList.contains("calc-square-root")) {
+            var number = Number(
+                document
+                    .querySelector(".calc-result.standard-calc")
+                    .innerHTML.replaceAll(",", ".")
+            );
+            if (number >= 0) {
+                document.querySelector(".calc-result.standard-calc").innerHTML =
+                    eval(
+                        document.querySelector(".calc-result.standard-calc")
+                            .innerHTML + " ** (1/2)"
+                    );
+            } else {
+                document.querySelector(".calc-result.standard-calc").innerHTML =
+                    window.navigator.language.split("-")[0] == "pl"
+                        ? "Liczba musi być większa lub równa zero"
+                        : "Number must be greater or equal to zero";
+            }
         }
     });
 });
