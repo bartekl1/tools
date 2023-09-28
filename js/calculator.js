@@ -208,6 +208,25 @@ document.querySelectorAll(".calc-btn.standard-calc").forEach((e) => {
                         ? "Liczba musi być większa lub równa zero"
                         : "Number must be greater or equal to zero";
             }
+        } else if (evt.currentTarget.classList.contains("calc-fraction")) {
+            var number = Number(
+                document
+                    .querySelector(".calc-result.standard-calc")
+                    .innerHTML.replaceAll(",", ".")
+            );
+            if (number !== 0) {
+                document.querySelector(".calc-result.standard-calc").innerHTML =
+                    eval(
+                        "1 / " +
+                            document.querySelector(".calc-result.standard-calc")
+                                .innerHTML
+                    );
+            } else {
+                document.querySelector(".calc-result.standard-calc").innerHTML =
+                    window.navigator.language.split("-")[0] == "pl"
+                        ? "Nie można dzielić przez zero"
+                        : "Can't divide by zero";
+            }
         }
     });
 });
