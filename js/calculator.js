@@ -227,6 +227,23 @@ document.querySelectorAll(".calc-btn.standard-calc").forEach((e) => {
                         ? "Nie można dzielić przez zero"
                         : "Can't divide by zero";
             }
+        } else if (evt.currentTarget.classList.contains("calc-opposite")) {
+            var number = Number(
+                document
+                    .querySelector(".calc-result.standard-calc")
+                    .innerHTML.replaceAll(",", ".")
+            );
+            if (number > 0) {
+                document.querySelector(".calc-result.standard-calc").innerHTML =
+                    "-" +
+                    document.querySelector(".calc-result.standard-calc")
+                        .innerHTML;
+            } else if (number < 0) {
+                document.querySelector(".calc-result.standard-calc").innerHTML =
+                    document
+                        .querySelector(".calc-result.standard-calc")
+                        .innerHTML.slice(1);
+            }
         }
     });
 });
