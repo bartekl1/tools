@@ -152,8 +152,16 @@ document.querySelectorAll(".calc-btn.standard-calc").forEach((e) => {
             mathOperation = mathOperation.replaceAll(",", ".");
             mathOperation = mathOperation.replaceAll("x", "*");
             mathOperation = mathOperation.replaceAll("÷", "/");
-            document.querySelector(".calc-result.standard-calc").innerHTML =
-                eval(mathOperation);
+            mathOperation += " ";
+            if (/\/ 0(?:\.0+)* /.test(mathOperation)) {
+                document.querySelector(".calc-result.standard-calc").innerHTML =
+                    window.navigator.language.split("-")[0] == "pl"
+                        ? "Nie można dzielić przez zero"
+                        : "Can't divide by zero";
+            } else {
+                document.querySelector(".calc-result.standard-calc").innerHTML =
+                    eval(mathOperation);
+            }
         } else if (evt.currentTarget.classList.contains("calc-clear")) {
             document.querySelector(".calc-result.standard-calc").innerHTML =
                 "0";
