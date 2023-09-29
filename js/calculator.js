@@ -244,6 +244,42 @@ document.querySelectorAll(".calc-btn.standard-calc").forEach((e) => {
                         .querySelector(".calc-result.standard-calc")
                         .innerHTML.slice(1);
             }
+        } else if (evt.currentTarget.classList.contains("calc-percent")) {
+            if (
+                ["x", "÷"].includes(
+                    document
+                        .querySelector(".calc-operation.standard-calc")
+                        .innerHTML.slice(-1)
+                )
+            ) {
+                document.querySelector(".calc-result.standard-calc").innerHTML =
+                    Number(
+                        document
+                            .querySelector(".calc-result.standard-calc")
+                            .innerHTML.replaceAll(",", ".")
+                    ) / 100;
+            } else if (
+                ["+", "-"].includes(
+                    document
+                        .querySelector(".calc-operation.standard-calc")
+                        .innerHTML.slice(-1)
+                )
+            ) {
+                document.querySelector(".calc-result.standard-calc").innerHTML =
+                    Number(
+                        document
+                            .querySelector(".calc-operation.standard-calc")
+                            .innerHTML.replaceAll(",", ".")
+                            .split(" ")
+                            .slice(-2, -1)
+                    ) *
+                    (Number(
+                        document
+                            .querySelector(".calc-result.standard-calc")
+                            .innerHTML.replaceAll(",", ".")
+                    ) /
+                        100);
+            }
         }
     });
 });
