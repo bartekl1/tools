@@ -211,3 +211,10 @@ html[data-bs-theme="dark"] {
 #calculator-select {
     max-width: 400px;
 }
+
+#errors {
+    position: fixed;
+    z-index: 10;
+    width: calc(100% - 2rem);
+    bottom: 0px;
+}
