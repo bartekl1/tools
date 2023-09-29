@@ -283,3 +283,44 @@ document.querySelectorAll(".calc-btn.standard-calc").forEach((e) => {
         }
     });
 });
+
+addEventListener("keyup", (evt) => {
+    if (
+        window.location.hash !== "#science" &&
+        window.location.hash !== "#science-advanced" &&
+        window.location.hash !== "#programmer"
+    ) {
+        if (
+            ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"].includes(evt.key)
+        ) {
+            document
+                .querySelectorAll(".standard-calc.calc-number")
+                .forEach((e) => {
+                    if (e.innerHTML == evt.key) {
+                        e.click();
+                    }
+                });
+        } else if ([".", ","].includes(evt.key)) {
+            document.querySelector(".standard-calc.calc-comma").click();
+        } else if (["=", "Enter"].includes(evt.key)) {
+            document.querySelector(".standard-calc.calc-solve").click();
+        } else if (["+", "-", "*", "/"].includes(evt.key)) {
+            document
+                .querySelectorAll(".standard-calc.calc-basic-operation")
+                .forEach((e) => {
+                    if (
+                        e.innerHTML ==
+                        evt.key.replaceAll("*", "x").replaceAll("/", "÷")
+                    ) {
+                        e.click();
+                    }
+                });
+        } else if (evt.key === "Escape") {
+            document.querySelector(".standard-calc.calc-clear-all").click();
+        } else if (evt.key === "Backspace") {
+            document.querySelector(".standard-calc.calc-delete").click();
+        } else if (evt.key === "%") {
+            document.querySelector(".standard-calc.calc-percent").click();
+        }
+    }
+});
