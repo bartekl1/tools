@@ -218,3 +218,7 @@ html[data-bs-theme="dark"] {
     width: calc(100% - 2rem);
     bottom: 0px;
 }
+
+#private-ip-div {
+    max-width: 300px;
+}

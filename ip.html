@@ -52,7 +52,37 @@
     </div>
 
     <div id="tool-page">
-        ip
+        <div class="h4"><span text-id="22">Private IP</span></div>
+
+        <div id="private-ip-loading">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+
+        <div class="alert alert-danger d-none" id="private-ip-blocked">
+            <span text-id="23">Private IP detection is blocked.</span>
+            <div id="private-ip-blocked-chrome" class="mt-1 d-none">
+                <span text-id="24">To unblock it follow this steps:</span>
+                <ol>
+                    <li><span text-id="25">Open</span> <code>chrome://flags/#enable-webrtc-hide-local-ips-with-mdns</code></li>
+                    <li><span text-id="26">At the highlighted option, change <code>Default</code> to <code>Disabled</code>.</span></li>
+                    <li><span text-id="27">Click <code>Relaunch</code>.</span></li>
+                </ol>
+            </div>
+        </div>
+
+        <div id="private-ip-div" class="d-none">
+            <div class="input-group">
+                <span class="input-group-text">
+                    <i class="bi bi-globe"></i>
+                </span>
+                <input type="text" class="form-control" id="private-ip" placeholder="IP" readonly>
+                <button class="btn btn-outline-primary copy">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+            </div>
+        </div>
     </div>
 
     <script src="/tools/js/theme.js"></script>
@@ -62,6 +92,8 @@
     
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    
+    <script src="/tools/js/modules/bowser.js"></script>
 
     <script src="/tools/js/ip.js"></script>
 

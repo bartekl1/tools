@@ -21,6 +21,12 @@ const textTranslations = [
     "Programisty",
     "Typ kalkulatora",
     "To narzędzie nie jest dostępne offline.",
+    "Prywatny IP",
+    "Wykrywanie prywatnego IP jest zablokowane.",
+    "Aby to odblokować wykonaj poniższe kroki",
+    "Otwórz",
+    "Przy wyróżnionej opcji zmień <code>Default</code> na <code>Disabled</code>.",
+    "Kliknij <code>Relaunch</code>.",
 ];
 
 const titleTranslations = {
@@ -32,6 +38,7 @@ const titleTranslations = {
 
 const placeholdersTranslations = {
     Search: "Szukaj",
+    IP: "IP",
 };
 
 const alternativeTextTranslations = {};
