@@ -20,12 +20,14 @@ const textTranslations = [
     "Naukowy",
     "Programisty",
     "Typ kalkulatora",
+    "To narzędzie nie jest dostępne offline.",
 ];
 
 const titleTranslations = {
     Tools: "Narzędzia",
     Information: "Informacje",
     Calculator: "Kalkulator",
+    IP: "IP",
 };
 
 const placeholdersTranslations = {

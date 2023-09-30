@@ -19,6 +19,10 @@ const precacheResources = [
     "/tools/LIBRARIES.md",
     "/tools/calculator.html",
     "/tools/js/calculator.js",
+    "/tools/ip.html",
+    "/tools/js/ip.js",
+    "/tools/js/error.js",
+    "/tools/js/offline.js",
 ];
 
 // When the service worker is installing, open the cache and add the precache resources to it
