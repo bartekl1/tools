@@ -41,117 +41,119 @@
         <span text-id="7">Calculator</span>
     </div>
 
-    <div class="input-group mb-3">
-        <span class="input-group-text" id="calculator-icon">
-            <i class="bi bi-calculator"></i>
-        </span>
-        <div class="form-floating">
-            <select class="form-select" id="calculator-select">
-                <option value="standard" text-id="17">Standard</option>
-                <!-- <option value="science" text-id="18">Science</option>
-                <option value="programmer" text-id="19">Programmer</option> -->
-            </select>
-            <label for="calculator-select" text-id="20">Calculator type</label>
+    <div id="tool-page">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="calculator-icon">
+                <i class="bi bi-calculator"></i>
+            </span>
+            <div class="form-floating">
+                <select class="form-select" id="calculator-select">
+                    <option value="standard" text-id="17">Standard</option>
+                    <!-- <option value="science" text-id="18">Science</option>
+                    <option value="programmer" text-id="19">Programmer</option> -->
+                </select>
+                <label for="calculator-select" text-id="20">Calculator type</label>
+            </div>
         </div>
-    </div>
 
-    <div id="standard-calculator">
-        <div class="calc-operation standard-calc"></div>
-        <div class="calc-result standard-calc">0</div>
-        <table>
-            <tr>
-                <td>
-                    <button class="btn btn-secondary calc-btn standard-calc calc-percent">%</button>
-                </td>
-                <td>
-                    <button class="btn btn-secondary calc-btn standard-calc calc-clear">CE</button>
-                </td>
-                <td>
-                    <button class="btn btn-secondary calc-btn standard-calc calc-clear-all">C</button>
-                </td>
-                <td>
-                    <button class="btn btn-secondary calc-btn standard-calc calc-delete"><i class="bi bi-x-circle"></i></button>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <button class="btn btn-secondary calc-btn standard-calc calc-fraction"><sup>1</sup>/<sub>x</sub></button>
-                </td>
-                <td>
-                    <button class="btn btn-secondary calc-btn standard-calc calc-square">x<sup>2</sup></button>
-                </td>
-                <td>
-                    <button class="btn btn-secondary calc-btn standard-calc calc-square-root">&#x221a;</button>
-                </td>
-                <td>
-                    <button class="btn btn-secondary calc-btn standard-calc calc-basic-operation">&#x00f7;</button>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <button class="btn btn-primary calc-btn standard-calc calc-number">7</button>
-                </td>
-                <td>
-                    <button class="btn btn-primary calc-btn standard-calc calc-number">8</button>
-                </td>
-                <td>
-                    <button class="btn btn-primary calc-btn standard-calc calc-number">9</button>
-                </td>
-                <td>
-                    <button class="btn btn-secondary calc-btn standard-calc calc-basic-operation">x</button>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <button class="btn btn-primary calc-btn standard-calc calc-number">4</button>
-                </td>
-                <td>
-                    <button class="btn btn-primary calc-btn standard-calc calc-number">5</button>
-                </td>
-                <td>
-                    <button class="btn btn-primary calc-btn standard-calc calc-number">6</button>
-                </td>
-                <td>
-                    <button class="btn btn-secondary calc-btn standard-calc calc-basic-operation">-</button>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <button class="btn btn-primary calc-btn standard-calc calc-number">1</button>
-                </td>
-                <td>
-                    <button class="btn btn-primary calc-btn standard-calc calc-number">2</button>
-                </td>
-                <td>
-                    <button class="btn btn-primary calc-btn standard-calc calc-number">3</button>
-                </td>
-                <td>
-                    <button class="btn btn-secondary calc-btn standard-calc calc-basic-operation">+</button>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <button class="btn btn-primary calc-btn standard-calc calc-opposite"><sup>+</sup>/<sub>-</sub></button>
-                </td>
-                <td>
-                    <button class="btn btn-primary calc-btn standard-calc calc-number">0</button>
-                </td>
-                <td>
-                    <button class="btn btn-primary calc-btn standard-calc calc-comma">,</button>
-                </td>
-                <td>
-                    <button class="btn btn-success calc-btn standard-calc calc-solve">=</button>
-                </td>
-            </tr>
-        </table>
-    </div>
+        <div id="standard-calculator">
+            <div class="calc-operation standard-calc"></div>
+            <div class="calc-result standard-calc">0</div>
+            <table>
+                <tr>
+                    <td>
+                        <button class="btn btn-secondary calc-btn standard-calc calc-percent">%</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-secondary calc-btn standard-calc calc-clear">CE</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-secondary calc-btn standard-calc calc-clear-all">C</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-secondary calc-btn standard-calc calc-delete"><i class="bi bi-x-circle"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button class="btn btn-secondary calc-btn standard-calc calc-fraction"><sup>1</sup>/<sub>x</sub></button>
+                    </td>
+                    <td>
+                        <button class="btn btn-secondary calc-btn standard-calc calc-square">x<sup>2</sup></button>
+                    </td>
+                    <td>
+                        <button class="btn btn-secondary calc-btn standard-calc calc-square-root">&#x221a;</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-secondary calc-btn standard-calc calc-basic-operation">&#x00f7;</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button class="btn btn-primary calc-btn standard-calc calc-number">7</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary calc-btn standard-calc calc-number">8</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary calc-btn standard-calc calc-number">9</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-secondary calc-btn standard-calc calc-basic-operation">x</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button class="btn btn-primary calc-btn standard-calc calc-number">4</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary calc-btn standard-calc calc-number">5</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary calc-btn standard-calc calc-number">6</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-secondary calc-btn standard-calc calc-basic-operation">-</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button class="btn btn-primary calc-btn standard-calc calc-number">1</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary calc-btn standard-calc calc-number">2</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary calc-btn standard-calc calc-number">3</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-secondary calc-btn standard-calc calc-basic-operation">+</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button class="btn btn-primary calc-btn standard-calc calc-opposite"><sup>+</sup>/<sub>-</sub></button>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary calc-btn standard-calc calc-number">0</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary calc-btn standard-calc calc-comma">,</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-success calc-btn standard-calc calc-solve">=</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
 
-    <div id="science-calculator" class="d-none">
-        science
-    </div>
+        <div id="science-calculator" class="d-none">
+            science
+        </div>
 
-    <div id="programmer-calculator" class="d-none">
-        programmer
+        <div id="programmer-calculator" class="d-none">
+            programmer
+        </div>
     </div>
 
     <script src="/tools/js/theme.js"></script>
