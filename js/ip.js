@@ -84,8 +84,6 @@ const findLocalIp = (logInfo = true) =>
         };
     });
 
-findLocalIp();
-
 document.querySelectorAll(".copy").forEach((e) => {
     e.addEventListener("click", (evt) => {
         navigator.clipboard.writeText(
@@ -103,3 +101,7 @@ document.querySelectorAll(".copy").forEach((e) => {
         );
     });
 });
+
+if (window.navigator.onLine) {
+    findLocalIp();
+}
