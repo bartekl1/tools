@@ -29,12 +29,13 @@ const textTranslations = [
     "Kliknij <code>Relaunch</code>.",
     "Publiczny IP",
     "Nie udało się sprawdzić publicznego IP.",
-    "Może to być spowodowane przez adblocka lub zbyt częste sprawdzanie.",
+    "Może to być spowodowane przez AdBlocka lub zbyt częste sprawdzanie.",
     "Miasto",
     "Kraj",
     "Szerokość geograficzna",
     "Długość geograficzna",
     "Strefa czasowa",
+    "Dane o publicznym IP pochodzą z",
 ];
 
 const titleTranslations = {
