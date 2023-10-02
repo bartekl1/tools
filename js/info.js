@@ -12,16 +12,20 @@ fetch(
         document.querySelector("#info-changelog").innerHTML = html;
     });
 
-fetch("/tools/LIBRARIES.md")
+fetch(
+    window.navigator.language.split("-")[0] == "pl"
+        ? "/tools/ACKNOWLEDGEMENTS_PL.md"
+        : "/tools/ACKNOWLEDGEMENTS.md"
+)
     .then((response) => {
         return response.text();
     })
     .then((md) => {
         var converter = new showdown.Converter();
         var html = converter.makeHtml(md);
-        document.querySelector("#info-libraries").innerHTML = html;
+        document.querySelector("#info-acknowledgements").innerHTML = html;
         document
-            .querySelector("#info-libraries")
+            .querySelector("#info-acknowledgements")
             .querySelectorAll("a")
             .forEach((e) => {
                 e.rel = "noopener";

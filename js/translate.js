@@ -14,7 +14,7 @@ const textTranslations = [
     "Klient HTTP (REST)",
     "Ogólne",
     "Rejestr zmian",
-    "Biblioteki",
+    "Podziękowania",
     "Jesteś offline. Niektóre narzędzia będą niedostępne.",
     "Standardowy",
     "Naukowy",
