@@ -36,6 +36,8 @@ const textTranslations = [
     "Długość geograficzna",
     "Strefa czasowa",
     "Dane o publicznym IP pochodzą z",
+    "Zgłoś błąd",
+    "Zaproponuj nową funkcję",
 ];
 
 const titleTranslations = {
