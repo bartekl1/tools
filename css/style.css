@@ -219,6 +219,7 @@ html[data-bs-theme="dark"] {
     bottom: 0px;
 }
 
-#private-ip-div {
-    max-width: 300px;
+#private-ip-div,
+#public-ip-div {
+    max-width: 400px;
 }

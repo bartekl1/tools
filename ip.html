@@ -77,7 +77,116 @@
                 <span class="input-group-text">
                     <i class="bi bi-globe"></i>
                 </span>
-                <input type="text" class="form-control" id="private-ip" placeholder="IP" readonly>
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="private-ip" placeholder="IP" readonly>
+                    <label for="public-ip">IP</label>
+                </div>
+                <button class="btn btn-outline-primary copy">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="h4 mt-2"><span text-id="28">Public IP</span></div>
+
+        <div id="public-ip-loading">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+
+        <div class="alert alert-danger d-none" id="public-ip-error">
+            <span text-id="29">Failed to check the public IP.</span>
+            <span text-id="30">This may be caused by adblock or checking too often.</span>
+        </div>
+
+        <div id="public-ip-div" class="d-none">
+            <div class="input-group mb-1">
+                <span class="input-group-text">
+                    <i class="bi bi-globe"></i>
+                </span>
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="public-ip" placeholder="IP" readonly>
+                    <label for="public-ip">IP</label>
+                </div>
+                <button class="btn btn-outline-primary copy">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+            </div>
+
+            <div class="input-group mb-1">
+                <span class="input-group-text">
+                    <i class="bi bi-building-fill"></i>
+                </span>
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="operator" placeholder="Operator" readonly>
+                    <label for="operator">Operator</label>
+                </div>
+                <button class="btn btn-outline-primary copy">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+            </div>
+
+            <div class="input-group mb-1">
+                <span class="input-group-text">
+                    <i class="bi bi-map"></i>
+                </span>
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="city" placeholder="City" readonly>
+                    <label for="city"><span text-id="31">City</span></label>
+                </div>
+                <button class="btn btn-outline-primary copy">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+            </div>
+
+            <div class="input-group mb-1">
+                <span class="input-group-text">
+                    <i class="bi bi-map"></i>
+                </span>
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="country" placeholder="Country" readonly>
+                    <label for="country"><span text-id="32">Country</span></label>
+                </div>
+                <button class="btn btn-outline-primary copy">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+            </div>
+
+            <div class="input-group mb-1">
+                <span class="input-group-text">
+                    <i class="bi bi-geo-alt-fill"></i>
+                </span>
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="latitude" placeholder="Latitude" readonly>
+                    <label for="latitude"><span text-id="33">Latitude</span></label>
+                </div>
+                <button class="btn btn-outline-primary copy">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+            </div>
+
+            <div class="input-group mb-1">
+                <span class="input-group-text">
+                    <i class="bi bi-geo-alt-fill"></i>
+                </span>
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="longitude" placeholder="Longitude" readonly>
+                    <label for="longitude"><span text-id="34">Longitude</span></label>
+                </div>
+                <button class="btn btn-outline-primary copy">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+            </div>
+
+            <div class="input-group mb-1">
+                <span class="input-group-text">
+                    <i class="bi bi-clock"></i>
+                </span>
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="timezone" placeholder="Timezone" readonly>
+                    <label for="timezone"><span text-id="35">Timezone</span></label>
+                </div>
                 <button class="btn btn-outline-primary copy">
                     <i class="bi bi-clipboard"></i>
                 </button>

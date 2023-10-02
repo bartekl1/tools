@@ -84,6 +84,38 @@ const findLocalIp = (logInfo = true) =>
         };
     });
 
+function getPublicIP() {
+    fetch("https://ipapi.co/json/")
+        .then((response) => {
+            if (response.ok) {
+                return response.json();
+            }
+            throw new Error("HTTP error");
+        })
+        .then((json) => {
+            document.querySelector("#public-ip").value = json.ip;
+            document.querySelector("#operator").value = json.org;
+            document.querySelector("#city").value = json.city;
+            document.querySelector("#country").value = json.country_name;
+            document.querySelector("#latitude").value = json.latitude;
+            document.querySelector("#longitude").value = json.longitude;
+            document.querySelector("#timezone").value = json.timezone;
+
+            document
+                .querySelector("#public-ip-loading")
+                .classList.add("d-none");
+            document.querySelector("#public-ip-div").classList.remove("d-none");
+        })
+        .catch((error) => {
+            document
+                .querySelector("#public-ip-loading")
+                .classList.add("d-none");
+            document
+                .querySelector("#public-ip-error")
+                .classList.remove("d-none");
+        });
+}
+
 document.querySelectorAll(".copy").forEach((e) => {
     e.addEventListener("click", (evt) => {
         navigator.clipboard.writeText(
@@ -104,4 +136,5 @@ document.querySelectorAll(".copy").forEach((e) => {
 
 if (window.navigator.onLine) {
     findLocalIp();
+    getPublicIP();
 }

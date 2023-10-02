@@ -27,6 +27,14 @@ const textTranslations = [
     "Otwórz",
     "Przy wyróżnionej opcji zmień <code>Default</code> na <code>Disabled</code>.",
     "Kliknij <code>Relaunch</code>.",
+    "Publiczny IP",
+    "Nie udało się sprawdzić publicznego IP.",
+    "Może to być spowodowane przez adblocka lub zbyt częste sprawdzanie.",
+    "Miasto",
+    "Kraj",
+    "Szerokość geograficzna",
+    "Długość geograficzna",
+    "Strefa czasowa",
 ];
 
 const titleTranslations = {
@@ -39,6 +47,12 @@ const titleTranslations = {
 const placeholdersTranslations = {
     Search: "Szukaj",
     IP: "IP",
+    Operator: "Operator",
+    City: "Miasto",
+    Country: "Kraj",
+    Latitude: "Szerokość geograficzna",
+    Longitude: "Długość geograficzna",
+    Timezone: "Strefa czasowa",
 };
 
 const alternativeTextTranslations = {};
