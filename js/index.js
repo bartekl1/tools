@@ -52,3 +52,38 @@ window.addEventListener("online", offline);
 window.addEventListener("offline", offline);
 
 document.querySelector("#search").addEventListener("keyup", search);
+
+var deferredPrompt;
+window.addEventListener("beforeinstallprompt", (e) => {
+    deferredPrompt = e;
+});
+
+document.querySelector("#install-app").addEventListener("click", async () => {
+    if (deferredPrompt !== null) {
+        deferredPrompt.prompt();
+        // const { outcome } = await deferredPrompt.userChoice;
+        // if (outcome === "accepted") {
+        //     deferredPrompt = null;
+        // }
+    }
+});
+
+window.addEventListener("appinstalled", () => {
+    console.log("PWA was installed");
+
+    document.querySelector("#install-app").classList.add("d-none");
+});
+
+function getPWADisplayMode() {
+    const isStandalone = window.matchMedia(
+        "(display-mode: standalone)"
+    ).matches;
+    if (navigator.standalone || isStandalone) {
+        return "standalone";
+    }
+    return "browser";
+}
+
+if (getPWADisplayMode() == "browser") {
+    document.querySelector("#install-app").classList.remove("d-none");
+}

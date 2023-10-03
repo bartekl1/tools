@@ -38,6 +38,7 @@ const textTranslations = [
     "Dane o publicznym IP pochodzą z",
     "Zgłoś błąd",
     "Zaproponuj nową funkcję",
+    "Zainstaluj",
 ];
 
 const titleTranslations = {
