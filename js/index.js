@@ -56,6 +56,10 @@ document.querySelector("#search").addEventListener("keyup", search);
 var deferredPrompt;
 window.addEventListener("beforeinstallprompt", (e) => {
     deferredPrompt = e;
+
+    if (getPWADisplayMode() == "browser") {
+        document.querySelector("#install-app").classList.remove("d-none");
+    }
 });
 
 document.querySelector("#install-app").addEventListener("click", async () => {
@@ -82,8 +86,4 @@ function getPWADisplayMode() {
         return "standalone";
     }
     return "browser";
-}
-
-if (getPWADisplayMode() == "browser") {
-    document.querySelector("#install-app").classList.remove("d-none");
 }
