@@ -4,6 +4,7 @@
     "short_name": "Tools",
     "start_url": "/tools/",
     "scope": "/tools/",
+    "display_override": ["window-controls-overlay", "minimal-ui"],
     "display": "standalone",
     "background_color": "#0d6efd",
     "theme_color": "#0d6efd",

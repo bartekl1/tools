@@ -75,9 +75,9 @@ window.addEventListener("appinstalled", () => {
 });
 
 function getPWADisplayMode() {
-    const isStandalone = window.matchMedia(
-        "(display-mode: standalone)"
-    ).matches;
+    const isStandalone =
+        window.matchMedia("(display-mode: standalone)").matches ||
+        window.matchMedia("(display-mode: window-controls-overlay)").matches;
     if (navigator.standalone || isStandalone) {
         return "standalone";
     }
