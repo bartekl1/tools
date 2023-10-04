@@ -46,42 +46,50 @@ html[data-bs-theme="dark"] {
     padding-bottom: 10px;
 }
 
-.tools-group.blue {
+.tools-group.blue,
+.top-bar-tool.blue {
     --tool-color: #0000ff;
     --tool-icon-color: #ffffff;
 }
 
-.tools-group.green {
+.tools-group.green,
+.top-bar-tool.green {
     --tool-color: #448944;
     --tool-icon-color: #ffffff;
 }
 
-.tools-group.red {
+.tools-group.red,
+.top-bar-tool.red {
     --tool-color: #ff0000;
     --tool-icon-color: #ffffff;
 }
 
-.tools-group.yellow {
+.tools-group.yellow,
+.top-bar-tool.yellow {
     --tool-color: #ffff00;
     --tool-icon-color: #000000;
 }
 
-.tools-group.orange {
+.tools-group.orange,
+.top-bar-tool.orange {
     --tool-color: #ff5733;
     --tool-icon-color: #ffffff;
 }
 
-.tools-group.pink {
+.tools-group.pink,
+.top-bar-tool.pink {
     --tool-color: #ff0062;
     --tool-icon-color: #ffffff;
 }
 
-.tools-group.purple {
+.tools-group.purple,
+.top-bar-tool.purple {
     --tool-color: #800080;
     --tool-icon-color: #ffffff;
 }
 
-.tools-group.gray {
+.tools-group.gray,
+.top-bar-tool.gray {
     --tool-color: #4e4848;
     --tool-icon-color: #ffffff;
 }
@@ -292,6 +300,9 @@ html[data-bs-theme="dark"] {
 .top-bar-search-group {
     max-width: calc(env(titlebar-area-width, 100%) - 80px) !important;
     width: 400px !important;
+    position: absolute;
+    left: 50%;
+    transform: translate(-30%, 0);
 }
 
 .center {
@@ -299,4 +310,72 @@ html[data-bs-theme="dark"] {
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
+}
+
+.top-bar-search-results {
+    position: fixed;
+    z-index: 10;
+
+    border-radius: var(--bs-border-radius);
+
+    background-color: var(--bs-body-bg);
+
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--bs-border-color);
+
+    overflow: auto;
+
+    max-height: 246px;
+}
+
+.top-bar-tool {
+    color: unset;
+    text-decoration: unset;
+}
+
+.top-bar-tool:hover {
+    --tool-background-color: var(--tool-background-color-hover);
+}
+
+.top-bar-tool:active {
+    --tool-background-color: var(--tool-background-color-active);
+}
+
+.top-bar-tool-icon-div {
+    color: var(--tool-icon-color);
+    background-color: var(--tool-color);
+
+    float: left;
+    width: 40px;
+    aspect-ratio: 1 / 1;
+
+    font-size: 20px;
+    position: relative;
+}
+
+.top-bar-tool-icon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.top-bar-tool-name {
+    float: left;
+    font-size: 16px;
+    padding-left: 6px;
+    padding-top: 4px;
+
+    width: calc(100% - 40px);
+    height: 40px;
+    overflow: hidden;
+}
+
+.top-bar-tool-body {
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: var(--tool-border-color);
+
+    background-color: var(--tool-background-color);
 }
