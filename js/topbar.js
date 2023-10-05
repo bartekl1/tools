@@ -230,6 +230,16 @@ function topbarSearch(evt) {
         document
             .querySelector(".top-bar-search-results")
             .classList.remove("d-none");
+
+        if (
+            document
+                .querySelector(".top-bar-search-results")
+                .querySelectorAll("div").length === 0
+        ) {
+            document
+                .querySelector(".top-bar-search-results")
+                .classList.add("d-none");
+        }
     }
 }
 
