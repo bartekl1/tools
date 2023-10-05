@@ -11,6 +11,46 @@ const tools = [
     },
     {
         name: {
+            english: "Unit converter",
+            polish: "Przelicznik jednostek",
+        },
+        icon: "bi-arrow-repeat",
+        href: "/tools/unit_converter.html",
+        color: "blue",
+        offline: true,
+    },
+    {
+        name: {
+            english: "Number system converter",
+            polish: "Przelicznik systemów liczbowych",
+        },
+        icon: "bi-123",
+        href: "/tools/number_system_converter.html",
+        color: "blue",
+        offline: true,
+    },
+    {
+        name: {
+            english: "Roman numeral converter",
+            polish: "Przelicznik liczb rzymskich",
+        },
+        icon: "bi-bank",
+        href: "/tools/roman_numeral_converter.html",
+        color: "blue",
+        offline: true,
+    },
+    {
+        name: {
+            english: "HTTP (REST) client",
+            polish: "Klient HTTP (REST)",
+        },
+        icon: "bi-wifi",
+        href: "/tools/http.html",
+        color: "green",
+        offline: false,
+    },
+    {
+        name: {
             english: "IP",
             polish: "IP",
         },
@@ -18,6 +58,76 @@ const tools = [
         href: "/tools/ip.html",
         color: "green",
         offline: false,
+    },
+    {
+        name: {
+            english: "User agent",
+            polish: "User agent",
+        },
+        icon: "bi-display",
+        href: "/tools/user_agent.html",
+        color: "green",
+        offline: true,
+    },
+    {
+        name: {
+            english: "JavaScript console",
+            polish: "Konsola JavaScript",
+        },
+        icon: "bi-terminal",
+        href: "/tools/js_console.html",
+        color: "green",
+        offline: true,
+    },
+    {
+        name: {
+            english: "Password generator",
+            polish: "Generator haseł",
+        },
+        icon: "bi-key-fill",
+        href: "/tools/password_generator.html",
+        color: "yellow",
+        offline: true,
+    },
+    {
+        name: {
+            english: "Hash",
+            polish: "Hash",
+        },
+        icon: "bi-hash",
+        href: "/tools/hash.html",
+        color: "yellow",
+        offline: true,
+    },
+    {
+        name: {
+            english: "Unix timestamp",
+            polish: "Unix timestamp",
+        },
+        icon: "bi-clock",
+        href: "/tools/unix_timestamp.html",
+        color: "orange",
+        offline: true,
+    },
+    {
+        name: {
+            english: "Random number generator",
+            polish: "Generator liczb losowych",
+        },
+        icon: "bi-dice-5",
+        href: "/tools/random_numbers.html",
+        color: "gray",
+        offline: true,
+    },
+    {
+        name: {
+            english: "GPS",
+            polish: "GPS",
+        },
+        icon: "bi-geo-alt-fill",
+        href: "/tools/gps.html",
+        color: "gray",
+        offline: true,
     },
 ];
 

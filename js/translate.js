@@ -39,6 +39,12 @@ const textTranslations = [
     "Zgłoś błąd",
     "Zaproponuj nową funkcję",
     "Zainstaluj",
+    "Zabezpieczenia",
+    "Generator haseł",
+    "Konsola JavaScript",
+    "Data i czas",
+    "Inne",
+    "Generator liczb losowych",
 ];
 
 const titleTranslations = {
