@@ -383,6 +383,11 @@ html[data-bs-theme="dark"] {
 input#hex,
 input#dec,
 input#oct,
-input#bin {
+input#bin,
+input#numbers-number,
+input#decimals-number,
+input#minimum,
+input#maximum,
+textarea#numbers {
     max-width: 400px;
 }

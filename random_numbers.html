@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Number system converter</title>
+    <title>Random number generator</title>
 
     <meta name="description" content="Tools">
     <meta name="keywords" content="Tools">
@@ -52,29 +52,40 @@
     </div>
 
     <div class="h3">
-        <i class="bi bi-123"></i>
-        <span text-id="9">Number system converter</span>
+        <i class="bi bi-dice-5"></i>
+        <span text-id="45">Random number generator</span>
     </div>
 
     <div id="tool-page">
         <div class="mb-2">
-            <label for="hex" class="form-label h4">HEX</label>
-            <input type="text" class="form-control" pattern="[0-9a-fA-F]*" id="hex">
+            <label for="numbers-number" class="form-label" text-id="46">Number of numbers</label>
+            <input type="number" class="form-control" min="0" id="numbers-number">
         </div>
 
         <div class="mb-2">
-            <label for="hex" class="form-label h4">DEC</label>
-            <input type="text" class="form-control" pattern="[0-9]*" id="dec">
+            <label for="decimals-number" class="form-label" text-id="47">Number of decimals</label>
+            <input type="number" class="form-control" min="0" id="decimals-number">
         </div>
 
         <div class="mb-2">
-            <label for="hex" class="form-label h4">OCT</label>
-            <input type="text" class="form-control" pattern="[0-7]*" id="oct">
+            <label for="minimum" class="form-label">Minimum</label>
+            <input type="number" class="form-control" id="minimum" step="any">
         </div>
 
         <div class="mb-2">
-            <label for="hex" class="form-label h4">BIN</label>
-            <input type="text" class="form-control" pattern="[0-1]*" id="bin">
+            <label for="maximum" class="form-label">Maximum</label>
+            <input type="number" class="form-control" id="maximum" step="any">
+        </div>
+
+        <button class="btn btn-primary" id="generate" text-id="48">Generate</button>
+
+        <button class="btn btn-primary d-none" type="button" disabled id="generating">
+            <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+            <span class="visually-hidden" role="status">Loading...</span>
+        </button>
+
+        <div>
+            <textarea class="form-control mt-2" id="numbers" readonly rows="10"></textarea>
         </div>
     </div>
 
@@ -86,7 +97,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
     
-    <script src="/tools/js/number_system_converter.js"></script>
+    <script src="/tools/js/random_numbers.js"></script>
 
     <script>
         var reg;

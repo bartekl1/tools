@@ -45,7 +45,9 @@ const textTranslations = [
     "Data i czas",
     "Inne",
     "Generator liczb losowych",
-    "Przelicznik systemów liczbowych",
+    "Ilość liczb",
+    "Ilość miejsc po przecinku",
+    "Generuj",
 ];
 
 const titleTranslations = {
@@ -54,6 +56,7 @@ const titleTranslations = {
     Calculator: "Kalkulator",
     IP: "IP",
     "Number system converter": "Przelicznik systemów liczbowych",
+    "Random number generator": "Generator liczb losowych",
 };
 
 const placeholdersTranslations = {
