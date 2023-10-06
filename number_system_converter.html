@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Number system converter</title>
+
+    <meta name="description" content="Tools">
+    <meta name="keywords" content="Tools">
+    <meta name="author" content="Bartek L">
+
+    <link rel="stylesheet" href="/tools/css/style.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.min.css" integrity="sha384-fFxL8wXRpg9gVqGpY+URMtLr3fLL0WBbo4NBQ+IWwMDYjIjI5VQ46XlJm5+BUlXJ" crossorigin="anonymous">
+
+    <link rel="manifest" href="/tools/manifest.json">
+
+    <link rel="shortcut icon" href="/tools/img/icons/elephant.ico">
+    <link rel="apple-touch-icon" href="/tools/img/icons/elephant.png">
+
+    <!-- Standard browsers -->
+    <meta name="theme-color" content="#0d6efd"/>
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#0d6efd">
+</head>
+<body class="px-3 pt-2">
+    <div class="top-bar">
+        <div class="float-start top-bar-buttons">
+            <button class="top-bar-button" onclick="window.location.reload()">
+                <i class="bi bi-arrow-clockwise"></i>
+            </button>
+            <a class="top-bar-button" href="/tools/">
+                <i class="bi bi-house"></i>
+            </a>
+        </div>
+        <div class="input-group top-bar-search-group">
+            <span class="input-group-text top-bar-search-text"><i class="bi bi-search"></i></span>
+            <input type="text" class="form-control top-bar-search" placeholder="Search">
+        </div>
+    </div>
+
+    <div class="text-light-emphasis h2 text-center">
+        <a href="/tools/" class="home-link">
+            <span text-id="0">Tools</span>
+            <i class="bi bi-tools"></i>
+        </a>
+    </div>
+
+    <div class="h3">
+        <i class="bi bi-123"></i>
+        <span text-id="46">Number system converter</span>
+    </div>
+
+    <div id="tool-page">
+        <div class="mb-2">
+            <label for="hex" class="form-label h4">HEX</label>
+            <input type="text" class="form-control" pattern="[0-9a-fA-F]*" id="hex">
+        </div>
+
+        <div class="mb-2">
+            <label for="hex" class="form-label h4">DEC</label>
+            <input type="text" class="form-control" pattern="[0-9]*" id="dec">
+        </div>
+
+        <div class="mb-2">
+            <label for="hex" class="form-label h4">OCT</label>
+            <input type="text" class="form-control" pattern="[0-7]*" id="oct">
+        </div>
+
+        <div class="mb-2">
+            <label for="hex" class="form-label h4">BIN</label>
+            <input type="text" class="form-control" pattern="[0-1]*" id="bin">
+        </div>
+    </div>
+
+    <script src="/tools/js/topbar.js"></script>
+    <script src="/tools/js/theme.js"></script>
+    <script src="/tools/js/translate.js"></script>
+    <script src="/tools/js/error.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    
+    <script src="/tools/js/number_system_converter.js"></script>
+
+    <script>
+        var reg;
+        // Register the service worker
+        if ('serviceWorker' in navigator) {
+            // Wait for the 'load' event to not block other work
+            window.addEventListener('load', async () => {
+                // Try to register the service worker.
+                try {
+                    reg = await navigator.serviceWorker.register('/tools/sw.js');
+                    console.log('Service worker registered! 😎', reg);
+                } catch (err) {
+                    console.log('😥 Service worker registration failed: ', err);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

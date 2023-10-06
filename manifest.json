@@ -9,7 +9,7 @@
     "background_color": "#0d6efd",
     "theme_color": "#0d6efd",
     "description": "Tools",
-    "id": "/",
+    "id": "/tools/",
     "icons": [
         {
             "src": "/tools/img/icons/elephant48.png",

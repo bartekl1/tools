@@ -25,6 +25,8 @@ const precacheResources = [
     "/tools/js/error.js",
     "/tools/js/offline.js",
     "/tools/js/topbar.js",
+    "/tools/number_system_converter.html",
+    "/tools/js/number_system_converter.js",
 ];
 
 // When the service worker is installing, open the cache and add the precache resources to it
