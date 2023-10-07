@@ -8,3 +8,4 @@
 # Data sources
 
 - [ipapi](https://ipapi.co/)
+- [Google Maps](https://maps.google.com/)

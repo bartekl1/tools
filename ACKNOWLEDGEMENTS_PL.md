@@ -8,3 +8,4 @@
 # Źródła danych
 
 - [ipapi](https://ipapi.co/)
+- [Mapy Google](https://maps.google.com/)
