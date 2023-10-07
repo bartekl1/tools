@@ -48,6 +48,15 @@ const textTranslations = [
     "Ilość liczb",
     "Ilość miejsc po przecinku",
     "Generuj",
+    "GPS nie jest wspierany.",
+    "GPS jest zablokowany.",
+    "Lokalizuj",
+    "Szerokość geograficzna",
+    "Długość geograficzna",
+    "Dokładność",
+    "Wysokość",
+    "Dokładność wysokości",
+    "Prędkość",
 ];
 
 const titleTranslations = {
@@ -57,6 +66,7 @@ const titleTranslations = {
     IP: "IP",
     "Number system converter": "Przelicznik systemów liczbowych",
     "Random number generator": "Generator liczb losowych",
+    GPS: "GPS",
 };
 
 const placeholdersTranslations = {
@@ -68,6 +78,12 @@ const placeholdersTranslations = {
     Latitude: "Szerokość geograficzna",
     Longitude: "Długość geograficzna",
     Timezone: "Strefa czasowa",
+    Latitude: "Szerokość geograficzna",
+    Longitude: "Długość geograficzna",
+    Accuracy: "Dokładność",
+    Altitude: "Wysokość",
+    "Altitude accuracy": "Dokładność wysokości",
+    Speed: "Prędkość",
 };
 
 const alternativeTextTranslations = {};
