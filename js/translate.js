@@ -57,6 +57,11 @@ const textTranslations = [
     "Wysokość",
     "Dokładność wysokości",
     "Prędkość",
+    "Przeglądarka może fałszować user agent.",
+    "Przeglądarka",
+    "System operacyjny",
+    "Silnik",
+    "Urządzenie",
 ];
 
 const titleTranslations = {
@@ -67,6 +72,7 @@ const titleTranslations = {
     "Number system converter": "Przelicznik systemów liczbowych",
     "Random number generator": "Generator liczb losowych",
     GPS: "GPS",
+    "User agent": "User agent",
 };
 
 const placeholdersTranslations = {
@@ -84,6 +90,11 @@ const placeholdersTranslations = {
     Altitude: "Wysokość",
     "Altitude accuracy": "Dokładność wysokości",
     Speed: "Prędkość",
+    "User agent": "User agent",
+    Browser: "Przeglądarka",
+    OS: "System operacyjny",
+    Engine: "Silnik",
+    Device: "Urządzenie",
 };
 
 const alternativeTextTranslations = {};

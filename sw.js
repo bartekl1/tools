@@ -31,6 +31,8 @@ const precacheResources = [
     "/tools/js/random_numbers.js",
     "/tools/gps.html",
     "/tools/js/gps.js",
+    "/tools/user_agent.html",
+    "/tools/js/user_agent.js",
 ];
 
 // When the service worker is installing, open the cache and add the precache resources to it
