@@ -72,6 +72,15 @@ function localize() {
                 .classList.add("d-none");
         }
 
+        if (coords.latitude !== null && coords.longitude !== null) {
+            document.querySelector(
+                "#google-maps"
+            ).innerHTML = `<iframe class="google-maps" src="https://maps.google.com/maps?q=${coords.latitude},${coords.longitude}&z=14&amp;output=embed"></iframe>`;
+            document.querySelector("#google-maps").classList.remove("d-none");
+        } else {
+            document.querySelector("#google-maps").classList.add("d-none");
+        }
+
         document.querySelector("#localizing").classList.add("d-none");
         document.querySelector("#localize").classList.remove("d-none");
     }

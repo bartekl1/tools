@@ -391,3 +391,9 @@ input#maximum,
 textarea#numbers {
     max-width: 400px;
 }
+
+iframe.google-maps {
+    max-width: 100%;
+    width: 700px;
+    height: 500px;
+}
