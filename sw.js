@@ -8,8 +8,8 @@ const precacheResources = [
     "/tools/manifest.json",
     "/tools/manifest_pl.json",
     "/tools/css/style.css",
-    "/tools/img/icons/elephant.ico",
-    "/tools/img/icons/elephant.png",
+    "/tools/img/icons/icon.ico",
+    "/tools/img/icons/icon_x192.png",
     "/tools/js/theme.js",
     "/tools/js/translate.js",
     "/tools/js/index.js",
@@ -34,6 +34,12 @@ const precacheResources = [
     "/tools/js/gps.js",
     "/tools/user_agent.html",
     "/tools/js/user_agent.js",
+    "/tools/js/modules/bowser.js",
+    "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css",
+    "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.min.css",
+    "https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js",
+    "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js",
+    "https://cdn.jsdelivr.net/npm/showdown@2.1.0/dist/showdown.min.js",
 ];
 
 // When the service worker is installing, open the cache and add the precache resources to it
