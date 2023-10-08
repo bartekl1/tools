@@ -104,6 +104,9 @@ const elementsTitlesTranslations = {};
 if (window.navigator.language.split("-")[0] == "pl") {
     document.querySelector("html").lang = "pl";
 
+    document.querySelector("link[rel=manifest]").href =
+        "/tools/manifest_pl.json";
+
     document.querySelector("title").innerHTML =
         titleTranslations[document.querySelector("title").innerHTML];
 

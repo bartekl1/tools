@@ -6,6 +6,7 @@ const cacheName = `${cacheNamePrefix}-v${version}`;
 const precacheResources = [
     "/tools/",
     "/tools/manifest.json",
+    "/tools/manifest_pl.json",
     "/tools/css/style.css",
     "/tools/img/icons/elephant.ico",
     "/tools/img/icons/elephant.png",
