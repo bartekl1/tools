@@ -59,22 +59,42 @@
     <div id="tool-page">
         <div class="mb-2">
             <label for="hex" class="form-label h4">HEX</label>
-            <input type="text" class="form-control" pattern="[0-9a-fA-F]*" id="hex">
+            <div class="input-group">
+                <input type="text" class="form-control" pattern="[0-9a-fA-F]*" id="hex">
+                <button class="btn btn-outline-primary copy">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+            </div>
         </div>
 
         <div class="mb-2">
             <label for="hex" class="form-label h4">DEC</label>
-            <input type="text" class="form-control" pattern="[0-9]*" id="dec">
+            <div class="input-group">
+                <input type="text" class="form-control" pattern="[0-9]*" id="dec">
+                <button class="btn btn-outline-primary copy">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+            </div>
         </div>
 
         <div class="mb-2">
             <label for="hex" class="form-label h4">OCT</label>
-            <input type="text" class="form-control" pattern="[0-7]*" id="oct">
+            <div class="input-group">
+                <input type="text" class="form-control" pattern="[0-7]*" id="oct">
+                <button class="btn btn-outline-primary copy">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+            </div>
         </div>
 
         <div class="mb-2">
             <label for="hex" class="form-label h4">BIN</label>
-            <input type="text" class="form-control" pattern="[0-1]*" id="bin">
+            <div class="input-group">
+                <input type="text" class="form-control" pattern="[0-1]*" id="bin">
+                <button class="btn btn-outline-primary copy">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+            </div>
         </div>
     </div>
 
