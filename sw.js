@@ -28,6 +28,8 @@ const precacheResources = [
     "/tools/js/topbar.js",
     "/tools/number_system_converter.html",
     "/tools/js/number_system_converter.js",
+    "/tools/roman_numeral_converter.html",
+    "/tools/js/roman_numeral_converter.js",
     "/tools/random_numbers.html",
     "/tools/js/random_numbers.js",
     "/tools/gps.html",

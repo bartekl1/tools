@@ -388,7 +388,9 @@ input#numbers-number,
 input#decimals-number,
 input#minimum,
 input#maximum,
-textarea#numbers {
+textarea#numbers,
+input#arabic,
+input#roman {
     max-width: 400px;
 }
 

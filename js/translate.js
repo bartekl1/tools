@@ -62,6 +62,8 @@ const textTranslations = [
     "System operacyjny",
     "Silnik",
     "Urządzenie",
+    "Liczba arabska",
+    "Liczba rzymska",
 ];
 
 const titleTranslations = {
@@ -73,6 +75,7 @@ const titleTranslations = {
     "Random number generator": "Generator liczb losowych",
     GPS: "GPS",
     "User agent": "User agent",
+    "Roman numeral converter": "Przelicznik liczb rzymskich",
 };
 
 const placeholdersTranslations = {
