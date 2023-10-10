@@ -21,22 +21,22 @@ const tools = [
     },
     {
         name: {
-            english: "Number system converter",
-            polish: "Przelicznik systemów liczbowych",
-        },
-        icon: "bi-123",
-        href: "/tools/number_system_converter.html",
-        color: "blue",
-        offline: true,
-    },
-    {
-        name: {
             english: "Roman numeral converter",
             polish: "Przelicznik liczb rzymskich",
         },
         icon: "bi-bank",
         href: "/tools/roman_numeral_converter.html",
         color: "blue",
+        offline: true,
+    },
+    {
+        name: {
+            english: "Number system converter",
+            polish: "Przelicznik systemów liczbowych",
+        },
+        icon: "bi-123",
+        href: "/tools/number_system_converter.html",
+        color: "green",
         offline: true,
     },
     {
@@ -66,16 +66,6 @@ const tools = [
         },
         icon: "bi-display",
         href: "/tools/user_agent.html",
-        color: "green",
-        offline: true,
-    },
-    {
-        name: {
-            english: "JavaScript console",
-            polish: "Konsola JavaScript",
-        },
-        icon: "bi-terminal",
-        href: "/tools/js_console.html",
         color: "green",
         offline: true,
     },
