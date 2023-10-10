@@ -64,6 +64,10 @@ const textTranslations = [
     "Urządzenie",
     "Liczba arabska",
     "Liczba rzymska",
+    "Bieżący znacznik czasu",
+    "Przelicznik",
+    "Znacznik czasu",
+    "Data",
 ];
 
 const titleTranslations = {
@@ -76,6 +80,7 @@ const titleTranslations = {
     GPS: "GPS",
     "User agent": "User agent",
     "Roman numeral converter": "Przelicznik liczb rzymskich",
+    "Unix timestamp": "Unix timestamp",
 };
 
 const placeholdersTranslations = {

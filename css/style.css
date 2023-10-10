@@ -390,7 +390,10 @@ input#minimum,
 input#maximum,
 textarea#numbers,
 input#arabic,
-input#roman {
+input#roman,
+input#current-timestamp,
+input#timestamp,
+input#date {
     max-width: 400px;
 }
 

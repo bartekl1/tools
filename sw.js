@@ -36,6 +36,8 @@ const precacheResources = [
     "/tools/js/gps.js",
     "/tools/user_agent.html",
     "/tools/js/user_agent.js",
+    "/tools/unix_timestamp.html",
+    "/tools/js/unix_timestamp.js",
     "/tools/js/modules/bowser.js",
     "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css",
     "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.min.css",
