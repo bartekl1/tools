@@ -68,6 +68,8 @@ const textTranslations = [
     "Przelicznik",
     "Znacznik czasu",
     "Data",
+    "Długość",
+    "Znaki specjalne",
 ];
 
 const titleTranslations = {
@@ -81,6 +83,7 @@ const titleTranslations = {
     "User agent": "User agent",
     "Roman numeral converter": "Przelicznik liczb rzymskich",
     "Unix timestamp": "Unix timestamp",
+    "Password generator": "Generator haseł",
 };
 
 const placeholdersTranslations = {
@@ -103,6 +106,8 @@ const placeholdersTranslations = {
     OS: "System operacyjny",
     Engine: "Silnik",
     Device: "Urządzenie",
+    Length: "Długość",
+    "Special characters": "Znaki specjalne",
 };
 
 const alternativeTextTranslations = {};

@@ -90,8 +90,8 @@ html[data-bs-theme="dark"] {
 
 .tools-group.gray,
 .top-bar-tool.gray {
-    --tool-color: #4e4848;
-    --tool-icon-color: #ffffff;
+    --tool-color: #9b8f8f;
+    --tool-icon-color: #000000;
 }
 
 .tool {
@@ -393,8 +393,14 @@ input#arabic,
 input#roman,
 input#current-timestamp,
 input#timestamp,
-input#date {
+input#date,
+input#password {
     max-width: 400px;
+}
+
+input#length,
+input#special {
+    max-width: 300px;
 }
 
 iframe.google-maps {
