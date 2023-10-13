@@ -380,6 +380,18 @@ html[data-bs-theme="dark"] {
     background-color: var(--tool-background-color);
 }
 
+input#hash-input,
+input#md5,
+input#sha1,
+input#sha256,
+input#sha224,
+input#sha512,
+input#sha384,
+input#sha3,
+input#ripemd160 {
+    max-width: 500px;
+}
+
 input#hex,
 input#dec,
 input#oct,

@@ -84,6 +84,7 @@ const titleTranslations = {
     "Roman numeral converter": "Przelicznik liczb rzymskich",
     "Unix timestamp": "Unix timestamp",
     "Password generator": "Generator haseł",
+    Hash: "Hash",
 };
 
 const placeholdersTranslations = {
