@@ -1,0 +1,44 @@
+{
+    "name": "tools",
+    "version": "1.0",
+    "description": "Website with math and IT tools",
+    "keywords": [
+        "website",
+        "application",
+        "calculator",
+        "app",
+        "it",
+        "tools",
+        "pwa",
+        "math",
+        "offline",
+        "tool",
+        "progressive-web-app",
+        "mathematics",
+        "calculations",
+        "webapp",
+        "information-technology",
+        "offline-capable",
+        "pwa-apps",
+        "pwa-app",
+        "pwa-offline",
+        "offline-first"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/bartekl1/tools.git"
+    },
+    "author": "bartekl1",
+    "license": "SEE LICENSE IN LICENSE",
+    "bugs": {
+        "url": "https://github.com/bartekl1/tools/issues"
+    },
+    "homepage": "https://github.com/bartekl1/tools#readme",
+    "dependencies": {
+        "bootstrap": "5.3.2",
+        "bootstrap-icons": "1.11.1",
+        "showdown": "2.1.0",
+        "bowser": "2.11.0",
+        "crypto-js": "4.1.1"
+    }
+}
