@@ -1,11 +1,11 @@
-const { exec } = require("child_process");
+const { execSync } = require("child_process");
 const fse = require("fs-extra");
 
 console.log("Tools build script\n");
 
 console.log("Installing dependencies ...");
 
-exec("npm install", (err, stdout, stderr) => {
+execSync("npm install", (err, stdout, stderr) => {
     if (err) {
         process.exit();
     }
@@ -93,18 +93,18 @@ global.Bowser = Bowser;
 `
 );
 
-exec(
+execSync(
     "browserify ./build/bowser.js -o ./build/bowser.bundle.js",
     (err, stdout, stderr) => {
         if (err) {
             process.exit();
         }
-
-        fse.copySync("./build/bowser.bundle.js", "./js/modules/bowser.js", {
-            overwrite: true,
-        });
     }
 );
+
+fse.copySync("./build/bowser.bundle.js", "./js/modules/bowser.js", {
+    overwrite: true,
+});
 
 console.log("Cleaning up ...");
 
