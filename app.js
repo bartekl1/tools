@@ -1,7 +1,7 @@
 const express = require("express");
 const minimist = require("minimist");
 
-const argv = require("minimist")(process.argv.slice(2));
+const argv = minimist(process.argv.slice(2));
 
 if (argv.h || argv.help) {
     console.log("Tools server\n");
