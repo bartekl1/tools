@@ -5,6 +5,8 @@
 - [Showdown](https://showdownjs.com/)
 - [Bowser](https://github.com/lancedikson/bowser)
 - [crypto-js](https://github.com/brix/crypto-js)
+- [Express](https://expressjs.com/)
+- [minimist](https://github.com/minimistjs/minimist)
 
 # Data sources
 
