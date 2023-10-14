@@ -7,6 +7,7 @@
 - [crypto-js](https://github.com/brix/crypto-js)
 - [Express](https://expressjs.com/)
 - [minimist](https://github.com/minimistjs/minimist)
+- [fs-extra](https://github.com/jprichardson/node-fs-extra)
 
 # Data sources
 
