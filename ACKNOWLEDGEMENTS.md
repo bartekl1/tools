@@ -8,6 +8,7 @@
 - [Express](https://expressjs.com/)
 - [minimist](https://github.com/minimistjs/minimist)
 - [fs-extra](https://github.com/jprichardson/node-fs-extra)
+- [Browserify](https://browserify.org/)
 
 # Data sources
 
