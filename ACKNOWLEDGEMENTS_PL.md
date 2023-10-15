@@ -10,6 +10,10 @@
 - [fs-extra](https://github.com/jprichardson/node-fs-extra)
 - [Browserify](https://browserify.org/)
 
+# Czcionki
+
+- [JetBrains Mono](https://www.jetbrains.com/lp/mono/)
+
 # Źródła danych
 
 - [ipapi](https://ipapi.co/)
