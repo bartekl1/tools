@@ -89,9 +89,12 @@
             <button class="btn btn-success ms-1 px-3" id="send">
                 <i class="bi bi-send"></i>
             </button>
+            <button class="btn btn-success ms-1 px-3 d-none" id="sending" disabled>
+                <span class="spinner-border spinner-border-sm"></span>
+            </button>
         </div>
 
-        <ul class="nav nav-pills mt-3 mb-2" id="pills-tab" role="tablist">
+        <ul class="nav nav-pills mt-3 mb-2" role="tablist">
             <li class="nav-item" role="presentation">
                 <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#request-content" type="button" role="tab" text-id="72">Content</button>
             </li>
@@ -109,10 +112,60 @@
                     <option value="text">TEXT (text/plain)</option>
                 </select>
 
-                <textarea class="form-control mt-2 source-code" id="content" rows="7" spellcheck="false"></textarea>
+                <textarea class="form-control mt-2 source-code" id="request-content-code" rows="7" spellcheck="false"></textarea>
             </div>
             <div class="tab-pane fade" id="request-headers" role="tabpanel" tabindex="0">
-                headers
+                <div class="header d-flex mb-2">
+                    <input type="text" class="form-control header-name me-2 source-code" spellcheck="false">
+                    <input type="text" class="form-control header-value me-2 source-code" spellcheck="false">
+                    <button class="btn btn-secondary header-delete">
+                        <i class="bi bi-x-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="response" class="">
+            <div class="d-flex justify-content-between flex-column flex-sm-row flex-md-row flex-lg-row flex-xl-row flex-xxl-row fs-4 mt-2">
+                <div>
+                    <span>Status:</span>
+                    <span id="response-status"></span>
+                </div>
+                <div>
+                    <span>Time:</span>
+                    <span id="response-time"></span>
+                </div>
+                <div>
+                    <span>Size:</span>
+                    <span id="response-size"></span>
+                </div>
+            </div>
+
+            <ul class="nav nav-pills mt-3 mb-2" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#response-content" type="button" role="tab" text-id="72">Content</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" data-bs-toggle="pill" data-bs-target="#response-headers" type="button" role="tab" text-id="73">Headers</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link d-none" data-bs-toggle="pill" data-bs-target="#response-html" type="button" role="tab">HTML</button>
+                </li>
+            </ul>
+    
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="response-content" role="tabpanel" tabindex="0">
+                    <textarea class="form-control mt-2 source-code" id="response-content-code" rows="7" spellcheck="false" readonly></textarea>
+                </div>
+                <div class="tab-pane fade" id="response-headers" role="tabpanel" tabindex="0">
+                    <div class="header d-flex mb-2">
+                        <input type="text" class="form-control header-name me-2 source-code" spellcheck="false" readonly>
+                        <input type="text" class="form-control header-value me-2 source-code" spellcheck="false" readonly>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="response-html" role="tabpanel" tabindex="0">
+                    <iframe id="response-iframe"></iframe>
+                </div>
             </div>
         </div>
     </div>
