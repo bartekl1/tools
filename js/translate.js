@@ -70,6 +70,9 @@ const textTranslations = [
     "Data",
     "Długość",
     "Znaki specjalne",
+    "Metoda",
+    "Zawartość",
+    "Nagłówki",
 ];
 
 const titleTranslations = {
@@ -85,6 +88,7 @@ const titleTranslations = {
     "Unix timestamp": "Unix timestamp",
     "Password generator": "Generator haseł",
     Hash: "Hash",
+    "HTTP (REST) client": "Klient HTTP (REST)",
 };
 
 const placeholdersTranslations = {
@@ -109,6 +113,7 @@ const placeholdersTranslations = {
     Device: "Urządzenie",
     Length: "Długość",
     "Special characters": "Znaki specjalne",
+    URL: "URL",
 };
 
 const alternativeTextTranslations = {};

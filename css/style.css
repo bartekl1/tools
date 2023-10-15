@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "JetBrains Mono";
+    src: url("/tools/fonts/JetBrainsMono-Regular.woff2") format("woff2");
+}
+
 html[data-bs-theme="light"] {
     --theme-color: #0d6efd;
 
@@ -419,4 +424,13 @@ iframe.google-maps {
     max-width: 100%;
     width: 700px;
     height: 500px;
+}
+
+#form-floating-url {
+    width: -webkit-fill-available;
+    margin-right: 5px;
+}
+
+.source-code {
+    font-family: "JetBrains Mono";
 }
