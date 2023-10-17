@@ -39,16 +39,16 @@ const tools = [
         color: "green",
         offline: true,
     },
-    {
-        name: {
-            english: "HTTP (REST) client",
-            polish: "Klient HTTP (REST)",
-        },
-        icon: "bi-wifi",
-        href: "/tools/http.html",
-        color: "green",
-        offline: false,
-    },
+    // {
+    //     name: {
+    //         english: "HTTP (REST) client",
+    //         polish: "Klient HTTP (REST)",
+    //     },
+    //     icon: "bi-wifi",
+    //     href: "/tools/http.html",
+    //     color: "green",
+    //     offline: false,
+    // },
     {
         name: {
             english: "IP",
