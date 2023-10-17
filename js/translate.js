@@ -73,6 +73,18 @@ const textTranslations = [
     "Metoda",
     "Zawartość",
     "Nagłówki",
+    "Długość",
+    "Masa",
+    "Czas",
+    "Temperatura",
+    "Nazwa",
+    "Symbol",
+    "Wynik",
+    "Kopiuj",
+    "metr (meter)","kilometr (kilometer)","decymetr (decimeter)","centymetr (centimeter)","milimetr (millimeter)",
+    "mikrometr = mikron (micrometer = micron)","angstrem (angstrom)","cal (inch)","stopa (foot)","jard (yard)",
+    "mila (land mile)","mila morska (nautical mile)","jednostka astronomiczna (astronomical unit)",
+    "rok świetlny (light-year)","parsek (parsec)"
 ];
 
 const titleTranslations = {
@@ -89,6 +101,7 @@ const titleTranslations = {
     "Password generator": "Generator haseł",
     Hash: "Hash",
     "HTTP (REST) client": "Klient HTTP (REST)",
+    "Unit converter": "Przelicznik jednostek",
 };
 
 const placeholdersTranslations = {
