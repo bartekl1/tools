@@ -81,10 +81,22 @@ const textTranslations = [
     "Symbol",
     "Wynik",
     "Kopiuj",
-    "metr (meter)","kilometr (kilometer)","decymetr (decimeter)","centymetr (centimeter)","milimetr (millimeter)",
-    "mikrometr = mikron (micrometer = micron)","angstrem (angstrom)","cal (inch)","stopa (foot)","jard (yard)",
-    "mila (land mile)","mila morska (nautical mile)","jednostka astronomiczna (astronomical unit)",
-    "rok świetlny (light-year)","parsek (parsec)"
+    "metr (meter)",
+    "kilometr (kilometer)",
+    "decymetr (decimeter)",
+    "centymetr (centimeter)",
+    "milimetr (millimeter)",
+    "mikrometr = mikron (micrometer = micron)",
+    "angstrem (angstrom)",
+    "cal (inch)",
+    "stopa (foot)",
+    "jard (yard)",
+    "mila (land mile)",
+    "mila morska (nautical mile)",
+    "jednostka astronomiczna (astronomical unit)",
+    "rok świetlny (light-year)",
+    "parsek (parsec)",
+    "Udostępnij"
 ];
 
 const titleTranslations = {

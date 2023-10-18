@@ -87,3 +87,21 @@ function getPWADisplayMode() {
     }
     return "browser";
 }
+
+if (navigator.canShare) {
+    document.querySelector("#share").addEventListener("click", () => {
+        navigator.share({
+            title:
+                window.navigator.language.split("-")[0] == "pl"
+                    ? "Narzędzia"
+                    : "Tools",
+            text:
+                window.navigator.language.split("-")[0] == "pl"
+                    ? "Strona z narzędziami matematycznymi i informatycznymi"
+                    : "Website with math and IT tools",
+            url: window.location.href,
+        });
+    });
+
+    document.querySelector("#share").classList.remove("d-none");
+}
