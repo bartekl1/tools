@@ -1,5 +1,5 @@
 function round(n, p) {
-    return Math.round(n * (10 ** p)) / (10 ** p)
+    return Math.round(n * 10 ** p) / 10 ** p;
 }
 
 function convertLength() {
@@ -20,22 +20,64 @@ function convertLength() {
         meters = parseFloat(document.querySelector("#length-input").value);
     }
 
-    document.querySelector('#length-meter').innerHTML = meters;
+    document.querySelector("#length-meter").innerHTML = meters;
 
-    document.querySelector('#length-kilometer').innerHTML = round(meters / 1000, 2);
-    document.querySelector('#length-decimeter').innerHTML = round(meters * 10, 2);
-    document.querySelector('#length-centimeter').innerHTML = round(meters * 100, 2);
-    document.querySelector('#length-millimeter').innerHTML = round(meters * 1000, 2);
-    document.querySelector('#length-micrometer').innerHTML = round(meters * 1_000_000, 2);
-    document.querySelector('#length-angstrom').innerHTML = round(meters * 10_000_000_000, 2);
-    document.querySelector('#length-inch').innerHTML = round((meters / 25.4 ) * 1000, 2);
-    document.querySelector('#length-foot').innerHTML = round(meters / 0.3048, 2);
-    document.querySelector('#length-yard').innerHTML = round(meters / 0.9144, 2);
-    document.querySelector('#length-land-mile').innerHTML = round(meters / 1_609.344, 2);
-    document.querySelector('#length-nautical-mile').innerHTML = round(meters / 1852, 2);
-    document.querySelector('#length-astronomical-unit').innerHTML = round(meters / 149_597_870_700, 2);
-    document.querySelector('#length-light-year').innerHTML = round(meters / (9.4607 * (10 ** 15)), 2);
-    document.querySelector('#length-parsec').innerHTML = round(meters / (3.086 * (10 ** 16)), 2);
+    document.querySelector("#length-kilometer").innerHTML = round(
+        meters / 1000,
+        2
+    );
+    document.querySelector("#length-decimeter").innerHTML = round(
+        meters * 10,
+        2
+    );
+    document.querySelector("#length-centimeter").innerHTML = round(
+        meters * 100,
+        2
+    );
+    document.querySelector("#length-millimeter").innerHTML = round(
+        meters * 1000,
+        2
+    );
+    document.querySelector("#length-micrometer").innerHTML = round(
+        meters * 1_000_000,
+        2
+    );
+    document.querySelector("#length-angstrom").innerHTML = round(
+        meters * 10_000_000_000,
+        2
+    );
+    document.querySelector("#length-inch").innerHTML = round(
+        (meters / 25.4) * 1000,
+        2
+    );
+    document.querySelector("#length-foot").innerHTML = round(
+        meters / 0.3048,
+        2
+    );
+    document.querySelector("#length-yard").innerHTML = round(
+        meters / 0.9144,
+        2
+    );
+    document.querySelector("#length-land-mile").innerHTML = round(
+        meters / 1_609.344,
+        2
+    );
+    document.querySelector("#length-nautical-mile").innerHTML = round(
+        meters / 1852,
+        2
+    );
+    document.querySelector("#length-astronomical-unit").innerHTML = round(
+        meters / 149_597_870_700,
+        2
+    );
+    document.querySelector("#length-light-year").innerHTML = round(
+        meters / (9.4607 * 10 ** 15),
+        2
+    );
+    document.querySelector("#length-parsec").innerHTML = round(
+        meters / (3.086 * 10 ** 16),
+        2
+    );
 }
 
 document
@@ -47,3 +89,23 @@ document
 document
     .querySelector("#length-unit")
     .addEventListener("change", convertLength);
+
+document.querySelectorAll(".copy").forEach((e) => {
+    e.addEventListener("click", (evt) => {
+        var element = evt.currentTarget;
+        while (element.tagName !== "TR") {
+            element = element.parentElement;
+        }
+        navigator.clipboard.writeText(element.querySelector(".value").innerHTML);
+
+        evt.currentTarget.innerHTML = '<i class="bi bi-clipboard-check"></i>';
+
+        setTimeout(
+            (el) => {
+                el.innerHTML = '<i class="bi bi-clipboard"></i>';
+            },
+            2000,
+            evt.currentTarget
+        );
+    });
+});
