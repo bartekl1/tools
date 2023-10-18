@@ -81,6 +81,27 @@
         </ul>
         <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade show active" id="length" role="tabpanel" tabindex="0">
+                <div class="d-flex">
+                    <input type="number" step="any" class="form-control" id="length-input">
+                    <select id="length-unit" class="form-select w-50 ms-2">
+                        <option value="meter" text-id="98">meter [m]</option>
+                        <option value="kilometer" text-id="99">kilometer [km]</option>
+                        <option value="decimeter" text-id="100">decimeter [dm]</option>
+                        <option value="centimeter" text-id="101">centimeter [cm]</option>
+                        <option value="millimeter" text-id="102">millimeter [mm]</option>
+                        <option value="micrometer" text-id="103">micrometer [µm]</option>
+                        <option value="angstrom" text-id="104">angstrom [Å]</option>
+                        <option value="inch" text-id="105">inch ["]</option>
+                        <option value="foot" text-id="106">foot [ft]</option>
+                        <option value="yard" text-id="107">yard [yd]</option>
+                        <option value="land-mile" text-id="108">land mile [mi]</option>
+                        <option value="nautical-mile" text-id="109">nautical mile [nmi]</option>
+                        <option value="astronomical-unit" text-id="110">astronomical unit [au]</option>
+                        <option value="light-year" text-id="111">light-year [ly]</option>
+                        <option value="parsec" text-id="112">parsec [pc]</option>
+                    </select>
+                </div>
+
                 <div class="table-responsive">
                     <table class="table table-hover">
                         <thead>
@@ -213,7 +234,7 @@
                             <tr>
                                 <td text-id="93">nautical mile</td>
                                 <td>nmi</td>
-                                <td id="length-nauticalmile" class="value"></td>
+                                <td id="length-nautical-mile" class="value"></td>
                                 <td>
                                     <button class="btn btn-secondary btn-sm copy">
                                         <i class="bi bi-clipboard"></i>

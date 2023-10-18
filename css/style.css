@@ -439,3 +439,7 @@ iframe.google-maps {
     width: 100%;
     height: 370px;
 }
+
+td.value {
+    text-align: right;
+}

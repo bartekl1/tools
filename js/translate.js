@@ -96,7 +96,22 @@ const textTranslations = [
     "jednostka astronomiczna (astronomical unit)",
     "rok świetlny (light-year)",
     "parsek (parsec)",
-    "Udostępnij"
+    "Udostępnij",
+    "metr [m]",
+    "kilometr [km]",
+    "decymetr [dm]",
+    "centymetr [cm]",
+    "milimetr [mm]",
+    "mikrometr [µm]",
+    "angstrem [Å]",
+    'cal ["]',
+    "stopa [ft]",
+    "jard [yd]",
+    "mila [mi]",
+    "mila morska [nmi]",
+    "jednostka astronomiczna [au]",
+    "rok świetlny [ly]",
+    "parsek [pc]",
 ];
 
 const titleTranslations = {
