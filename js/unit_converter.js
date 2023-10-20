@@ -132,6 +132,79 @@ function convertLength() {
     );
 }
 
+function convertWeight() {
+    if (document.querySelector("#weight-input").value === "") {
+        return;
+    }
+
+    if (document.querySelector("#weight-input").checkValidity()) {
+        document.querySelector("#weight-input").classList.remove("is-invalid");
+    } else {
+        document.querySelector("#weight-input").classList.add("is-invalid");
+        return;
+    }
+
+    var kilograms;
+
+    if (document.querySelector("#weight-unit").value === "kilogram") {
+        kilograms = parseFloat(document.querySelector("#weight-input").value);
+    }
+    // else if (document.querySelector("#weight-unit").value === "kilometer") {
+    //     kilograms =
+    //         parseFloat(document.querySelector("#weight-input").value) * 1000;
+    // } else if (document.querySelector("#weight-unit").value === "decimeter") {
+    //     kilograms =
+    //         parseFloat(document.querySelector("#weight-input").value) / 10;
+    // }
+
+    document.querySelector("#weight-kilogram").innerHTML = round(kilograms, 2);
+
+    document.querySelector("#weight-decagram").innerHTML = round(
+        kilograms * 100,
+        2
+    );
+    document.querySelector("#weight-gram").innerHTML = round(
+        kilograms * 1000,
+        2
+    );
+    document.querySelector("#weight-pound").innerHTML = round(
+        kilograms / 0.453_592_37,
+        2
+    );
+    document.querySelector("#weight-ounce").innerHTML = round(
+        kilograms / 0.028_349_523_1,
+        2
+    );
+    document.querySelector("#weight-carat").innerHTML = round(
+        kilograms / (2 * 10 ** -4),
+        2
+    );
+    document.querySelector("#weight-grain").innerHTML = round(
+        kilograms / 0.000_064_798_91,
+        2
+    );
+    document.querySelector("#weight-hundredweight-us").innerHTML = round(
+        kilograms / 45.3592,
+        2
+    );
+    document.querySelector("#weight-hundredweight-uk").innerHTML = round(
+        kilograms / 50.8023,
+        2
+    );
+    document.querySelector("#weight-ton-us").innerHTML = round(
+        kilograms / 907.18,
+        2
+    );
+    document.querySelector("#weight-ton-uk").innerHTML = round(
+        kilograms / 1016.05,
+        2
+    );
+    document.querySelector("#weight-ton").innerHTML = round(
+        kilograms / 1000,
+        2
+    );
+}
+
 document
     .querySelector("#length-input")
     .addEventListener("keyup", convertLength);
@@ -141,6 +214,16 @@ document
 document
     .querySelector("#length-unit")
     .addEventListener("change", convertLength);
+
+document
+    .querySelector("#weight-input")
+    .addEventListener("keyup", convertWeight);
+document
+    .querySelector("#weight-input")
+    .addEventListener("change", convertWeight);
+document
+    .querySelector("#weight-unit")
+    .addEventListener("change", convertWeight);
 
 document.querySelectorAll(".copy").forEach((e) => {
     e.addEventListener("click", (evt) => {
