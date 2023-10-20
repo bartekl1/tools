@@ -148,14 +148,48 @@ function convertWeight() {
 
     if (document.querySelector("#weight-unit").value === "kilogram") {
         kilograms = parseFloat(document.querySelector("#weight-input").value);
+    } else if (document.querySelector("#weight-unit").value === "decagram") {
+        kilograms =
+            parseFloat(document.querySelector("#weight-input").value) / 100;
+    } else if (document.querySelector("#weight-unit").value === "gram") {
+        kilograms =
+            parseFloat(document.querySelector("#weight-input").value) / 1000;
+    } else if (document.querySelector("#weight-unit").value === "pound") {
+        kilograms =
+            parseFloat(document.querySelector("#weight-input").value) *
+            0.453_592_37;
+    } else if (document.querySelector("#weight-unit").value === "ounce") {
+        kilograms =
+            parseFloat(document.querySelector("#weight-input").value) *
+            0.028_349_523_1;
+    } else if (document.querySelector("#weight-unit").value === "carat") {
+        kilograms =
+            parseFloat(document.querySelector("#weight-input").value) *
+            (2 * 10 ** -4);
+    } else if (document.querySelector("#weight-unit").value === "grain") {
+        kilograms =
+            parseFloat(document.querySelector("#weight-input").value) *
+            0.000_064_798_91;
+    } else if (
+        document.querySelector("#weight-unit").value === "hundredweight-us"
+    ) {
+        kilograms =
+            parseFloat(document.querySelector("#weight-input").value) * 45.3592;
+    } else if (
+        document.querySelector("#weight-unit").value === "hundredweight-uk"
+    ) {
+        kilograms =
+            parseFloat(document.querySelector("#weight-input").value) * 50.8023;
+    } else if (document.querySelector("#weight-unit").value === "ton-us") {
+        kilograms =
+            parseFloat(document.querySelector("#weight-input").value) * 907.18;
+    } else if (document.querySelector("#weight-unit").value === "ton-uk") {
+        kilograms =
+            parseFloat(document.querySelector("#weight-input").value) * 1016.05;
+    } else if (document.querySelector("#weight-unit").value === "ton") {
+        kilograms =
+            parseFloat(document.querySelector("#weight-input").value) * 1000;
     }
-    // else if (document.querySelector("#weight-unit").value === "kilometer") {
-    //     kilograms =
-    //         parseFloat(document.querySelector("#weight-input").value) * 1000;
-    // } else if (document.querySelector("#weight-unit").value === "decimeter") {
-    //     kilograms =
-    //         parseFloat(document.querySelector("#weight-input").value) / 10;
-    // }
 
     document.querySelector("#weight-kilogram").innerHTML = round(kilograms, 2);
 
