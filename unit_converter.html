@@ -276,7 +276,166 @@
                 </div>
             </div>
             <div class="tab-pane fade" id="weight" role="tabpanel" tabindex="0">
-                weight
+                <div class="d-flex">
+                    <input type="number" step="any" class="form-control" id="weight-input">
+                    <select id="weight-unit" class="form-select w-50 ms-2">
+                        <option value="kilogram" text-id="113">kilogram [kg]</option>
+                        <option value="decagram" text-id="114">decagram [dag]</option>
+                        <option value="gram" text-id="115">gram [g]</option>
+                        <option value="pound" text-id="116">pound [lb]</option>
+                        <option value="ounce" text-id="117">ounce [oz]</option>
+                        <option value="carat" text-id="118">carat [ct]</option>
+                        <option value="grain" text-id="119">grain [gr]</option>
+                        <option value="hundredweight-us" text-id="120">hundredweight US [cwt]</option>
+                        <option value="hundredweight-uk" text-id="121">hundredweight UK [cwtUK]</option>
+                        <option value="ton-us" text-id="122">ton US [tonUS]</option>
+                        <option value="ton-uk" text-id="123">ton UK [tonUK]</option>
+                        <option value="ton" text-id="124">ton [t]</option>
+                    </select>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">
+                                    <span text-id="78">Name</span>
+                                </th>
+                                <th scope="col">
+                                    <span text-id="79">Symbol</span>
+                                </th>
+                                <th scope="col">
+                                    <span text-id="80">Value</span>
+                                </th>
+                                <th scope="col">
+                                    <span text-id="81">Copy</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td text-id="125">kilogram</td>
+                                <td>kg</td>
+                                <td id="length-kilogram" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="126">decagram</td>
+                                <td>dag</td>
+                                <td id="length-decagram" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="127">gram</td>
+                                <td>g</td>
+                                <td id="length-gram" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="128">pound</td>
+                                <td>lb</td>
+                                <td id="length-pound" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="129">ounce</td>
+                                <td>oz</td>
+                                <td id="length-ounce" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="130">carat</td>
+                                <td>ct</td>
+                                <td id="length-carat" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="131">grain</td>
+                                <td>gr</td>
+                                <td id="length-grain" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="132">hundredweight US</td>
+                                <td>cwt</td>
+                                <td id="length-hundredweight-us" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="133">hundredweight UK</td>
+                                <td>cwtUK</td>
+                                <td id="length-hundredweight-uk" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="134">ton US</td>
+                                <td>tonUS</td>
+                                <td id="length-ton-us" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="135">ton UK</td>
+                                <td>tonUK</td>
+                                <td id="length-ton-uk" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="136">ton</td>
+                                <td>t</td>
+                                <td id="length-ton" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
             <div class="tab-pane fade" id="time" role="tabpanel" tabindex="0">
                 time
