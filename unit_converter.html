@@ -438,7 +438,188 @@
                 </div>
             </div>
             <div class="tab-pane fade" id="time" role="tabpanel" tabindex="0">
-                time
+                <div class="d-flex">
+                    <input type="number" step="any" class="form-control" id="time-input">
+                    <select id="time-unit" class="form-select w-50 ms-2">
+                        <option value="second" text-id="137">second [s]</option>
+                        <option value="minute" text-id="138">minute [min]</option>
+                        <option value="hour" text-id="139">hour [h]</option>
+                        <option value="day" text-id="140">day [d]</option>
+                        <option value="week" text-id="141">week</option>
+                        <option value="month" text-id="142">month</option>
+                        <option value="year" text-id="143">year</option>
+                        <option value="nanosecond" text-id="144">nanosecond [ns]</option>
+                        <option value="microsecond" text-id="145">microsecond [µs]</option>
+                        <option value="millisecond" text-id="146">millisecond [ms]</option>
+                        <option value="quarter" text-id="147">quarter</option>
+                        <option value="decade" text-id="148">decade</option>
+                        <option value="age" text-id="149">age</option>
+                        <option value="millennium" text-id="150">millennium</option>
+                    </select>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">
+                                    <span text-id="78">Name</span>
+                                </th>
+                                <th scope="col">
+                                    <span text-id="79">Symbol</span>
+                                </th>
+                                <th scope="col">
+                                    <span text-id="80">Value</span>
+                                </th>
+                                <th scope="col">
+                                    <span text-id="81">Copy</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td text-id="151">second</td>
+                                <td>s</td>
+                                <td id="time-second" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="152">minute</td>
+                                <td>min</td>
+                                <td id="time-minute" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="153">hour</td>
+                                <td>h</td>
+                                <td id="time-hour" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="154">day</td>
+                                <td>d</td>
+                                <td id="time-day" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="155">week</td>
+                                <td></td>
+                                <td id="time-week" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="156">month</td>
+                                <td></td>
+                                <td id="time-month" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="157">year</td>
+                                <td></td>
+                                <td id="time-year" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="158">nanosecond</td>
+                                <td>ns</td>
+                                <td id="time-nanosecond" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="159">microsecond</td>
+                                <td>µs</td>
+                                <td id="time-microsecond" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="160">millisecond</td>
+                                <td>ms</td>
+                                <td id="time-millisecond" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="161">quarter</td>
+                                <td></td>
+                                <td id="time-quarter" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="162">decade</td>
+                                <td></td>
+                                <td id="time-decade" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="163">age</td>
+                                <td></td>
+                                <td id="time-age" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="164">millennium</td>
+                                <td></td>
+                                <td id="time-millennium" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>                            
+                        </tbody>
+                    </table>
+                </div>
             </div>
             <div class="tab-pane fade" id="temperature" role="tabpanel" tabindex="0">
                 temperature
