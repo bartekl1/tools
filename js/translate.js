@@ -164,6 +164,12 @@ const textTranslations = [
     "dekada (decade)",
     "wiek (age)",
     "tysiąclecie (millennium)",
+    "kelwin [K]",
+    "stopień Celsjusza [℃]",
+    "stopień Fahrenheita [℉]",
+    "kelwin (kelvin)",
+    "stopień Celsjusza (degree Celsius)",
+    "stopień Fahrenheita (degree Fahrenheit)",
 ];
 
 const titleTranslations = {
