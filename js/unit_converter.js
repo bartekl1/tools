@@ -18,9 +18,61 @@ function convertLength() {
 
     if (document.querySelector("#length-unit").value === "meter") {
         meters = parseFloat(document.querySelector("#length-input").value);
+    } else if (document.querySelector("#length-unit").value === "kilometer") {
+        meters =
+            parseFloat(document.querySelector("#length-input").value) * 1000;
+    } else if (document.querySelector("#length-unit").value === "decimeter") {
+        meters = parseFloat(document.querySelector("#length-input").value) / 10;
+    } else if (document.querySelector("#length-unit").value === "centimeter") {
+        meters =
+            parseFloat(document.querySelector("#length-input").value) / 100;
+    } else if (document.querySelector("#length-unit").value === "millimeter") {
+        meters =
+            parseFloat(document.querySelector("#length-input").value) / 1000;
+    } else if (document.querySelector("#length-unit").value === "micrometer") {
+        meters =
+            parseFloat(document.querySelector("#length-input").value) /
+            1_000_000;
+    } else if (document.querySelector("#length-unit").value === "angstrom") {
+        meters =
+            parseFloat(document.querySelector("#length-input").value) /
+            10_000_000_000;
+    } else if (document.querySelector("#length-unit").value === "inch") {
+        meters =
+            (parseFloat(document.querySelector("#length-input").value) * 25.4) /
+            1000;
+    } else if (document.querySelector("#length-unit").value === "foot") {
+        meters =
+            parseFloat(document.querySelector("#length-input").value) * 0.3048;
+    } else if (document.querySelector("#length-unit").value === "yard") {
+        meters =
+            parseFloat(document.querySelector("#length-input").value) * 0.9144;
+    } else if (document.querySelector("#length-unit").value === "land-mile") {
+        meters =
+            parseFloat(document.querySelector("#length-input").value) *
+            1_609.344;
+    } else if (
+        document.querySelector("#length-unit").value === "nautical-mile"
+    ) {
+        meters =
+            parseFloat(document.querySelector("#length-input").value) * 1852;
+    } else if (
+        document.querySelector("#length-unit").value === "astronomical-unit"
+    ) {
+        meters =
+            parseFloat(document.querySelector("#length-input").value) *
+            149_597_870_700;
+    } else if (document.querySelector("#length-unit").value === "light-year") {
+        meters =
+            parseFloat(document.querySelector("#length-input").value) *
+            (9.4607 * 10 ** 15);
+    } else if (document.querySelector("#length-unit").value === "parsec") {
+        meters =
+            parseFloat(document.querySelector("#length-input").value) *
+            (3.086 * 10 ** 16);
     }
 
-    document.querySelector("#length-meter").innerHTML = meters;
+    document.querySelector("#length-meter").innerHTML = round(meters, 2);
 
     document.querySelector("#length-kilometer").innerHTML = round(
         meters / 1000,
@@ -96,7 +148,9 @@ document.querySelectorAll(".copy").forEach((e) => {
         while (element.tagName !== "TR") {
             element = element.parentElement;
         }
-        navigator.clipboard.writeText(element.querySelector(".value").innerHTML);
+        navigator.clipboard.writeText(
+            element.querySelector(".value").innerHTML
+        );
 
         evt.currentTarget.innerHTML = '<i class="bi bi-clipboard-check"></i>';
 
