@@ -348,6 +348,58 @@ function convertTime() {
     );
 }
 
+function convertTemperature() {
+    if (document.querySelector("#temperature-input").value === "") {
+        return;
+    }
+
+    if (document.querySelector("#temperature-input").checkValidity()) {
+        document
+            .querySelector("#temperature-input")
+            .classList.remove("is-invalid");
+    } else {
+        document
+            .querySelector("#temperature-input")
+            .classList.add("is-invalid");
+        return;
+    }
+
+    var kelvins;
+
+    if (document.querySelector("#temperature-unit").value === "kelvin") {
+        kelvins = parseFloat(
+            document.querySelector("#temperature-input").value
+        );
+    } else if (
+        document.querySelector("#temperature-unit").value === "celsius"
+    ) {
+        kelvins =
+            parseFloat(document.querySelector("#temperature-input").value) +
+            273.15;
+    } else if (
+        document.querySelector("#temperature-unit").value === "fahrenheit"
+    ) {
+        kelvins =
+            (5 / 9) *
+                (parseFloat(
+                    document.querySelector("#temperature-input").value
+                ) -
+                    32) +
+            273.15;
+    }
+
+    document.querySelector("#temperature-kelvin").innerHTML = round(kelvins, 2);
+
+    document.querySelector("#temperature-celsius").innerHTML = round(
+        kelvins - 273.15,
+        2
+    );
+    document.querySelector("#temperature-fahrenheit").innerHTML = round(
+        32 + (9 / 5) * (kelvins - 273.15),
+        2
+    );
+}
+
 document
     .querySelector("#length-input")
     .addEventListener("keyup", convertLength);
@@ -371,6 +423,16 @@ document
 document.querySelector("#time-input").addEventListener("keyup", convertTime);
 document.querySelector("#time-input").addEventListener("change", convertTime);
 document.querySelector("#time-unit").addEventListener("change", convertTime);
+
+document
+    .querySelector("#temperature-input")
+    .addEventListener("keyup", convertTemperature);
+document
+    .querySelector("#temperature-input")
+    .addEventListener("change", convertTemperature);
+document
+    .querySelector("#temperature-unit")
+    .addEventListener("change", convertTemperature);
 
 document.querySelectorAll(".copy").forEach((e) => {
     e.addEventListener("click", (evt) => {
