@@ -239,6 +239,115 @@ function convertWeight() {
     );
 }
 
+function convertTime() {
+    if (document.querySelector("#time-input").value === "") {
+        return;
+    }
+
+    if (document.querySelector("#time-input").checkValidity()) {
+        document.querySelector("#time-input").classList.remove("is-invalid");
+    } else {
+        document.querySelector("#time-input").classList.add("is-invalid");
+        return;
+    }
+
+    var seconds;
+
+    if (document.querySelector("#time-unit").value === "second") {
+        seconds = parseFloat(document.querySelector("#time-input").value);
+    } else if (document.querySelector("#time-unit").value === "minute") {
+        seconds = parseFloat(document.querySelector("#time-input").value) * 60;
+    } else if (document.querySelector("#time-unit").value === "hour") {
+        seconds =
+            parseFloat(document.querySelector("#time-input").value) * (60 * 60);
+    } else if (document.querySelector("#time-unit").value === "day") {
+        seconds =
+            parseFloat(document.querySelector("#time-input").value) *
+            (60 * 60 * 24);
+    } else if (document.querySelector("#time-unit").value === "week") {
+        seconds =
+            parseFloat(document.querySelector("#time-input").value) *
+            (60 * 60 * 24 * 7);
+    } else if (document.querySelector("#time-unit").value === "year") {
+        seconds =
+            parseFloat(document.querySelector("#time-input").value) *
+            (60 * 60 * 24 * 365);
+    } else if (document.querySelector("#time-unit").value === "nanosecond") {
+        seconds =
+            parseFloat(document.querySelector("#time-input").value) /
+            1000000000;
+    } else if (document.querySelector("#time-unit").value === "microsecond") {
+        seconds =
+            parseFloat(document.querySelector("#time-input").value) / 1000000;
+    } else if (document.querySelector("#time-unit").value === "millisecond") {
+        seconds =
+            parseFloat(document.querySelector("#time-input").value) / 1000;
+    } else if (document.querySelector("#time-unit").value === "quarter") {
+        seconds =
+            parseFloat(document.querySelector("#time-input").value) * (60 * 15);
+    } else if (document.querySelector("#time-unit").value === "decade") {
+        seconds =
+            parseFloat(document.querySelector("#time-input").value) *
+            (60 * 60 * 24 * 365 * 10);
+    } else if (document.querySelector("#time-unit").value === "age") {
+        seconds =
+            parseFloat(document.querySelector("#time-input").value) *
+            (60 * 60 * 24 * 365 * 100);
+    } else if (document.querySelector("#time-unit").value === "millennium") {
+        seconds =
+            parseFloat(document.querySelector("#time-input").value) *
+            (60 * 60 * 24 * 365 * 1000);
+    }
+
+    document.querySelector("#time-second").innerHTML = round(seconds, 2);
+
+    document.querySelector("#time-minute").innerHTML = round(seconds / 60, 2);
+    document.querySelector("#time-hour").innerHTML = round(
+        seconds / (60 * 60),
+        2
+    );
+    document.querySelector("#time-day").innerHTML = round(
+        seconds / (60 * 60 * 24),
+        2
+    );
+    document.querySelector("#time-week").innerHTML = round(
+        seconds / (60 * 60 * 24 * 7),
+        2
+    );
+    document.querySelector("#time-year").innerHTML = round(
+        seconds / (60 * 60 * 24 * 365),
+        2
+    );
+    document.querySelector("#time-nanosecond").innerHTML = round(
+        seconds * 1000000000,
+        2
+    );
+    document.querySelector("#time-microsecond").innerHTML = round(
+        seconds * 1000000,
+        2
+    );
+    document.querySelector("#time-millisecond").innerHTML = round(
+        seconds * 1000,
+        2
+    );
+    document.querySelector("#time-quarter").innerHTML = round(
+        seconds / (60 * 15),
+        2
+    );
+    document.querySelector("#time-decade").innerHTML = round(
+        seconds / (60 * 60 * 24 * 365 * 10),
+        2
+    );
+    document.querySelector("#time-age").innerHTML = round(
+        seconds / (60 * 60 * 24 * 365 * 100),
+        2
+    );
+    document.querySelector("#time-millennium").innerHTML = round(
+        seconds / (60 * 60 * 24 * 365 * 1000),
+        2
+    );
+}
+
 document
     .querySelector("#length-input")
     .addEventListener("keyup", convertLength);
@@ -258,6 +367,10 @@ document
 document
     .querySelector("#weight-unit")
     .addEventListener("change", convertWeight);
+
+document.querySelector("#time-input").addEventListener("keyup", convertTime);
+document.querySelector("#time-input").addEventListener("change", convertTime);
+document.querySelector("#time-unit").addEventListener("change", convertTime);
 
 document.querySelectorAll(".copy").forEach((e) => {
     e.addEventListener("click", (evt) => {
