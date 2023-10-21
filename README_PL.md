@@ -1,4 +1,4 @@
-# Narzędzia
+# 🛠 Narzędzia
 
 Strona z narzędziami matematycznymi i informatycznymi
 
@@ -13,30 +13,30 @@ Strona z narzędziami matematycznymi i informatycznymi
 
 Ta strona jest progresywna aplikacją webową (PWA), więc może zostać zainstalowana i można z niej korzystać bez internetu.
 
-## Dostępne narzędzia
+## 📝 Dostępne narzędzia
 
-### Matematyczne
+### ➗ Matematyczne
 
 - Kalkulator
 - Przelicznik jednostek
 - Przelicznik liczb rzymskich
 
-### Informatyczne
+### 💻 Informatyczne
 
 - Przelicznik systemów liczbowych
 - IP
 - User agent
 
-### Zabezpieczenia
+### 🔑 Zabezpieczenia
 
 - Generator haseł
 - Generator hashy
 
-### Data i czas
+### 🕑 Data i czas
 
 - Unix timestamp
 
-### Inne
+### 📄 Inne
 
 - Generator liczb losowych
 - GPS

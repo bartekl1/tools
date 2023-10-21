@@ -1,4 +1,4 @@
-# Tools
+# 🛠 Tools
 
 Website with math and IT tools
 
@@ -14,30 +14,30 @@ Website with math and IT tools
 
 This website is a progressive web app (PWA), so it can be installed and you can use it without internet.
 
-## Available tools
+## 📝 Available tools
 
-### Math
+### ➗ Math
 
 - Calculator
 - Unit converter
 - Roman numeral converter
 
-### IT
+### 💻 IT
 
 - Number system converter
 - IP
 - User agent
 
-### Security
+### 🔑 Security
 
 - Password generator
 - Hash generator
 
-### Date and time
+### 🕑 Date and time
 
 - Unix timestamp
 
-### Other
+### 📄 Other
 
 - Random number generator
 - GPS
