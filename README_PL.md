@@ -8,8 +8,8 @@ Strona z narzędziami matematycznymi i informatycznymi
 ![GitHub forks](https://img.shields.io/github/forks/bartekl1/tools?style=flat-square)
 
 [🌐Strona](https://bartekl1.github.io/tools)
-[🧾Rejestr zmian](CHANGELOG.md)
-[🎁Podziękowania](ACKNOWLEDGEMENTS.md)
+[🧾Rejestr zmian](CHANGELOG_PL.md)
+[🎁Podziękowania](ACKNOWLEDGEMENTS_PL.md)
 
 Ta strona jest progresywna aplikacją webową (PWA), więc może zostać zainstalowana i można z niej korzystać bez internetu.
 
