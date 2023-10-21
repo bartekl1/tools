@@ -41,3 +41,48 @@ This website is a progressive web app (PWA), so it can be installed and you can 
 
 - Random number generator
 - GPS
+
+## 👨‍💻 Running locally
+
+1. Requirements
+    - Node.js
+    - GIT
+
+2. Clone repository and open folder.
+
+    ```bash
+    git clone https://github.com/bartekl1/tools.git
+    cd tools
+    ```
+
+3. Install dependencies
+
+    ```bash
+    npm install
+    ```
+
+4. Build dependencies
+
+    ```bash
+    npm run build
+    ```
+
+5. Start server
+
+    ```bash
+    node .
+    ```
+
+    or
+
+    ```bash
+    npm start
+    ```
+
+    You can change server port by running following command:
+
+    ```bash
+    node . -p <PORT>
+    ```
+
+6. Open [http://localhost:3000/](http://localhost:3000/) or other URL if you have changed port
