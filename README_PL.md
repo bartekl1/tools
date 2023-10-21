@@ -40,3 +40,48 @@ Ta strona jest progresywna aplikacją webową (PWA), więc może zostać zainsta
 
 - Generator liczb losowych
 - GPS
+
+## 👨‍💻 Uruchamianie lokalnie
+
+1. Wymagania
+    - Node.js
+    - GIT
+
+2. Sklonuj repozytorium i przejdź do jego folderu
+
+    ```bash
+    git clone https://github.com/bartekl1/tools.git
+    cd tools
+    ```
+
+3. Zainstaluj wymagane biblioteki
+
+    ```bash
+    npm install
+    ```
+
+4. Zbuduj wymagane biblioteki
+
+    ```bash
+    npm run build
+    ```
+
+5. Uruchom serwer
+
+    ```bash
+    node .
+    ```
+
+    lub
+
+    ```bash
+    npm start
+    ```
+
+    Możesz zmienić port serwera uruchamiając poniższe polecenie:
+
+    ```bash
+    node . -p <PORT>
+    ```
+
+6. Otwórz [http://localhost:3000/](http://localhost:3000/) lub inny URL jeśli zmieniłeś port

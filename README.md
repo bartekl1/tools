@@ -48,7 +48,7 @@ This website is a progressive web app (PWA), so it can be installed and you can 
     - Node.js
     - GIT
 
-2. Clone repository and open folder.
+2. Clone repository and open folder
 
     ```bash
     git clone https://github.com/bartekl1/tools.git
