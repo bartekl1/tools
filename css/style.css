@@ -267,6 +267,8 @@ html[data-bs-theme="dark"] {
 .top-bar {
     -webkit-app-region: drag;
     app-region: drag;
+
+    z-index: 10;
 }
 
 .top-bar-button {
