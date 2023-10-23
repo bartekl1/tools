@@ -4,11 +4,11 @@
     "short_name": "Tools",
     "start_url": "/tools/",
     "scope": "/tools/",
-    "display_override": ["window-controls-overlay", "minimal-ui"],
+    "display_override": ["window-controls-overlay"],
     "display": "standalone",
     "background_color": "#0d6efd",
     "theme_color": "#0d6efd",
-    "description": "Tools",
+    "description": "Website with math and IT tools",
     "id": "/tools/",
     "icons": [
         {
@@ -95,5 +95,12 @@
             "type": "image/png",
             "purpose": "maskable"
         }
-    ]
+    ],
+    "dir": "ltr",
+    "lang": "en",
+    "orientation": "any",
+    "categories": ["productivity", "utilities"],
+    "edge_side_panel": {
+        "preferred_width": 400
+    }
 }

@@ -4,11 +4,11 @@
     "short_name": "Narzędzia",
     "start_url": "/tools/",
     "scope": "/tools/",
-    "display_override": ["window-controls-overlay", "minimal-ui"],
+    "display_override": ["window-controls-overlay"],
     "display": "standalone",
     "background_color": "#0d6efd",
     "theme_color": "#0d6efd",
-    "description": "Narzędzia",
+    "description": "Strona z narzędziami matematycznymi i informatycznymi",
     "id": "/tools/",
     "icons": [
         {
@@ -95,5 +95,12 @@
             "type": "image/png",
             "purpose": "maskable"
         }
-    ]
+    ],
+    "dir": "ltr",
+    "lang": "pl",
+    "orientation": "any",
+    "categories": ["productivity", "utilities"],
+    "edge_side_panel": {
+        "preferred_width": 400
+    }
 }
