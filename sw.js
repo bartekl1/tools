@@ -1,12 +1,10 @@
-const version = "1.0";
+const version = "1.1";
 // Choose a cache name
 const cacheNamePrefix = "cache-tools";
 const cacheName = `${cacheNamePrefix}-v${version}`;
 // List the files to precache
 const precacheResources = [
     "/tools/",
-    "/tools/manifest.json",
-    "/tools/manifest_pl.json",
     "/tools/css/style.css",
     "/tools/img/icons/icon.ico",
     "/tools/img/icons/icon_x192.png",
