@@ -445,3 +445,7 @@ iframe.google-maps {
 td.value {
     text-align: right;
 }
+
+#decimals-count {
+    max-width: 200px;
+}

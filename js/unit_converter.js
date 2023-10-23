@@ -14,6 +14,21 @@ function convertLength() {
         return;
     }
 
+    if (
+        document.querySelector("#decimals-count").checkValidity() &&
+        document.querySelector("#decimals-count").value !== ""
+    ) {
+        document
+            .querySelector("#decimals-count")
+            .classList.remove("is-invalid");
+        var decimals = parseInt(
+            document.querySelector("#decimals-count").value
+        );
+    } else {
+        document.querySelector("#decimals-count").classList.add("is-invalid");
+        return;
+    }
+
     var meters;
 
     if (document.querySelector("#length-unit").value === "meter") {
@@ -72,63 +87,63 @@ function convertLength() {
             (3.086 * 10 ** 16);
     }
 
-    document.querySelector("#length-meter").innerHTML = round(meters, 2);
+    document.querySelector("#length-meter").innerHTML = round(meters, decimals);
 
     document.querySelector("#length-kilometer").innerHTML = round(
         meters / 1000,
-        2
+        decimals
     );
     document.querySelector("#length-decimeter").innerHTML = round(
         meters * 10,
-        2
+        decimals
     );
     document.querySelector("#length-centimeter").innerHTML = round(
         meters * 100,
-        2
+        decimals
     );
     document.querySelector("#length-millimeter").innerHTML = round(
         meters * 1000,
-        2
+        decimals
     );
     document.querySelector("#length-micrometer").innerHTML = round(
         meters * 1_000_000,
-        2
+        decimals
     );
     document.querySelector("#length-angstrom").innerHTML = round(
         meters * 10_000_000_000,
-        2
+        decimals
     );
     document.querySelector("#length-inch").innerHTML = round(
         (meters / 25.4) * 1000,
-        2
+        decimals
     );
     document.querySelector("#length-foot").innerHTML = round(
         meters / 0.3048,
-        2
+        decimals
     );
     document.querySelector("#length-yard").innerHTML = round(
         meters / 0.9144,
-        2
+        decimals
     );
     document.querySelector("#length-land-mile").innerHTML = round(
         meters / 1_609.344,
-        2
+        decimals
     );
     document.querySelector("#length-nautical-mile").innerHTML = round(
         meters / 1852,
-        2
+        decimals
     );
     document.querySelector("#length-astronomical-unit").innerHTML = round(
         meters / 149_597_870_700,
-        2
+        decimals
     );
     document.querySelector("#length-light-year").innerHTML = round(
         meters / (9.4607 * 10 ** 15),
-        2
+        decimals
     );
     document.querySelector("#length-parsec").innerHTML = round(
         meters / (3.086 * 10 ** 16),
-        2
+        decimals
     );
 }
 
@@ -141,6 +156,19 @@ function convertWeight() {
         document.querySelector("#weight-input").classList.remove("is-invalid");
     } else {
         document.querySelector("#weight-input").classList.add("is-invalid");
+        return;
+    }
+
+    if (document.querySelector("#decimals-count").checkValidity() &&
+    document.querySelector("#decimals-count").value !== "") {
+        document
+            .querySelector("#decimals-count")
+            .classList.remove("is-invalid");
+        var decimals = parseInt(
+            document.querySelector("#decimals-count").value
+        );
+    } else {
+        document.querySelector("#decimals-count").classList.add("is-invalid");
         return;
     }
 
@@ -191,51 +219,54 @@ function convertWeight() {
             parseFloat(document.querySelector("#weight-input").value) * 1000;
     }
 
-    document.querySelector("#weight-kilogram").innerHTML = round(kilograms, 2);
+    document.querySelector("#weight-kilogram").innerHTML = round(
+        kilograms,
+        decimals
+    );
 
     document.querySelector("#weight-decagram").innerHTML = round(
         kilograms * 100,
-        2
+        decimals
     );
     document.querySelector("#weight-gram").innerHTML = round(
         kilograms * 1000,
-        2
+        decimals
     );
     document.querySelector("#weight-pound").innerHTML = round(
         kilograms / 0.453_592_37,
-        2
+        decimals
     );
     document.querySelector("#weight-ounce").innerHTML = round(
         kilograms / 0.028_349_523_1,
-        2
+        decimals
     );
     document.querySelector("#weight-carat").innerHTML = round(
         kilograms / (2 * 10 ** -4),
-        2
+        decimals
     );
     document.querySelector("#weight-grain").innerHTML = round(
         kilograms / 0.000_064_798_91,
-        2
+        decimals
     );
     document.querySelector("#weight-hundredweight-us").innerHTML = round(
         kilograms / 45.3592,
-        2
+        decimals
     );
     document.querySelector("#weight-hundredweight-uk").innerHTML = round(
         kilograms / 50.8023,
-        2
+        decimals
     );
     document.querySelector("#weight-ton-us").innerHTML = round(
         kilograms / 907.18,
-        2
+        decimals
     );
     document.querySelector("#weight-ton-uk").innerHTML = round(
         kilograms / 1016.05,
-        2
+        decimals
     );
     document.querySelector("#weight-ton").innerHTML = round(
         kilograms / 1000,
-        2
+        decimals
     );
 }
 
@@ -248,6 +279,19 @@ function convertTime() {
         document.querySelector("#time-input").classList.remove("is-invalid");
     } else {
         document.querySelector("#time-input").classList.add("is-invalid");
+        return;
+    }
+
+    if (document.querySelector("#decimals-count").checkValidity() &&
+    document.querySelector("#decimals-count").value !== "") {
+        document
+            .querySelector("#decimals-count")
+            .classList.remove("is-invalid");
+        var decimals = parseInt(
+            document.querySelector("#decimals-count").value
+        );
+    } else {
+        document.querySelector("#decimals-count").classList.add("is-invalid");
         return;
     }
 
@@ -299,52 +343,55 @@ function convertTime() {
             (60 * 60 * 24 * 365 * 1000);
     }
 
-    document.querySelector("#time-second").innerHTML = round(seconds, 2);
+    document.querySelector("#time-second").innerHTML = round(seconds, decimals);
 
-    document.querySelector("#time-minute").innerHTML = round(seconds / 60, 2);
+    document.querySelector("#time-minute").innerHTML = round(
+        seconds / 60,
+        decimals
+    );
     document.querySelector("#time-hour").innerHTML = round(
         seconds / (60 * 60),
-        2
+        decimals
     );
     document.querySelector("#time-day").innerHTML = round(
         seconds / (60 * 60 * 24),
-        2
+        decimals
     );
     document.querySelector("#time-week").innerHTML = round(
         seconds / (60 * 60 * 24 * 7),
-        2
+        decimals
     );
     document.querySelector("#time-year").innerHTML = round(
         seconds / (60 * 60 * 24 * 365),
-        2
+        decimals
     );
     document.querySelector("#time-nanosecond").innerHTML = round(
         seconds * 1000000000,
-        2
+        decimals
     );
     document.querySelector("#time-microsecond").innerHTML = round(
         seconds * 1000000,
-        2
+        decimals
     );
     document.querySelector("#time-millisecond").innerHTML = round(
         seconds * 1000,
-        2
+        decimals
     );
     document.querySelector("#time-quarter").innerHTML = round(
         seconds / (60 * 15),
-        2
+        decimals
     );
     document.querySelector("#time-decade").innerHTML = round(
         seconds / (60 * 60 * 24 * 365 * 10),
-        2
+        decimals
     );
     document.querySelector("#time-age").innerHTML = round(
         seconds / (60 * 60 * 24 * 365 * 100),
-        2
+        decimals
     );
     document.querySelector("#time-millennium").innerHTML = round(
         seconds / (60 * 60 * 24 * 365 * 1000),
-        2
+        decimals
     );
 }
 
@@ -361,6 +408,19 @@ function convertTemperature() {
         document
             .querySelector("#temperature-input")
             .classList.add("is-invalid");
+        return;
+    }
+
+    if (document.querySelector("#decimals-count").checkValidity() &&
+    document.querySelector("#decimals-count").value !== "") {
+        document
+            .querySelector("#decimals-count")
+            .classList.remove("is-invalid");
+        var decimals = parseInt(
+            document.querySelector("#decimals-count").value
+        );
+    } else {
+        document.querySelector("#decimals-count").classList.add("is-invalid");
         return;
     }
 
@@ -388,15 +448,18 @@ function convertTemperature() {
             273.15;
     }
 
-    document.querySelector("#temperature-kelvin").innerHTML = round(kelvins, 2);
+    document.querySelector("#temperature-kelvin").innerHTML = round(
+        kelvins,
+        decimals
+    );
 
     document.querySelector("#temperature-celsius").innerHTML = round(
         kelvins - 273.15,
-        2
+        decimals
     );
     document.querySelector("#temperature-fahrenheit").innerHTML = round(
         32 + (9 / 5) * (kelvins - 273.15),
-        2
+        decimals
     );
 }
 
@@ -433,6 +496,19 @@ document
 document
     .querySelector("#temperature-unit")
     .addEventListener("change", convertTemperature);
+
+document.querySelector("#decimals-count").addEventListener("keyup", () => {
+    convertLength();
+    convertWeight();
+    convertTime();
+    convertTemperature();
+});
+document.querySelector("#decimals-count").addEventListener("change", () => {
+    convertLength();
+    convertWeight();
+    convertTime();
+    convertTemperature();
+});
 
 document.querySelectorAll(".copy").forEach((e) => {
     e.addEventListener("click", (evt) => {

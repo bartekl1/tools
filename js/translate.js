@@ -170,6 +170,7 @@ const textTranslations = [
     "kelwin (kelvin)",
     "stopień Celsjusza (degree Celsius)",
     "stopień Fahrenheita (degree Fahrenheit)",
+    "Ilość miejsc po przecinku",
 ];
 
 const titleTranslations = {
