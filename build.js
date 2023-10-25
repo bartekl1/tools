@@ -106,6 +106,12 @@ fse.copySync("./build/bowser.bundle.js", "./js/modules/bowser.js", {
     overwrite: true,
 });
 
+console.log("Copying LaTeX.js files ...");
+
+fse.copySync("./node_modules/latex.js/dist", "./js/modules/latex", {
+    overwrite: true,
+});
+
 console.log("Cleaning up ...");
 
 fse.removeSync("./build", { recursive: true, force: true });

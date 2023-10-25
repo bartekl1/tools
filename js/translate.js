@@ -191,6 +191,7 @@ const titleTranslations = {
     "Unit converter": "Przelicznik jednostek",
     "JSON formatter": "JSON formatter",
     "Markdown renderer": "Markdown renderer",
+    "LaTeX renderer": "LaTeX renderer",
 };
 
 const placeholdersTranslations = {
