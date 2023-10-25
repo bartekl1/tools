@@ -91,6 +91,16 @@ const tools = [
     },
     {
         name: {
+            english: "LaTeX renderer",
+            polish: "LaTeX renderer",
+        },
+        icon: "bi-infinity",
+        href: "/tools/latex.html",
+        color: "green",
+        offline: true,
+    },
+    {
+        name: {
             english: "Password generator",
             polish: "Generator haseł",
         },
