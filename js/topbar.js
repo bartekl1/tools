@@ -81,6 +81,16 @@ const tools = [
     },
     {
         name: {
+            english: "Markdown renderer",
+            polish: "Markdown renderer",
+        },
+        icon: "bi-markdown",
+        href: "/tools/markdown.html",
+        color: "green",
+        offline: true,
+    },
+    {
+        name: {
             english: "Password generator",
             polish: "Generator haseł",
         },

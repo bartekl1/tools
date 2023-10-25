@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>JSON formatter</title>
+    <title>Markdown renderer</title>
 
     <meta name="description" content="Tools">
     <meta name="keywords" content="Tools">
@@ -52,29 +52,17 @@
     </div>
 
     <div class="h3">
-        <i class="bi bi-braces"></i>
-        <span>JSON formatter</span>
+        <i class="bi bi-markdown"></i>
+        <span>Markdown renderer</span>
     </div>
 
     <div id="tool-page">
-        <button class="btn btn-primary mb-2" id="format">
-            <i class="bi bi-code-slash"></i>
-            <span text-id="172">Format</span>
-        </button>
-
-        <button class="btn btn-secondary mb-2" id="copy">
-            <i class="bi bi-clipboard"></i>
-            <span text-id="81">Copy</span>
-        </button>
-
         <div class="d-flex w-100 flex-column flex-sm-column flex-md-row flex-lg-row flex-xl-row flex-xxl-row">
             <div class="w-100 me-md-2 me-lg-2 me-xl-2 me-xxl-2 mb-2">
                 <textarea class="form-control source-code" id="input" rows="20"></textarea>
             </div>
             
-            <div class="w-100">
-                <textarea class="form-control source-code" id="output" readonly rows="20"></textarea>
-            </div>
+            <div class="w-100 form-control" id="output"></div>
         </div>
     </div>
 
@@ -85,8 +73,10 @@
     <script src="/tools/js/offline.js"></script>
     
     <script src="/tools/js/modules/bootstrap.bundle.min.js"></script>
+    
+    <script src="/tools/js/modules/showdown.min.js"></script>
 
-    <script src="/tools/js/json.js"></script>
+    <script src="/tools/js/markdown.js"></script>
 
     <script>
         var reg;

@@ -190,6 +190,7 @@ const titleTranslations = {
     "HTTP (REST) client": "Klient HTTP (REST)",
     "Unit converter": "Przelicznik jednostek",
     "JSON formatter": "JSON formatter",
+    "Markdown renderer": "Markdown renderer",
 };
 
 const placeholdersTranslations = {
