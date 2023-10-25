@@ -9,6 +9,7 @@
 - [minimist](https://github.com/minimistjs/minimist)
 - [fs-extra](https://github.com/jprichardson/node-fs-extra)
 - [Browserify](https://browserify.org/)
+- [LaTeX.js](https://latex.js.org/)
 
 # Fonts
 
