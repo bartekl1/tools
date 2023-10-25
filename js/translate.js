@@ -171,6 +171,7 @@ const textTranslations = [
     "stopień Celsjusza (degree Celsius)",
     "stopień Fahrenheita (degree Fahrenheit)",
     "Ilość miejsc po przecinku",
+    "Formatuj",
 ];
 
 const titleTranslations = {
@@ -188,6 +189,7 @@ const titleTranslations = {
     Hash: "Hash",
     "HTTP (REST) client": "Klient HTTP (REST)",
     "Unit converter": "Przelicznik jednostek",
+    "JSON formatter": "JSON formatter",
 };
 
 const placeholdersTranslations = {

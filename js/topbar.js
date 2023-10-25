@@ -71,6 +71,16 @@ const tools = [
     },
     {
         name: {
+            english: "JSON formatter",
+            polish: "JSON formatter",
+        },
+        icon: "bi-braces",
+        href: "/tools/json.html",
+        color: "green",
+        offline: true,
+    },
+    {
+        name: {
             english: "Password generator",
             polish: "Generator haseł",
         },
