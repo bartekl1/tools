@@ -5,6 +5,8 @@ const cacheName = `${cacheNamePrefix}-v${version}`;
 // List the files to precache
 const precacheResources = [
     "/tools/",
+    "/tools/manifest.json",
+    "/tools/manifest_pl.json",
     "/tools/css/style.css",
     "/tools/img/icons/icon.ico",
     "/tools/img/icons/icon_x192.png",
@@ -68,6 +70,18 @@ const precacheResources = [
     "/tools/js/modules/crypto-js/sha384.js",
     "/tools/js/modules/crypto-js/sha3.js",
     "/tools/js/modules/crypto-js/ripemd160.js",
+    "/tools/js/modules/latex/latex.js",
+    "/tools/js/modules/latex/css/katex.css",
+    "/tools/js/modules/latex/css/article.css",
+    "/tools/js/modules/latex/js/base.js",
+    "/tools/js/modules/latex/css/base.css",
+    "/tools/js/modules/latex/fonts/cmu.css",
+    "/tools/js/modules/latex/fonts/Sans/cmun-sans.css",
+    "/tools/js/modules/latex/fonts/Serif/cmun-serif.css",
+    "/tools/js/modules/latex/fonts/Serif%20Slanted/cmun-serif-slanted.css",
+    "/tools/js/modules/latex/fonts/Typewriter/cmun-typewriter.css",
+    "/tools/js/modules/latex/fonts/Typewriter%20Slanted/cmun-typewriter-slanted.css",
+    "/tools/js/modules/latex/fonts/Serif/cmunrm.woff",
 ];
 
 // When the service worker is installing, open the cache and add the precache resources to it
