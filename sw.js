@@ -44,6 +44,8 @@ const precacheResources = [
     // "/tools/js/http.js",
     "/tools/unit_converter.html",
     "/tools/js/unit_converter.js",
+    "/tools/json.html",
+    "/tools/js/json.js",
     "/tools/fonts/JetBrainsMono-Regular.woff2",
     "/tools/js/modules/bowser.js",
     "/tools/css/modules/bootstrap.min.css",
