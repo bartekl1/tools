@@ -172,7 +172,11 @@ const textTranslations = [
     "stopień Fahrenheita (degree Fahrenheit)",
     "Ilość miejsc po przecinku",
     "Formatuj",
-    "Text",
+    "Tekst",
+    "Generator kodów QR",
+    "Szerokość",
+    "Margines",
+    "Pobierz",
 ];
 
 const titleTranslations = {
@@ -194,6 +198,7 @@ const titleTranslations = {
     "Markdown renderer": "Markdown renderer",
     "LaTeX renderer": "LaTeX renderer",
     ASCII: "ASCII",
+    "QR code generator": "Generator kodów QR",
 };
 
 const placeholdersTranslations = {
@@ -219,6 +224,8 @@ const placeholdersTranslations = {
     Length: "Długość",
     "Special characters": "Znaki specjalne",
     URL: "URL",
+    Height: "Wysokość",
+    Width: "Szerokość",
 };
 
 const alternativeTextTranslations = {};

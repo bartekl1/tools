@@ -415,7 +415,10 @@ input#timestamp,
 input#date,
 input#password,
 input#ascii,
-input#text {
+input#text,
+input#width,
+input#height,
+input#margin {
     max-width: 400px;
 }
 
@@ -450,4 +453,9 @@ td.value {
 
 #decimals-count {
     max-width: 200px;
+}
+
+#qr-code {
+    max-width: 100%;
+    height: unset !important;
 }

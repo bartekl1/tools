@@ -112,6 +112,28 @@ fse.copySync("./node_modules/latex.js/dist", "./js/modules/latex", {
     overwrite: true,
 });
 
+console.log("Building qrcode and copying files ...");
+
+fse.writeFileSync(
+    "./build/qrcode.js",
+    `const QRCode = require("qrcode");
+global.QRCode = QRCode;
+`
+);
+
+execSync(
+    "browserify ./build/qrcode.js -o ./build/qrcode.bundle.js",
+    (err, stdout, stderr) => {
+        if (err) {
+            process.exit();
+        }
+    }
+);
+
+fse.copySync("./build/qrcode.bundle.js", "./js/modules/qrcode.js", {
+    overwrite: true,
+});
+
 console.log("Cleaning up ...");
 
 fse.removeSync("./build", { recursive: true, force: true });

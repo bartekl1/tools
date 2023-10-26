@@ -54,6 +54,8 @@ const precacheResources = [
     "/tools/js/latex.js",
     "/tools/ascii.html",
     "/tools/js/ascii.js",
+    "/tools/qr_generator.html",
+    "/tools/js/qr_generator.js",
     "/tools/fonts/JetBrainsMono-Regular.woff2",
     "/tools/js/modules/bowser.js",
     "/tools/css/modules/bootstrap.min.css",
@@ -84,6 +86,7 @@ const precacheResources = [
     "/tools/js/modules/latex/fonts/Typewriter/cmun-typewriter.css",
     "/tools/js/modules/latex/fonts/Typewriter%20Slanted/cmun-typewriter-slanted.css",
     "/tools/js/modules/latex/fonts/Serif/cmunrm.woff",
+    "/tools/js/modules/qrcode.js",
 ];
 
 // When the service worker is installing, open the cache and add the precache resources to it
