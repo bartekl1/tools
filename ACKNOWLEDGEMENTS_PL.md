@@ -10,6 +10,7 @@
 - [fs-extra](https://github.com/jprichardson/node-fs-extra)
 - [Browserify](https://browserify.org/)
 - [LaTeX.js](https://latex.js.org/)
+- [qrcode](https://github.com/soldair/node-qrcode)
 
 # Czcionki
 
