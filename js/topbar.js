@@ -101,6 +101,16 @@ const tools = [
     },
     {
         name: {
+            english: "ASCII",
+            polish: "ASCII",
+        },
+        icon: "bi-type",
+        href: "/tools/ascii.html",
+        color: "green",
+        offline: true,
+    },
+    {
+        name: {
             english: "Password generator",
             polish: "Generator haseł",
         },

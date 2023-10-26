@@ -52,6 +52,8 @@ const precacheResources = [
     "/tools/js/markdown.js",
     "/tools/latex.html",
     "/tools/js/latex.js",
+    "/tools/ascii.html",
+    "/tools/js/ascii.js",
     "/tools/fonts/JetBrainsMono-Regular.woff2",
     "/tools/js/modules/bowser.js",
     "/tools/css/modules/bootstrap.min.css",

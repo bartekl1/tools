@@ -413,7 +413,9 @@ input#roman,
 input#current-timestamp,
 input#timestamp,
 input#date,
-input#password {
+input#password,
+input#ascii,
+input#text {
     max-width: 400px;
 }
 

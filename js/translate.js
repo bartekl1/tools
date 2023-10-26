@@ -172,6 +172,7 @@ const textTranslations = [
     "stopień Fahrenheita (degree Fahrenheit)",
     "Ilość miejsc po przecinku",
     "Formatuj",
+    "Text",
 ];
 
 const titleTranslations = {
@@ -192,6 +193,7 @@ const titleTranslations = {
     "JSON formatter": "JSON formatter",
     "Markdown renderer": "Markdown renderer",
     "LaTeX renderer": "LaTeX renderer",
+    ASCII: "ASCII",
 };
 
 const placeholdersTranslations = {
