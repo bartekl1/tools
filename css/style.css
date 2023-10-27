@@ -423,7 +423,14 @@ input#margin {
 }
 
 input#length,
-input#special {
+input#special,
+select#bars-number,
+select#first-digit,
+select#second-digit,
+select#third-digit,
+select#multiplier,
+select#tolerance,
+select#temperature-coefficient {
     max-width: 300px;
 }
 

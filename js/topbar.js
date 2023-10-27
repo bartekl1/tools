@@ -159,6 +159,26 @@ const tools = [
         color: "gray",
         offline: true,
     },
+    {
+        name: {
+            english: "QR code generator",
+            polish: "Generator kodów QR",
+        },
+        icon: "bi-qr-code",
+        href: "/tools/qr_generator.html",
+        color: "gray",
+        offline: true,
+    },
+    {
+        name: {
+            english: "Resistor bar codes",
+            polish: "Kody paskowe rezystorów",
+        },
+        icon: "bi-plug-fill",
+        href: "/tools/resistor.html",
+        color: "gray",
+        offline: true,
+    },
 ];
 
 function setResultsPosition() {
