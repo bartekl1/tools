@@ -425,12 +425,15 @@ input#margin {
 input#length,
 input#special,
 select#bars-number,
-select#first-digit,
-select#second-digit,
-select#third-digit,
-select#multiplier,
-select#tolerance,
-select#temperature-coefficient {
+select#first-digit-select,
+select#second-digit-select,
+select#third-digit-select,
+select#multiplier-select,
+select#tolerance-select,
+select#temperature-coefficient-select,
+input#resistance-output,
+input#tolerance-output,
+input#temperature-coefficient-output {
     max-width: 300px;
 }
 

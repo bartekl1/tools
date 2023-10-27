@@ -221,6 +221,7 @@ const textTranslations = [
     "Niebieski (10 ppm/K)",
     "Fioletowy (5 ppm/K)",
     "Szary (1 ppm/K)",
+    "Opór",
 ];
 
 const titleTranslations = {
@@ -271,6 +272,7 @@ const placeholdersTranslations = {
     URL: "URL",
     Height: "Wysokość",
     Width: "Szerokość",
+    Resistance: "Opór",
 };
 
 const alternativeTextTranslations = {};
