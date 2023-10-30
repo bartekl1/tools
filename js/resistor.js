@@ -70,9 +70,23 @@ function setColors() {
         temperatureCoefficientColors[
             document.querySelector("#temperature-coefficient-select").value
         ];
+
+    document.querySelector("#bars-number").value == 6
+        ? document
+              .querySelector("#temperature-coefficient-output-div")
+              .classList.remove("d-none")
+        : document
+              .querySelector("#temperature-coefficient-output-div")
+              .classList.add("d-none");
 }
 
 function calcFromBars() {
+    document.querySelector("#resistance-output").classList.remove("is-invalid");
+    document.querySelector("#tolerance-output").classList.remove("is-invalid");
+    document
+        .querySelector("#temperature-coefficient-output")
+        .classList.remove("is-invalid");
+
     var resistance =
         parseInt(document.querySelector("#first-digit-select").value) * 10 +
         parseInt(document.querySelector("#second-digit-select").value);
@@ -93,13 +107,89 @@ function calcFromBars() {
     document.querySelector("#temperature-coefficient-output").value = parseInt(
         document.querySelector("#temperature-coefficient-select").value
     );
-    document.querySelector("#bars-number").value == 6
-        ? document
-              .querySelector("#temperature-coefficient-output-div")
-              .classList.remove("d-none")
-        : document
-              .querySelector("#temperature-coefficient-output-div")
-              .classList.add("d-none");
+}
+
+function calcToBars() {
+    document.querySelector("#resistance-output").classList.remove("is-invalid");
+    document.querySelector("#tolerance-output").classList.remove("is-invalid");
+    document
+        .querySelector("#temperature-coefficient-output")
+        .classList.remove("is-invalid");
+
+    if (
+        !document.querySelector("#resistance-output").checkValidity() ||
+        Number(
+            document
+                .querySelector("#resistance-output")
+                .value.substring(
+                    document.querySelector("#bars-number").value >= 5 ? 3 : 2
+                )
+        ) != 0
+    ) {
+        document
+            .querySelector("#resistance-output")
+            .classList.add("is-invalid");
+
+        return;
+    }
+
+    if (
+        !Object.keys(toleranceColors).includes(
+            document.querySelector("#tolerance-output").value
+        )
+    ) {
+        document.querySelector("#tolerance-output").classList.add("is-invalid");
+        return;
+    }
+
+    if (
+        !Object.keys(temperatureCoefficientColors).includes(
+            document.querySelector("#temperature-coefficient-output").value
+        ) &&
+        document.querySelector("#bars-number").value == 6
+    ) {
+        document
+            .querySelector("#temperature-coefficient-output")
+            .classList.add("is-invalid");
+        return;
+    }
+
+    document.querySelector("#first-digit-select").value =
+        document.querySelector("#resistance-output").value[0] || 0;
+    document.querySelector("#second-digit-select").value =
+        document.querySelector("#resistance-output").value[1] || 0;
+
+    if (document.querySelector("#bars-number").value >= 5) {
+        document.querySelector("#third-digit-select").value =
+            document.querySelector("#resistance-output").value[2] || 0;
+    }
+
+    if (document.querySelector("#resistance-output").value != 0) {
+        var multiplier =
+            document.querySelector("#resistance-output").value /
+            document
+                .querySelector("#resistance-output")
+                .value.substring(
+                    0,
+                    document.querySelector("#bars-number").value >= 5 ? 3 : 2
+                );
+
+        if (!Object.keys(multiplierColors).includes(String(multiplier))) {
+            document
+                .querySelector("#resistance-output")
+                .classList.add("is-invalid");
+            return;
+        }
+
+        document.querySelector("#multiplier-select").value = multiplier;
+    }
+
+    document.querySelector("#tolerance-select").value =
+        document.querySelector("#tolerance-output").value;
+    document.querySelector("#temperature-coefficient-select").value =
+        document.querySelector("#temperature-coefficient-output").value;
+
+    setColors();
 }
 
 fetch("/tools/img/resistor.svg")
@@ -118,6 +208,10 @@ document.querySelectorAll(".form-select").forEach((e) => {
 
 document.querySelectorAll(".form-select").forEach((e) => {
     e.addEventListener("change", calcFromBars);
+});
+
+document.querySelectorAll(".form-control").forEach((e) => {
+    e.addEventListener("change", calcToBars);
 });
 
 document.querySelector("#bars-number").addEventListener("change", () => {
