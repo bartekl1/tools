@@ -72,6 +72,36 @@ function setColors() {
         ];
 }
 
+function calcFromBars() {
+    var resistance =
+        parseInt(document.querySelector("#first-digit-select").value) * 10 +
+        parseInt(document.querySelector("#second-digit-select").value);
+
+    if (document.querySelector("#bars-number").value >= 5) {
+        resistance *= 10;
+        resistance += parseInt(
+            document.querySelector("#third-digit-select").value
+        );
+    }
+
+    resistance *= parseInt(document.querySelector("#multiplier-select").value);
+
+    document.querySelector("#resistance-output").value = resistance;
+    document.querySelector("#tolerance-output").value = parseInt(
+        document.querySelector("#tolerance-select").value
+    );
+    document.querySelector("#temperature-coefficient-output").value = parseInt(
+        document.querySelector("#temperature-coefficient-select").value
+    );
+    document.querySelector("#bars-number").value == 6
+        ? document
+              .querySelector("#temperature-coefficient-output-div")
+              .classList.remove("d-none")
+        : document
+              .querySelector("#temperature-coefficient-output-div")
+              .classList.add("d-none");
+}
+
 fetch("/tools/img/resistor.svg")
     .then((response) => {
         return response.text();
@@ -84,6 +114,10 @@ fetch("/tools/img/resistor.svg")
 
 document.querySelectorAll(".form-select").forEach((e) => {
     e.addEventListener("change", setColors);
+});
+
+document.querySelectorAll(".form-select").forEach((e) => {
+    e.addEventListener("change", calcFromBars);
 });
 
 document.querySelector("#bars-number").addEventListener("change", () => {
