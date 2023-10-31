@@ -1,4 +1,6 @@
-# Biblioteki NPM
+# Wykorzystane oprogramowanie
+
+## Biblioteki NPM
 
 - [Bootstrap](https://getbootstrap.com/)
 - [Bootstrap Icons](https://icons.getbootstrap.com/)
@@ -11,12 +13,14 @@
 - [Browserify](https://browserify.org/)
 - [LaTeX.js](https://latex.js.org/)
 - [qrcode](https://github.com/soldair/node-qrcode)
+- [Moment.js](https://momentjs.com/)
+- [Moment Timezone](https://momentjs.com/timezone/)
 
-# Czcionki
+## Czcionki
 
 - [JetBrains Mono](https://www.jetbrains.com/lp/mono/)
 
-# Źródła danych
+## Źródła danych
 
 - [ipapi](https://ipapi.co/)
 - [Mapy Google](https://maps.google.com/)
