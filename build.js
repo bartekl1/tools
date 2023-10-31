@@ -11,16 +11,14 @@ execSync("npm install", (err, stdout, stderr) => {
     }
 });
 
-if (!fse.existsSync("build")) {
-    fse.mkdirSync("build");
+if (!fse.existsSync("./build")) {
+    fse.mkdirSync("./build");
 }
 
 console.log("Removing old libraries ...");
 
-try {
-    fse.moveSync("./js/modules", "./build/modules/js", { overwrite: true });
-    fse.moveSync("./css/modules", "./build/modules/css", { overwrite: true });
-} catch {}
+fse.removeSync("./js/modules");
+fse.removeSync("./css/modules");
 
 if (!fse.existsSync("./js/modules")) {
     fse.mkdirSync("./js/modules");
@@ -131,6 +129,28 @@ execSync(
 );
 
 fse.copySync("./build/qrcode.bundle.js", "./js/modules/qrcode.js", {
+    overwrite: true,
+});
+
+console.log("Building Moment.js and copying files ...");
+
+fse.writeFileSync(
+    "./build/moment.js",
+    `const moment = require("moment-timezone");
+global.moment = moment;
+`
+);
+
+execSync(
+    "browserify ./build/moment.js -o ./build/moment.bundle.js",
+    (err, stdout, stderr) => {
+        if (err) {
+            process.exit();
+        }
+    }
+);
+
+fse.copySync("./build/moment.bundle.js", "./js/modules/moment.js", {
     overwrite: true,
 });
 
