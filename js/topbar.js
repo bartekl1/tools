@@ -31,6 +31,16 @@ const tools = [
     },
     {
         name: {
+            english: "Geographical coordinates converter",
+            polish: "Przelicznik współrzędnych geograficznych",
+        },
+        icon: "bi-globe-europe-africa",
+        href: "/tools/geographical_coordinates_converter.html",
+        color: "blue",
+        offline: true,
+    },
+    {
+        name: {
             english: "Number system converter",
             polish: "Przelicznik systemów liczbowych",
         },

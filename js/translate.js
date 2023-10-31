@@ -222,6 +222,9 @@ const textTranslations = [
     "Fioletowy (5 ppm/K)",
     "Szary (1 ppm/K)",
     "Opór",
+    "Przelicznik współrzędnych geograficznych",
+    "Dziesiętne",
+    "Stopnie, minuty, sekundy",
 ];
 
 const titleTranslations = {
@@ -245,6 +248,8 @@ const titleTranslations = {
     ASCII: "ASCII",
     "QR code generator": "Generator kodów QR",
     "Resistor bar codes": "Kody paskowe rezystorów",
+    "Geographical coordinates converter":
+        "Przelicznik współrzędnych geograficznych",
 };
 
 const placeholdersTranslations = {

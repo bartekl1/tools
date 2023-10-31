@@ -58,6 +58,8 @@ const precacheResources = [
     "/tools/js/qr_generator.js",
     "/tools/resistor.html",
     "/tools/js/resistor.js",
+    "/tools/geographical_coordinates_converter.html",
+    "/tools/js/geographical_coordinates_converter.js",
     "/tools/img/resistor.svg",
     "/tools/fonts/JetBrainsMono-Regular.woff2",
     "/tools/js/modules/bowser.js",

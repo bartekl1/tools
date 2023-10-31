@@ -395,7 +395,9 @@ input#sha224,
 input#sha512,
 input#sha384,
 input#sha3,
-input#ripemd160 {
+input#ripemd160,
+input#latitude-decimal,
+input#longitude-decimal {
     max-width: 500px;
 }
 
@@ -435,6 +437,17 @@ input#resistance-output,
 input#tolerance-output,
 input#temperature-coefficient-output {
     max-width: 300px;
+}
+
+input#latitude-degrees,
+input#latitude-minutes,
+input#latitude-seconds,
+input#longitude-degrees,
+input#longitude-minutes,
+input#longitude-seconds,
+select#latitude-direction,
+select#longitude-direction {
+    max-width: 102px;
 }
 
 iframe.google-maps {
