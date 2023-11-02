@@ -1,3 +1,35 @@
+function setCoords() {
+    document.querySelector("#coords-decimal").value = `${
+        document.querySelector("#latitude-decimal").value
+    }, ${document.querySelector("#longitude-decimal").value}`;
+
+    document.querySelector("#coords-degrees").value = `${
+        parseInt(document.querySelector("#latitude-degrees").value) || 0
+    }°${
+        (parseInt(document.querySelector("#latitude-minutes").value) || 0) < 10
+            ? "0"
+            : ""
+    }${parseInt(document.querySelector("#latitude-minutes").value) || 0}'${
+        (parseInt(document.querySelector("#latitude-seconds").value) || 0) < 10
+            ? "0"
+            : ""
+    }${
+        parseInt(document.querySelector("#latitude-seconds").value) || 0
+    }"${document.querySelector("#latitude-direction").value.toUpperCase()}, ${
+        parseInt(document.querySelector("#longitude-degrees").value) || 0
+    }°${
+        (parseInt(document.querySelector("#longitude-minutes").value) || 0) < 10
+            ? "0"
+            : ""
+    }${parseInt(document.querySelector("#longitude-minutes").value) || 0}'${
+        (parseInt(document.querySelector("#longitude-seconds").value) || 0) < 10
+            ? "0"
+            : ""
+    }${
+        parseInt(document.querySelector("#longitude-seconds").value) || 0
+    }"${document.querySelector("#longitude-direction").value.toUpperCase()}`;
+}
+
 document
     .querySelectorAll(["#latitude-decimal", "#longitude-decimal"])
     .forEach((e) => {
@@ -71,6 +103,8 @@ document
                 document.querySelector("#longitude-decimal").value >= 0
                     ? "e"
                     : "w";
+
+            setCoords();
         });
     });
 
@@ -161,5 +195,92 @@ document
                 (document.querySelector("#longitude-direction").value === "e"
                     ? 1
                     : -1);
+
+            setCoords();
         });
+    });
+
+document.querySelectorAll(".copy").forEach((e) => {
+    e.addEventListener("click", (evt) => {
+        navigator.clipboard.writeText(
+            evt.currentTarget.parentElement.querySelector("input").value
+        );
+
+        evt.currentTarget.innerHTML = '<i class="bi bi-clipboard-check"></i>';
+
+        setTimeout(
+            (el) => {
+                el.innerHTML = '<i class="bi bi-clipboard"></i>';
+            },
+            2000,
+            evt.currentTarget
+        );
+    });
+});
+
+document.querySelector(".copy-latitude").addEventListener("click", (evt) => {
+    navigator.clipboard.writeText(
+        `${parseInt(document.querySelector("#latitude-degrees").value) || 0}°${
+            (parseInt(document.querySelector("#latitude-minutes").value) || 0) <
+            10
+                ? "0"
+                : ""
+        }${parseInt(document.querySelector("#latitude-minutes").value) || 0}'${
+            (parseInt(document.querySelector("#latitude-seconds").value) || 0) <
+            10
+                ? "0"
+                : ""
+        }${
+            parseInt(document.querySelector("#latitude-seconds").value) || 0
+        }"${document.querySelector("#latitude-direction").value.toUpperCase()}`
+    );
+
+    evt.currentTarget.innerHTML = '<i class="bi bi-clipboard-check"></i>';
+
+    setTimeout(
+        (el) => {
+            el.innerHTML = '<i class="bi bi-clipboard"></i>';
+        },
+        2000,
+        evt.currentTarget
+    );
+});
+
+document
+    .querySelector(".copy-longitude")
+    .addEventListener("click", (evt) => {
+        navigator.clipboard.writeText(
+            `${
+                parseInt(document.querySelector("#longitude-degrees").value) ||
+                0
+            }°${
+                (parseInt(document.querySelector("#longitude-minutes").value) ||
+                    0) < 10
+                    ? "0"
+                    : ""
+            }${
+                parseInt(document.querySelector("#longitude-minutes").value) ||
+                0
+            }'${
+                (parseInt(document.querySelector("#longitude-seconds").value) ||
+                    0) < 10
+                    ? "0"
+                    : ""
+            }${
+                parseInt(document.querySelector("#longitude-seconds").value) ||
+                0
+            }"${document
+                .querySelector("#longitude-direction")
+                .value.toUpperCase()}`
+        );
+
+        evt.currentTarget.innerHTML = '<i class="bi bi-clipboard-check"></i>';
+
+        setTimeout(
+            (el) => {
+                el.innerHTML = '<i class="bi bi-clipboard"></i>';
+            },
+            2000,
+            evt.currentTarget
+        );
     });

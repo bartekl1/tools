@@ -397,7 +397,9 @@ input#sha384,
 input#sha3,
 input#ripemd160,
 input#latitude-decimal,
-input#longitude-decimal {
+input#longitude-decimal,
+input#coords-decimal,
+input#coords-degrees {
     max-width: 500px;
 }
 
