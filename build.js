@@ -137,6 +137,7 @@ console.log("Building Moment.js and copying files ...");
 fse.writeFileSync(
     "./build/moment.js",
     `const moment = require("moment-timezone");
+require("moment/min/locales");
 global.moment = moment;
 `
 );

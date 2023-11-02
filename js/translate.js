@@ -225,6 +225,11 @@ const textTranslations = [
     "Przelicznik współrzędnych geograficznych",
     "Dziesiętne",
     "Stopnie, minuty, sekundy",
+    "Czas na świecie",
+    "Bieżący czas",
+    "Czas lokalny",
+    "Czas uniwersalny",
+    "Inna strefa czasowa",
 ];
 
 const titleTranslations = {
@@ -250,6 +255,7 @@ const titleTranslations = {
     "Resistor bar codes": "Kody paskowe rezystorów",
     "Geographical coordinates converter":
         "Przelicznik współrzędnych geograficznych",
+    "World time": "Czas na świecie",
 };
 
 const placeholdersTranslations = {

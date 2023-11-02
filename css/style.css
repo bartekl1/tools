@@ -450,6 +450,17 @@ select#longitude-direction {
     max-width: 102px;
 }
 
+input#custom-input-time,
+select#custom-time-timezone {
+    max-width: 250px;
+}
+
+input#local-timezone,
+input#utc-timezone,
+select#custom-timezone {
+    max-width: 523px;
+}
+
 iframe.google-maps {
     max-width: 100%;
     width: 700px;
