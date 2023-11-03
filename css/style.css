@@ -437,8 +437,21 @@ select#tolerance-select,
 select#temperature-coefficient-select,
 input#resistance-output,
 input#tolerance-output,
-input#temperature-coefficient-output {
+input#temperature-coefficient-output,
+input#first-date,
+input#second-date {
     max-width: 300px;
+}
+
+input#years,
+input#months,
+input#weeks,
+input#days,
+input#hours,
+input#minutes,
+input#seconds,
+input#milliseconds {
+    max-width: 200px;
 }
 
 input#latitude-degrees,

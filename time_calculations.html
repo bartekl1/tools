@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Time calculations</title>
+
+    <meta name="description" content="Tools">
+    <meta name="keywords" content="Tools">
+    <meta name="author" content="Bartek L">
+
+    <link rel="stylesheet" href="/tools/css/style.css">
+
+    <link rel="stylesheet" href="/tools/css/modules/bootstrap.min.css">
+    <link rel="stylesheet" href="/tools/css/modules/bootstrap-icons/bootstrap-icons.min.css">
+
+    <link rel="manifest" href="/tools/manifest.json">
+
+    <link rel="shortcut icon" href="/tools/img/icons/icon.ico">
+    <link rel="apple-touch-icon" href="/tools/img/icons/icon_x192.png">
+
+    <!-- Standard browsers -->
+    <meta name="theme-color" content="#0d6efd"/>
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#0d6efd">
+</head>
+<body class="px-3 pt-2">
+    <div class="top-bar">
+        <div class="float-start top-bar-buttons">
+            <button class="top-bar-button" onclick="window.location.reload()">
+                <i class="bi bi-arrow-clockwise"></i>
+            </button>
+            <a class="top-bar-button" href="/tools/">
+                <i class="bi bi-house"></i>
+            </a>
+        </div>
+        <div class="input-group top-bar-search-group">
+            <span class="input-group-text top-bar-search-text"><i class="bi bi-search"></i></span>
+            <input type="text" class="form-control top-bar-search" placeholder="Search">
+        </div>
+    </div>
+
+    <div class="text-light-emphasis h2 text-center">
+        <a href="/tools/" class="home-link">
+            <span text-id="0">Tools</span>
+            <i class="bi bi-tools"></i>
+        </a>
+    </div>
+
+    <div class="h3">
+        <i class="bi bi-calculator-fill"></i>
+        <span text-id="231">Time calculations</span>
+    </div>
+
+    <div id="tool-page">
+        <ul class="nav nav-pills mb-3" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#dates-difference" type="button" role="tab">
+                    <span text-id="232">Dates difference</span>
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#add-subtract" type="button" role="tab">
+                    <span text-id="233"> Add / subtract to date</span>
+                </button>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane fade show active" id="dates-difference" role="tabpanel" tabindex="0">
+                <input type="datetime-local" class="form-control mb-2" id="first-date" step="0.001">
+                <input type="datetime-local" class="form-control mb-2" id="second-date" step="0.001">
+
+                <div class="d-flex flex-column flex-sm-column flex-md-column flex-lg-row flex-xl-row flex-xxl-row">
+                    <div class="form-floating me-2 mb-2">
+                        <input type="text" class="form-control" id="difference-years" readonly>
+                        <label for="difference-years" text-id="234">Years</label>
+                    </div>
+                    <div class="form-floating me-2 mb-2">
+                        <input type="text" class="form-control" id="difference-months" readonly>
+                        <label for="difference-months" text-id="235">Months</label>
+                    </div>
+                    <div class="form-floating me-2 mb-2">
+                        <input type="text" class="form-control" id="difference-weeks" readonly>
+                        <label for="difference-weeks" text-id="236">Weeks</label>
+                    </div>
+                    <div class="form-floating me-2 mb-2">
+                        <input type="text" class="form-control" id="difference-days" readonly>
+                        <label for="difference-days" text-id="237">Days</label>
+                    </div>
+                    <div class="form-floating me-2 mb-2">
+                        <input type="text" class="form-control" id="difference-hours" readonly>
+                        <label for="difference-hours" text-id="238">Hours</label>
+                    </div>
+                    <div class="form-floating me-2 mb-2">
+                        <input type="text" class="form-control" id="difference-minutes" readonly>
+                        <label for="difference-minutes" text-id="239">Minutes</label>
+                    </div>
+                    <div class="form-floating me-2 mb-2">
+                        <input type="text" class="form-control" id="difference-seconds" readonly>
+                        <label for="difference-seconds" text-id="240">Seconds</label>
+                    </div>
+                    <div class="form-floating me-2 mb-2">
+                        <input type="text" class="form-control" id="difference-milliseconds" readonly>
+                        <label for="difference-milliseconds" text-id="241">Milliseconds</label>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="add-subtract" role="tabpanel" tabindex="0">
+                
+            </div>
+        </div>
+    </div>
+
+    <script src="/tools/js/topbar.js"></script>
+    <script src="/tools/js/theme.js"></script>
+    <script src="/tools/js/translate.js"></script>
+    <script src="/tools/js/error.js"></script>
+    
+    <script src="/tools/js/modules/bootstrap.bundle.min.js"></script>
+    <script src="/tools/js/modules/moment.js"></script>
+    
+    <script src="/tools/js/time_calculations.js"></script>
+
+    <script>
+        var reg;
+        // Register the service worker
+        if ('serviceWorker' in navigator) {
+            // Wait for the 'load' event to not block other work
+            window.addEventListener('load', async () => {
+                // Try to register the service worker.
+                try {
+                    reg = await navigator.serviceWorker.register('/tools/sw.js');
+                    console.log('Service worker registered! 😎', reg);
+                } catch (err) {
+                    console.log('😥 Service worker registration failed: ', err);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

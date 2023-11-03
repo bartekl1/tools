@@ -62,6 +62,8 @@ const precacheResources = [
     "/tools/js/geographical_coordinates_converter.js",
     "/tools/world_time.html",
     "/tools/js/world_time.js",
+    "/tools/time_calculations.html",
+    "/tools/js/time_calculations.js",
     "/tools/img/resistor.svg",
     "/tools/fonts/JetBrainsMono-Regular.woff2",
     "/tools/js/modules/bowser.js",

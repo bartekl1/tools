@@ -230,6 +230,17 @@ const textTranslations = [
     "Czas lokalny",
     "Czas uniwersalny",
     "Inna strefa czasowa",
+    "Obliczenia na czasie",
+    "Różnica dat",
+    "Dodaj / odejmij do daty",
+    "Lata",
+    "Miesiące",
+    "Tygodnie",
+    "Dni",
+    "Godziny",
+    "Minuty",
+    "Sekundy",
+    "Milisekundy",
 ];
 
 const titleTranslations = {
@@ -256,6 +267,7 @@ const titleTranslations = {
     "Geographical coordinates converter":
         "Przelicznik współrzędnych geograficznych",
     "World time": "Czas na świecie",
+    "Time calculations": "Obliczenia na czasie",
 };
 
 const placeholdersTranslations = {
