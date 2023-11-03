@@ -241,6 +241,8 @@ const textTranslations = [
     "Minuty",
     "Sekundy",
     "Milisekundy",
+    "Dodaj",
+    "Odejmij",
 ];
 
 const titleTranslations = {

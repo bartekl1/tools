@@ -35,9 +35,65 @@ function calcDifference() {
     }
 }
 
+function addSubtract() {
+    if (document.querySelector("#input-date").value !== "") {
+        var duration = moment.duration({
+            milliseconds: document.querySelector("#add-subtract-milliseconds")
+                .value,
+            seconds: document.querySelector("#add-subtract-seconds").value,
+            minutes: document.querySelector("#add-subtract-minutes").value,
+            hours: document.querySelector("#add-subtract-hours").value,
+            days: document.querySelector("#add-subtract-days").value,
+            weeks: document.querySelector("#add-subtract-weeks").value,
+            months: document.querySelector("#add-subtract-months").value,
+            years: document.querySelector("#add-subtract-years").value,
+        });
+
+        var inputDate = moment(document.querySelector("#input-date").value);
+
+        if (document.querySelector("#add").checked) {
+            var outputDate = inputDate.add(duration);
+        } else if (document.querySelector("#subtract").checked) {
+            var outputDate = inputDate.subtract(duration);
+        }
+
+        document.querySelector("#output-date").value = outputDate
+            .toISOString()
+            .slice(0, -1);
+    }
+}
+
 document
     .querySelector("#first-date")
     .addEventListener("change", calcDifference);
 document
     .querySelector("#second-date")
     .addEventListener("change", calcDifference);
+
+document.querySelector("#input-date").addEventListener("change", addSubtract);
+document
+    .querySelector("#add-subtract-years")
+    .addEventListener("change", addSubtract);
+document
+    .querySelector("#add-subtract-months")
+    .addEventListener("change", addSubtract);
+document
+    .querySelector("#add-subtract-weeks")
+    .addEventListener("change", addSubtract);
+document
+    .querySelector("#add-subtract-days")
+    .addEventListener("change", addSubtract);
+document
+    .querySelector("#add-subtract-hours")
+    .addEventListener("change", addSubtract);
+document
+    .querySelector("#add-subtract-minutes")
+    .addEventListener("change", addSubtract);
+document
+    .querySelector("#add-subtract-seconds")
+    .addEventListener("change", addSubtract);
+document
+    .querySelector("#add-subtract-milliseconds")
+    .addEventListener("change", addSubtract);
+document.querySelector("#add").addEventListener("change", addSubtract);
+document.querySelector("#subtract").addEventListener("change", addSubtract);

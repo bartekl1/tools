@@ -439,18 +439,28 @@ input#resistance-output,
 input#tolerance-output,
 input#temperature-coefficient-output,
 input#first-date,
-input#second-date {
+input#second-date,
+input#input-date,
+input#output-date {
     max-width: 300px;
 }
 
-input#years,
-input#months,
-input#weeks,
-input#days,
-input#hours,
-input#minutes,
-input#seconds,
-input#milliseconds {
+input#difference-years,
+input#difference-months,
+input#difference-weeks,
+input#difference-days,
+input#difference-hours,
+input#difference-minutes,
+input#difference-seconds,
+input#difference-milliseconds,
+input#add-subtract-years,
+input#add-subtract-months,
+input#add-subtract-weeks,
+input#add-subtract-days,
+input#add-subtract-hours,
+input#add-subtract-minutes,
+input#add-subtract-seconds,
+input#add-subtract-milliseconds {
     max-width: 200px;
 }
 

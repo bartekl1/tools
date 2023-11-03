@@ -110,7 +110,55 @@
                 </div>
             </div>
             <div class="tab-pane fade" id="add-subtract" role="tabpanel" tabindex="0">
+                <input type="datetime-local" class="form-control mb-2" id="input-date" step="0.001">
+
+                <div class="mb-2">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="add" name="operation" value="radio" checked>
+                        <label class="form-check-label" for="add" text-id="242">Add</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="subtract" name="operation" value="subtract">
+                        <label class="form-check-label" for="subtract" text-id="243">Subtract</label>
+                    </div>
+                </div>
                 
+                <div class="d-flex flex-column flex-sm-column flex-md-column flex-lg-row flex-xl-row flex-xxl-row">
+                    <div class="form-floating me-2 mb-2">
+                        <input type="number" class="form-control" id="add-subtract-years" value="0">
+                        <label for="add-subtract-years" text-id="234">Years</label>
+                    </div>
+                    <div class="form-floating me-2 mb-2">
+                        <input type="number" class="form-control" id="add-subtract-months" value="0">
+                        <label for="add-subtract-months" text-id="235">Months</label>
+                    </div>
+                    <div class="form-floating me-2 mb-2">
+                        <input type="number" class="form-control" id="add-subtract-weeks" value="0">
+                        <label for="add-subtract-weeks" text-id="236">Weeks</label>
+                    </div>
+                    <div class="form-floating me-2 mb-2">
+                        <input type="number" class="form-control" id="add-subtract-days" value="0">
+                        <label for="add-subtract-days" text-id="237">Days</label>
+                    </div>
+                    <div class="form-floating me-2 mb-2">
+                        <input type="number" class="form-control" id="add-subtract-hours" value="0">
+                        <label for="add-subtract-hours" text-id="238">Hours</label>
+                    </div>
+                    <div class="form-floating me-2 mb-2">
+                        <input type="number" class="form-control" id="add-subtract-minutes" value="0">
+                        <label for="add-subtract-minutes" text-id="239">Minutes</label>
+                    </div>
+                    <div class="form-floating me-2 mb-2">
+                        <input type="number" class="form-control" id="add-subtract-seconds" value="0">
+                        <label for="add-subtract-seconds" text-id="240">Seconds</label>
+                    </div>
+                    <div class="form-floating me-2 mb-2">
+                        <input type="number" class="form-control" id="add-subtract-milliseconds" value="0">
+                        <label for="add-subtract-milliseconds" text-id="241">Milliseconds</label>
+                    </div>
+                </div>
+
+                <input type="datetime-local" class="form-control mb-2" id="output-date" step="0.001" readonly>
             </div>
         </div>
     </div>
