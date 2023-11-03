@@ -121,6 +121,16 @@ const tools = [
     },
     {
         name: {
+            english: "Unix timestamp",
+            polish: "Unix timestamp",
+        },
+        icon: "bi-clock",
+        href: "/tools/unix_timestamp.html",
+        color: "green",
+        offline: true,
+    },
+    {
+        name: {
             english: "Password generator",
             polish: "Generator haseł",
         },
@@ -141,11 +151,21 @@ const tools = [
     },
     {
         name: {
-            english: "Unix timestamp",
-            polish: "Unix timestamp",
+            english: "World time",
+            polish: "Czas na świecie",
         },
         icon: "bi-clock",
-        href: "/tools/unix_timestamp.html",
+        href: "/tools/world_time.html",
+        color: "orange",
+        offline: true,
+    },
+    {
+        name: {
+            english: "Time calculations",
+            polish: "Obliczenia na czasie",
+        },
+        icon: "bi-calculator-fill",
+        href: "/tools/time_calculations.html",
         color: "orange",
         offline: true,
     },
