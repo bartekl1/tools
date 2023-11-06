@@ -1,6 +1,8 @@
 const { execSync } = require("child_process");
 const fse = require("fs-extra");
 
+const ignore = ["ignore", "node_modules", "configs.json"];
+
 console.log("Tools build script\n");
 
 console.log("Installing dependencies ...");
@@ -158,5 +160,48 @@ fse.copySync("./build/moment.bundle.js", "./js/modules/moment.js", {
 console.log("Cleaning up ...");
 
 fse.removeSync("./build", { recursive: true, force: true });
+
+console.log("Building dist ...");
+
+if (fse.existsSync("./dist")) {
+    fse.removeSync("./dist");
+}
+
+fse.mkdirSync("./dist");
+
+fse.readdirSync(".").forEach((e) => {
+    if (!ignore.includes(e) && e !== "dist") {
+        fse.copySync(`./${e}`, `./dist/${e}`, {
+            overwrite: true,
+        });
+    }
+});
+
+var configs;
+
+try {
+    configs = fse.readJSONSync("configs.json");
+} catch (e) {
+    configs = {};
+    if (!e.message.includes("no such file or directory")) {
+        throw e;
+    }
+}
+
+if (
+    configs["google-site-verification"] !== "" &&
+    configs["google-site-verification"] !== undefined
+) {
+    fse.readdirSync("./dist").forEach((e) => {
+        if (e.endsWith(".html")) {
+            var file = fse.readFileSync(`./dist/${e}`, "utf-8");
+            file = file.replace(
+                "<google-site-verification></google-site-verification>",
+                `<meta name="google-site-verification" content="${configs["google-site-verification"]}" />`
+            );
+            fse.writeFileSync(`./dist/${e}`, file, "utf-8");
+        }
+    });
+}
 
 console.log("\nDone!");
