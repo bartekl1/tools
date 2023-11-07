@@ -1,17 +1,17 @@
 const { execSync } = require("child_process");
 const fse = require("fs-extra");
 
-const ignore = ["ignore", "node_modules", "configs.json"];
+const ignore = [
+    "ignore",
+    "node_modules",
+    "configs.json",
+    ".git",
+    ".github",
+    "build.js",
+    "app.js",
+];
 
 console.log("Tools build script\n");
-
-console.log("Installing dependencies ...");
-
-execSync("npm install", (err, stdout, stderr) => {
-    if (err) {
-        process.exit();
-    }
-});
 
 if (!fse.existsSync("./build")) {
     fse.mkdirSync("./build");
