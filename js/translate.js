@@ -244,6 +244,8 @@ const textTranslations = [
     "Dodaj",
     "Odejmij",
     "Stoper",
+    "Czas",
+    "Czas trwania",
 ];
 
 const titleTranslations = {

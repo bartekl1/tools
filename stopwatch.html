@@ -61,7 +61,7 @@
     <div id="tool-page">
         <div class="container-fluid text-center">
             <div class="row">
-                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 ">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-2">
                     <div class="fs-1" id="time">00:00:00.00</div>
 
                     <button class="btn btn-primary" id="start-pause" current-function="start">
@@ -77,6 +77,18 @@
                     </button>
                 </div>
                 <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                    <div class="table-responsive">
+                        <table class="table d-none" id="measures">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col" text-id="245">Time</th>
+                                    <th scope="col" text-id="246">Duration</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
