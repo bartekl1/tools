@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Stopwatch</title>
+
+    <meta name="description" content="Stopwatch - Website with math and IT tools">
+    <meta name="keywords" content="Tools, Narzędzia, Stopwatch">
+    <meta name="author" content="Bartek L">
+
+    <link rel="stylesheet" href="/tools/css/style.css">
+
+    <link rel="stylesheet" href="/tools/css/modules/bootstrap.min.css">
+    <link rel="stylesheet" href="/tools/css/modules/bootstrap-icons/bootstrap-icons.min.css">
+
+    <link rel="manifest" href="/tools/manifest.json">
+
+    <link rel="shortcut icon" href="/tools/img/icons/icon.ico">
+    <link rel="apple-touch-icon" href="/tools/img/icons/icon_x192.png">
+
+    <!-- Standard browsers -->
+    <meta name="theme-color" content="#0d6efd"/>
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#0d6efd">
+
+    <google-site-verification></google-site-verification>
+</head>
+<body class="px-3 pt-2">
+    <div class="top-bar">
+        <div class="float-start top-bar-buttons">
+            <button class="top-bar-button" onclick="window.location.reload()">
+                <i class="bi bi-arrow-clockwise"></i>
+            </button>
+            <a class="top-bar-button" href="/tools/">
+                <i class="bi bi-house"></i>
+            </a>
+        </div>
+        <div class="input-group top-bar-search-group">
+            <span class="input-group-text top-bar-search-text"><i class="bi bi-search"></i></span>
+            <input type="text" class="form-control top-bar-search" placeholder="Search">
+        </div>
+    </div>
+
+    <div class="text-light-emphasis h2 text-center">
+        <a href="/tools/" class="home-link">
+            <span text-id="0">Tools</span>
+            <i class="bi bi-tools"></i>
+        </a>
+    </div>
+
+    <div class="h3">
+        <i class="bi bi-stopwatch"></i>
+        <span text-id="244">Stopwatch</span>
+    </div>
+
+    <div id="tool-page">
+        <div class="container-fluid text-center">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 ">
+                    <div class="fs-1" id="time">00:00:00.00</div>
+
+                    <button class="btn btn-primary" id="start-pause" current-function="start">
+                        <i class="bi bi-play-fill"></i>
+                    </button>
+
+                    <button class="btn btn-secondary" id="measure">
+                        <i class="bi bi-flag-fill"></i>
+                    </button>
+
+                    <button class="btn btn-secondary" id="reset">
+                        <i class="bi bi-arrow-clockwise"></i>
+                    </button>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/tools/js/topbar.js"></script>
+    <script src="/tools/js/theme.js"></script>
+    <script src="/tools/js/translate.js"></script>
+    <script src="/tools/js/error.js"></script>
+    
+    <script src="/tools/js/modules/bootstrap.bundle.min.js"></script>
+    <script src="/tools/js/modules/moment.js"></script>
+    
+    <script src="/tools/js/stopwatch.js"></script>
+
+    <script>
+        var reg;
+        // Register the service worker
+        if ('serviceWorker' in navigator) {
+            // Wait for the 'load' event to not block other work
+            window.addEventListener('load', async () => {
+                // Try to register the service worker.
+                try {
+                    reg = await navigator.serviceWorker.register('/tools/sw.js');
+                    console.log('Service worker registered! 😎', reg);
+                } catch (err) {
+                    console.log('😥 Service worker registration failed: ', err);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

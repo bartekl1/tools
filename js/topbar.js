@@ -171,6 +171,16 @@ const tools = [
     },
     {
         name: {
+            english: "Stopwatch",
+            polish: "Stoper",
+        },
+        icon: "bi-stopwatch",
+        href: "/tools/stopwatch.html",
+        color: "orange",
+        offline: true,
+    },
+    {
+        name: {
             english: "Random number generator",
             polish: "Generator liczb losowych",
         },

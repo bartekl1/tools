@@ -243,6 +243,7 @@ const textTranslations = [
     "Milisekundy",
     "Dodaj",
     "Odejmij",
+    "Stoper",
 ];
 
 const titleTranslations = {
@@ -270,6 +271,7 @@ const titleTranslations = {
         "Przelicznik współrzędnych geograficznych",
     "World time": "Czas na świecie",
     "Time calculations": "Obliczenia na czasie",
+    Stopwatch: "Stoper",
 };
 
 const placeholdersTranslations = {
