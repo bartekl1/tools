@@ -188,6 +188,8 @@ try {
     }
 }
 
+var package = fse.readJsonSync("package.json");
+
 if (
     configs["google-site-verification"] !== "" &&
     configs["google-site-verification"] !== undefined
@@ -203,5 +205,12 @@ if (
         }
     });
 }
+
+var file = fse.readFileSync("./dist/info.html", "utf-8");
+file = file.replace(
+    '<span id="version"></span>',
+    `<span id="version">${package.version}</span>`
+);
+fse.writeFileSync("./dist/info.html", file, "utf-8");
 
 console.log("\nDone!");
