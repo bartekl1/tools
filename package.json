@@ -33,7 +33,7 @@
     "bugs": {
         "url": "https://github.com/bartekl1/tools/issues"
     },
-    "homepage": "https://github.com/bartekl1/tools#readme",
+    "homepage": "https://bartekl1.github.io/tools/",
     "dependencies": {
         "bootstrap": ">=5.3.2",
         "bootstrap-icons": ">=1.11.1",
