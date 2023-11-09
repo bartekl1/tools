@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>IP</title>
+
+    <meta name="description" content="IP - Website with math and IT tools">
+    <meta name="keywords" content="Tools, Narzędzia, IP">
+    <meta name="author" content="Bartek L">
+
+    <link rel="stylesheet" href="/tools/css/style.css">
+
+    <link rel="stylesheet" href="/tools/css/modules/bootstrap.min.css">
+    <link rel="stylesheet" href="/tools/css/modules/bootstrap-icons/bootstrap-icons.min.css">
+
+    <link rel="manifest" href="/tools/manifest.json">
+
+    <link rel="shortcut icon" href="/tools/img/icons/icon.ico">
+    <link rel="apple-touch-icon" href="/tools/img/icons/icon_x192.png">
+
+    <!-- Standard browsers -->
+    <meta name="theme-color" content="#0d6efd"/>
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#0d6efd">
+
+    <meta name="google-site-verification" content="iVUlsObmmSNWRLIdT7hypTIqcRhdZ8_IYMZGz8CvlPE" />
+</head>
+<body class="px-3 pt-2">
+    <div class="top-bar">
+        <div class="float-start top-bar-buttons">
+            <button class="top-bar-button" onclick="window.location.reload()">
+                <i class="bi bi-arrow-clockwise"></i>
+            </button>
+            <a class="top-bar-button" href="/tools/">
+                <i class="bi bi-house"></i>
+            </a>
+        </div>
+        <div class="input-group top-bar-search-group">
+            <span class="input-group-text top-bar-search-text"><i class="bi bi-search"></i></span>
+            <input type="text" class="form-control top-bar-search" placeholder="Search">
+        </div>
+    </div>
+
+    <div class="text-light-emphasis h2 text-center">
+        <a href="/tools/" class="home-link">
+            <span text-id="0">Tools</span>
+            <i class="bi bi-tools"></i>
+        </a>
+    </div>
+
+    <div class="h3">
+        <i class="bi bi-globe"></i>
+        <span>IP</span>
+    </div>
+
+    <div id="offline" class="alert alert-danger p-0 ps-2 d-none">
+        <div class="float-start fs-1">
+            <i class="bi bi-wifi-off"></i>
+        </div>
+        <div class="float-start ps-3 py-3">
+            <span text-id="21">This tool is not available offline.</span>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+
+    <div id="tool-page">
+        <div class="h4"><span text-id="22">Private IP</span></div>
+
+        <div id="private-ip-loading">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+
+        <div class="alert alert-danger d-none" id="private-ip-blocked">
+            <span text-id="23">Private IP detection is blocked.</span>
+            <div id="private-ip-blocked-chrome" class="mt-1 d-none">
+                <span text-id="24">To unblock it follow this steps:</span>
+                <ol>
+                    <li><span text-id="25">Open</span> <code>chrome://flags/#enable-webrtc-hide-local-ips-with-mdns</code></li>
+                    <li><span text-id="26">At the highlighted option, change <code>Default</code> to <code>Disabled</code>.</span></li>
+                    <li><span text-id="27">Click <code>Relaunch</code>.</span></li>
+                </ol>
+            </div>
+        </div>
+
+        <div id="private-ip-div" class="d-none">
+            <div class="input-group">
+                <span class="input-group-text">
+                    <i class="bi bi-globe"></i>
+                </span>
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="private-ip" placeholder="IP" readonly>
+                    <label for="public-ip">IP</label>
+                </div>
+                <button class="btn btn-outline-primary copy">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="h4 mt-2"><span text-id="28">Public IP</span></div>
+
+        <div id="public-ip-loading">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+
+        <div class="alert alert-danger d-none" id="public-ip-error">
+            <span text-id="29">Failed to check the public IP.</span>
+            <br>
+            <span text-id="30">This may be caused by AdBlock or checking too often.</span>
+        </div>
+
+        <div id="public-ip-div" class="d-none">
+            <div class="input-group mb-1">
+                <span class="input-group-text">
+                    <i class="bi bi-globe"></i>
+                </span>
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="public-ip" placeholder="IP" readonly>
+                    <label for="public-ip">IP</label>
+                </div>
+                <button class="btn btn-outline-primary copy">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+            </div>
+
+            <div class="input-group mb-1">
+                <span class="input-group-text">
+                    <i class="bi bi-building-fill"></i>
+                </span>
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="operator" placeholder="Operator" readonly>
+                    <label for="operator">Operator</label>
+                </div>
+                <button class="btn btn-outline-primary copy">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+            </div>
+
+            <div class="input-group mb-1">
+                <span class="input-group-text">
+                    <i class="bi bi-map"></i>
+                </span>
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="city" placeholder="City" readonly>
+                    <label for="city"><span text-id="31">City</span></label>
+                </div>
+                <button class="btn btn-outline-primary copy">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+            </div>
+
+            <div class="input-group mb-1">
+                <span class="input-group-text">
+                    <i class="bi bi-map"></i>
+                </span>
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="country" placeholder="Country" readonly>
+                    <label for="country"><span text-id="32">Country</span></label>
+                </div>
+                <button class="btn btn-outline-primary copy">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+            </div>
+
+            <div class="input-group mb-1">
+                <span class="input-group-text">
+                    <i class="bi bi-geo-alt-fill"></i>
+                </span>
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="latitude" placeholder="Latitude" readonly>
+                    <label for="latitude"><span text-id="33">Latitude</span></label>
+                </div>
+                <button class="btn btn-outline-primary copy">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+            </div>
+
+            <div class="input-group mb-1">
+                <span class="input-group-text">
+                    <i class="bi bi-geo-alt-fill"></i>
+                </span>
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="longitude" placeholder="Longitude" readonly>
+                    <label for="longitude"><span text-id="34">Longitude</span></label>
+                </div>
+                <button class="btn btn-outline-primary copy">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+            </div>
+
+            <div class="input-group mb-1">
+                <span class="input-group-text">
+                    <i class="bi bi-clock"></i>
+                </span>
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="timezone" placeholder="Timezone" readonly>
+                    <label for="timezone"><span text-id="35">Timezone</span></label>
+                </div>
+                <button class="btn btn-outline-primary copy">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="alert alert-info mt-2">
+            <span text-id="36">The public IP data comes from</span>
+            <a href="https://ipapi.co/" target="_blank" rel="noopener" class="alert-link">ipapi</a>
+        </div>
+    </div>
+
+    <script src="/tools/js/topbar.js"></script>
+    <script src="/tools/js/theme.js"></script>
+    <script src="/tools/js/translate.js"></script>
+    <script src="/tools/js/error.js"></script>
+    <script src="/tools/js/offline.js"></script>
+    
+    <script src="/tools/js/modules/bootstrap.bundle.min.js"></script>
+    
+    <script src="/tools/js/modules/bowser.js"></script>
+
+    <script src="/tools/js/ip.js"></script>
+
+    <script>
+        var reg;
+        // Register the service worker
+        if ('serviceWorker' in navigator) {
+            // Wait for the 'load' event to not block other work
+            window.addEventListener('load', async () => {
+                // Try to register the service worker.
+                try {
+                    reg = await navigator.serviceWorker.register('/tools/sw.js');
+                    console.log('Service worker registered! 😎', reg);
+                } catch (err) {
+                    console.log('😥 Service worker registration failed: ', err);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

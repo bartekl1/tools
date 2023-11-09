@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Unit converter</title>
+
+    <meta name="description" content="Unit converter - Website with math and IT tools">
+    <meta name="keywords" content="Tools, Narzędzia, Unit converter">
+    <meta name="author" content="Bartek L">
+
+    <link rel="stylesheet" href="/tools/css/style.css">
+
+    <link rel="stylesheet" href="/tools/css/modules/bootstrap.min.css">
+    <link rel="stylesheet" href="/tools/css/modules/bootstrap-icons/bootstrap-icons.min.css">
+
+    <link rel="manifest" href="/tools/manifest.json">
+
+    <link rel="shortcut icon" href="/tools/img/icons/icon.ico">
+    <link rel="apple-touch-icon" href="/tools/img/icons/icon_x192.png">
+
+    <!-- Standard browsers -->
+    <meta name="theme-color" content="#0d6efd"/>
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#0d6efd">
+
+    <meta name="google-site-verification" content="iVUlsObmmSNWRLIdT7hypTIqcRhdZ8_IYMZGz8CvlPE" />
+</head>
+<body class="px-3 pt-2">
+    <div class="top-bar">
+        <div class="float-start top-bar-buttons">
+            <button class="top-bar-button" onclick="window.location.reload()">
+                <i class="bi bi-arrow-clockwise"></i>
+            </button>
+            <a class="top-bar-button" href="/tools/">
+                <i class="bi bi-house"></i>
+            </a>
+        </div>
+        <div class="input-group top-bar-search-group">
+            <span class="input-group-text top-bar-search-text"><i class="bi bi-search"></i></span>
+            <input type="text" class="form-control top-bar-search" placeholder="Search">
+        </div>
+    </div>
+
+    <div class="text-light-emphasis h2 text-center">
+        <a href="/tools/" class="home-link">
+            <span text-id="0">Tools</span>
+            <i class="bi bi-tools"></i>
+        </a>
+    </div>
+
+    <div class="h3">
+        <i class="bi bi-arrow-repeat"></i>
+        <span text-id="8">Unit converter</span>
+    </div>
+
+    <div id="tool-page">
+        <ul class="nav nav-pills mb-3" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#length" type="button" role="tab">
+                    <span text-id="74">Length</span>
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#weight" type="button" role="tab">
+                    <span text-id="75">Weight</span>
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#time" type="button" role="tab">
+                    <span text-id="76">Time</span>
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#temperature" type="button" role="tab">
+                    <span text-id="77">Temperature</span>
+                </button>
+            </li>
+        </ul>
+        <div>
+            <div class="form-floating mb-2">
+                <input type="number" class="form-control" id="decimals-count" value="2">
+                <label for="decimals-count" text-id="171">Decimals count</label>
+            </div>
+        </div>
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="length" role="tabpanel" tabindex="0">
+                <div class="d-flex">
+                    <input type="number" step="any" class="form-control" id="length-input">
+                    <select id="length-unit" class="form-select w-50 ms-2">
+                        <option value="meter" text-id="98">meter [m]</option>
+                        <option value="kilometer" text-id="99">kilometer [km]</option>
+                        <option value="decimeter" text-id="100">decimeter [dm]</option>
+                        <option value="centimeter" text-id="101">centimeter [cm]</option>
+                        <option value="millimeter" text-id="102">millimeter [mm]</option>
+                        <option value="micrometer" text-id="103">micrometer [µm]</option>
+                        <option value="angstrom" text-id="104">angstrom [Å]</option>
+                        <option value="inch" text-id="105">inch ["]</option>
+                        <option value="foot" text-id="106">foot [ft]</option>
+                        <option value="yard" text-id="107">yard [yd]</option>
+                        <option value="land-mile" text-id="108">land mile [mi]</option>
+                        <option value="nautical-mile" text-id="109">nautical mile [nmi]</option>
+                        <option value="astronomical-unit" text-id="110">astronomical unit [au]</option>
+                        <option value="light-year" text-id="111">light-year [ly]</option>
+                        <option value="parsec" text-id="112">parsec [pc]</option>
+                    </select>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">
+                                    <span text-id="78">Name</span>
+                                </th>
+                                <th scope="col">
+                                    <span text-id="79">Symbol</span>
+                                </th>
+                                <th scope="col">
+                                    <span text-id="80">Value</span>
+                                </th>
+                                <th scope="col">
+                                    <span text-id="81">Copy</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td text-id="82">meter</td>
+                                <td>m</td>
+                                <td id="length-meter" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="83">kilometer</td>
+                                <td>km</td>
+                                <td id="length-kilometer" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="84">decimeter</td>
+                                <td>dm</td>
+                                <td id="length-decimeter" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="85">centimeter</td>
+                                <td>cm</td>
+                                <td id="length-centimeter" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="86">millimeter</td>
+                                <td>mm</td>
+                                <td id="length-millimeter" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="87">micrometer = micron</td>
+                                <td>µm = µ</td>
+                                <td id="length-micrometer" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="88">angstrom</td>
+                                <td>Å</td>
+                                <td id="length-angstrom" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="89">inch</td>
+                                <td>"</td>
+                                <td id="length-inch" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="90">foot</td>
+                                <td>ft</td>
+                                <td id="length-foot" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="91">yard</td>
+                                <td>yd</td>
+                                <td id="length-yard" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="92">land mile</td>
+                                <td>mi</td>
+                                <td id="length-land-mile" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="93">nautical mile</td>
+                                <td>nmi</td>
+                                <td id="length-nautical-mile" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="94">astronomical unit</td>
+                                <td>au</td>
+                                <td id="length-astronomical-unit" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="95">light-year</td>
+                                <td>ly</td>
+                                <td id="length-light-year" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="96">parsec</td>
+                                <td>pc</td>
+                                <td id="length-parsec" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="weight" role="tabpanel" tabindex="0">
+                <div class="d-flex">
+                    <input type="number" step="any" class="form-control" id="weight-input">
+                    <select id="weight-unit" class="form-select w-50 ms-2">
+                        <option value="kilogram" text-id="113">kilogram [kg]</option>
+                        <option value="decagram" text-id="114">decagram [dag]</option>
+                        <option value="gram" text-id="115">gram [g]</option>
+                        <option value="pound" text-id="116">pound [lb]</option>
+                        <option value="ounce" text-id="117">ounce [oz]</option>
+                        <option value="carat" text-id="118">carat [ct]</option>
+                        <option value="grain" text-id="119">grain [gr]</option>
+                        <option value="hundredweight-us" text-id="120">hundredweight US [cwt]</option>
+                        <option value="hundredweight-uk" text-id="121">hundredweight UK [cwtUK]</option>
+                        <option value="ton-us" text-id="122">ton US [tonUS]</option>
+                        <option value="ton-uk" text-id="123">ton UK [tonUK]</option>
+                        <option value="ton" text-id="124">ton [t]</option>
+                    </select>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">
+                                    <span text-id="78">Name</span>
+                                </th>
+                                <th scope="col">
+                                    <span text-id="79">Symbol</span>
+                                </th>
+                                <th scope="col">
+                                    <span text-id="80">Value</span>
+                                </th>
+                                <th scope="col">
+                                    <span text-id="81">Copy</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td text-id="125">kilogram</td>
+                                <td>kg</td>
+                                <td id="weight-kilogram" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="126">decagram</td>
+                                <td>dag</td>
+                                <td id="weight-decagram" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="127">gram</td>
+                                <td>g</td>
+                                <td id="weight-gram" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="128">pound</td>
+                                <td>lb</td>
+                                <td id="weight-pound" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="129">ounce</td>
+                                <td>oz</td>
+                                <td id="weight-ounce" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="130">carat</td>
+                                <td>ct</td>
+                                <td id="weight-carat" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="131">grain</td>
+                                <td>gr</td>
+                                <td id="weight-grain" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="132">hundredweight US</td>
+                                <td>cwt</td>
+                                <td id="weight-hundredweight-us" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="133">hundredweight UK</td>
+                                <td>cwtUK</td>
+                                <td id="weight-hundredweight-uk" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="134">ton US</td>
+                                <td>tonUS</td>
+                                <td id="weight-ton-us" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="135">ton UK</td>
+                                <td>tonUK</td>
+                                <td id="weight-ton-uk" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="136">ton</td>
+                                <td>t</td>
+                                <td id="weight-ton" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="time" role="tabpanel" tabindex="0">
+                <div class="d-flex">
+                    <input type="number" step="any" class="form-control" id="time-input">
+                    <select id="time-unit" class="form-select w-50 ms-2">
+                        <option value="second" text-id="137">second [s]</option>
+                        <option value="minute" text-id="138">minute [min]</option>
+                        <option value="hour" text-id="139">hour [h]</option>
+                        <option value="day" text-id="140">day [d]</option>
+                        <option value="week" text-id="141">week</option>
+                        <!-- <option value="month" text-id="142">month</option> -->
+                        <option value="year" text-id="143">year</option>
+                        <option value="nanosecond" text-id="144">nanosecond [ns]</option>
+                        <option value="microsecond" text-id="145">microsecond [µs]</option>
+                        <option value="millisecond" text-id="146">millisecond [ms]</option>
+                        <option value="quarter" text-id="147">quarter</option>
+                        <option value="decade" text-id="148">decade</option>
+                        <option value="age" text-id="149">age</option>
+                        <option value="millennium" text-id="150">millennium</option>
+                    </select>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">
+                                    <span text-id="78">Name</span>
+                                </th>
+                                <th scope="col">
+                                    <span text-id="79">Symbol</span>
+                                </th>
+                                <th scope="col">
+                                    <span text-id="80">Value</span>
+                                </th>
+                                <th scope="col">
+                                    <span text-id="81">Copy</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td text-id="151">second</td>
+                                <td>s</td>
+                                <td id="time-second" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="152">minute</td>
+                                <td>min</td>
+                                <td id="time-minute" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="153">hour</td>
+                                <td>h</td>
+                                <td id="time-hour" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="154">day</td>
+                                <td>d</td>
+                                <td id="time-day" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="155">week</td>
+                                <td></td>
+                                <td id="time-week" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <!-- <tr>
+                                <td text-id="156">month</td>
+                                <td></td>
+                                <td id="time-month" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr> -->
+                            <tr>
+                                <td text-id="157">year</td>
+                                <td></td>
+                                <td id="time-year" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="158">nanosecond</td>
+                                <td>ns</td>
+                                <td id="time-nanosecond" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="159">microsecond</td>
+                                <td>µs</td>
+                                <td id="time-microsecond" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="160">millisecond</td>
+                                <td>ms</td>
+                                <td id="time-millisecond" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="161">quarter</td>
+                                <td></td>
+                                <td id="time-quarter" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="162">decade</td>
+                                <td></td>
+                                <td id="time-decade" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="163">age</td>
+                                <td></td>
+                                <td id="time-age" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="164">millennium</td>
+                                <td></td>
+                                <td id="time-millennium" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="temperature" role="tabpanel" tabindex="0">
+                <div class="d-flex">
+                    <input type="number" step="any" class="form-control" id="temperature-input">
+                    <select id="temperature-unit" class="form-select w-50 ms-2">
+                        <option value="kelvin" text-id="165">kelvin [K]</option>
+                        <option value="celsius" text-id="166">degree Celsius [℃]</option>
+                        <option value="fahrenheit" text-id="167">degree Fahrenheit [℉]</option>
+                    </select>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">
+                                    <span text-id="78">Name</span>
+                                </th>
+                                <th scope="col">
+                                    <span text-id="79">Symbol</span>
+                                </th>
+                                <th scope="col">
+                                    <span text-id="80">Value</span>
+                                </th>
+                                <th scope="col">
+                                    <span text-id="81">Copy</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td text-id="168">kelvin</td>
+                                <td>K</td>
+                                <td id="temperature-kelvin" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="169">degree Celsius</td>
+                                <td>℃</td>
+                                <td id="temperature-celsius" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="170">degree Fahrenheit</td>
+                                <td>℉</td>
+                                <td id="temperature-fahrenheit" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/tools/js/topbar.js"></script>
+    <script src="/tools/js/theme.js"></script>
+    <script src="/tools/js/translate.js"></script>
+    <script src="/tools/js/error.js"></script>
+    
+    <script src="/tools/js/modules/bootstrap.bundle.min.js"></script>
+    
+    <script src="/tools/js/unit_converter.js"></script>
+
+    <script>
+        var reg;
+        // Register the service worker
+        if ('serviceWorker' in navigator) {
+            // Wait for the 'load' event to not block other work
+            window.addEventListener('load', async () => {
+                // Try to register the service worker.
+                try {
+                    reg = await navigator.serviceWorker.register('/tools/sw.js');
+                    console.log('Service worker registered! 😎', reg);
+                } catch (err) {
+                    console.log('😥 Service worker registration failed: ', err);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

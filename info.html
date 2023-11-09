@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Information</title>
+
+    <meta name="description" content="Information - Website with math and IT tools">
+    <meta name="keywords" content="Tools, Narzędzia">
+    <meta name="author" content="Bartek L">
+
+    <link rel="stylesheet" href="/tools/css/style.css">
+
+    <link rel="stylesheet" href="/tools/css/modules/bootstrap.min.css">
+    <link rel="stylesheet" href="/tools/css/modules/bootstrap-icons/bootstrap-icons.min.css">
+
+    <link rel="manifest" href="/tools/manifest.json">
+
+    <link rel="shortcut icon" href="/tools/img/icons/icon.ico">
+    <link rel="apple-touch-icon" href="/tools/img/icons/icon_x192.png">
+
+    <!-- Standard browsers -->
+    <meta name="theme-color" content="#0d6efd"/>
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#0d6efd">
+
+    <meta name="google-site-verification" content="iVUlsObmmSNWRLIdT7hypTIqcRhdZ8_IYMZGz8CvlPE" />
+</head>
+<body class="px-3 pt-2">
+    <div class="top-bar">
+        <div class="float-start top-bar-buttons">
+            <button class="top-bar-button" onclick="window.location.reload()">
+                <i class="bi bi-arrow-clockwise"></i>
+            </button>
+            <a class="top-bar-button" href="/tools/">
+                <i class="bi bi-house"></i>
+            </a>
+        </div>
+        <div class="input-group top-bar-search-group">
+            <span class="input-group-text top-bar-search-text"><i class="bi bi-search"></i></span>
+            <input type="text" class="form-control top-bar-search" placeholder="Search">
+        </div>
+    </div>
+
+    <div class="text-light-emphasis h2 text-center">
+        <a href="/tools/" class="home-link">
+            <span text-id="0">Tools</span>
+            <i class="bi bi-tools"></i>
+        </a>
+    </div>
+
+    <div class="h3">
+        <i class="bi bi-info-circle"></i>
+        <span text-id="5">Information</span>
+    </div>
+
+    <ul class="nav nav-pills mb-3" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#info-general" type="button" role="tab">
+                <i class="bi bi-info-circle"></i>
+                <span text-id="13">General</span>
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#info-changelog" type="button" role="tab">
+                <i class="bi bi-list-ol"></i>
+                <span text-id="14">Changelog</span>
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#info-acknowledgements" type="button" role="tab">
+                <i class="bi bi-gift-fill"></i>
+                <span text-id="15">Acknowledgements</span>
+            </button>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane fade show active" id="info-general" role="tabpanel" tabindex="0">
+            <div class="fs-4 fw-medium">
+                <span text-id="0">Tools</span>
+            </div>
+            <div class="fs-6">
+                <span text-id="1" class="fw-medium">Version</span>:
+                <span id="version">1.1</span>
+            </div>
+            <div class="fs-6">
+                <span text-id="2" class="fw-medium">Author</span>:
+                <span id="author">Bartek L</span>
+                <a href="https://github.com/bartekl1" target="_blank" rel="noopener" class="btn btn-dark btn-sm ms-1">
+                    <i class="bi bi-github"></i>
+                    <span text-id="3">GitHub profile</span>
+                </a>
+            </div>
+            <div class="mt-1">
+                <a href="https://github.com/bartekl1/tools" target="_blank" rel="noopener" class="btn btn-secondary btn-sm mb-1">
+                    <i class="bi bi-github"></i>
+                    <span text-id="4">GitHub repository</span>
+                </a>
+            </div>
+            <div class="mt-1">
+                <a href="https://github.com/bartekl1/tools/issues/new?assignees=&labels=bug&projects=&template=%F0%9F%A6%9F-bug-report.md&title=" target="_blank" rel="noopener" class="btn btn-secondary btn-sm mb-1">
+                    <i class="bi bi-bug-fill"></i>
+                    <span text-id="37">Report bug</span>
+                </a>
+                <a href="https://github.com/bartekl1/tools/issues/new?assignees=&labels=enhancement&projects=&template=%F0%9F%93%A2-feature-request.md&title=" target="_blank" rel="noopener" class="btn btn-secondary btn-sm mb-1">
+                    <i class="bi bi-megaphone-fill"></i>
+                    <span text-id="38">Request new feature</span>
+                </a>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="info-changelog" role="tabpanel" tabindex="0">
+            <div class="d-flex justify-content-center">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="info-acknowledgements" role="tabpanel" tabindex="0">
+            <div class="d-flex justify-content-center">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/tools/js/topbar.js"></script>
+    <script src="/tools/js/theme.js"></script>
+    <script src="/tools/js/translate.js"></script>
+    <script src="/tools/js/error.js"></script>
+    
+    <script src="/tools/js/modules/bootstrap.bundle.min.js"></script>
+    
+    <script src="/tools/js/modules/showdown.min.js"></script>
+
+    <script src="/tools/js/info.js"></script>
+
+    <script>
+        var reg;
+        // Register the service worker
+        if ('serviceWorker' in navigator) {
+            // Wait for the 'load' event to not block other work
+            window.addEventListener('load', async () => {
+                // Try to register the service worker.
+                try {
+                    reg = await navigator.serviceWorker.register('/tools/sw.js');
+                    console.log('Service worker registered! 😎', reg);
+                } catch (err) {
+                    console.log('😥 Service worker registration failed: ', err);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

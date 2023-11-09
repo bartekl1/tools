@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Resistor bar codes</title>
+
+    <meta name="description" content="Resistor bar codes - Website with math and IT tools">
+    <meta name="keywords" content="Tools, Narzędzia, Resistor bar codes">
+    <meta name="author" content="Bartek L">
+
+    <link rel="stylesheet" href="/tools/css/style.css">
+
+    <link rel="stylesheet" href="/tools/css/modules/bootstrap.min.css">
+    <link rel="stylesheet" href="/tools/css/modules/bootstrap-icons/bootstrap-icons.min.css">
+
+    <link rel="manifest" href="/tools/manifest.json">
+
+    <link rel="shortcut icon" href="/tools/img/icons/icon.ico">
+    <link rel="apple-touch-icon" href="/tools/img/icons/icon_x192.png">
+
+    <!-- Standard browsers -->
+    <meta name="theme-color" content="#0d6efd"/>
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#0d6efd">
+
+    <meta name="google-site-verification" content="iVUlsObmmSNWRLIdT7hypTIqcRhdZ8_IYMZGz8CvlPE" />
+</head>
+<body class="px-3 pt-2">
+    <div class="top-bar">
+        <div class="float-start top-bar-buttons">
+            <button class="top-bar-button" onclick="window.location.reload()">
+                <i class="bi bi-arrow-clockwise"></i>
+            </button>
+            <a class="top-bar-button" href="/tools/">
+                <i class="bi bi-house"></i>
+            </a>
+        </div>
+        <div class="input-group top-bar-search-group">
+            <span class="input-group-text top-bar-search-text"><i class="bi bi-search"></i></span>
+            <input type="text" class="form-control top-bar-search" placeholder="Search">
+        </div>
+    </div>
+
+    <div class="text-light-emphasis h2 text-center">
+        <a href="/tools/" class="home-link">
+            <span text-id="0">Tools</span>
+            <i class="bi bi-tools"></i>
+        </a>
+    </div>
+
+    <div class="h3">
+        <i class="bi bi-plug-fill"></i>
+        <span text-id="178">Resistor bar codes</span>
+    </div>
+
+    <div id="tool-page">
+        <div id="resistor-div"></div>
+
+        <div class="form-floating mt-3">
+            <select class="form-select" id="bars-number">
+                <option value="4" selected>4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+            </select>
+            <label for="bars-number" text-id="179">Number of bars</label>
+        </div>
+
+        <div>
+            <div class="form-floating mt-2">
+                <select class="form-select" id="first-digit-select">
+                    <option value="0" text-id="180" selected>Black (0)</option>
+                    <option value="1" text-id="181">Brown (1)</option>
+                    <option value="2" text-id="182">Red (2)</option>
+                    <option value="3" text-id="183">Orange (3)</option>
+                    <option value="4" text-id="184">Yellow (4)</option>
+                    <option value="5" text-id="185">Green (5)</option>
+                    <option value="6" text-id="186">Blue (6)</option>
+                    <option value="7" text-id="187">Violet (7)</option>
+                    <option value="8" text-id="188">Gray (8)</option>
+                    <option value="9" text-id="189">White (9)</option>
+                </select>
+                <label for="first-digit-select" text-id="190">First digit</label>
+            </div>
+
+            <div class="form-floating mt-2">
+                <select class="form-select" id="second-digit-select">
+                    <option value="0" text-id="180" selected>Black (0)</option>
+                    <option value="1" text-id="181">Brown (1)</option>
+                    <option value="2" text-id="182">Red (2)</option>
+                    <option value="3" text-id="183">Orange (3)</option>
+                    <option value="4" text-id="184">Yellow (4)</option>
+                    <option value="5" text-id="185">Green (5)</option>
+                    <option value="6" text-id="186">Blue (6)</option>
+                    <option value="7" text-id="187">Violet (7)</option>
+                    <option value="8" text-id="188">Gray (8)</option>
+                    <option value="9" text-id="189">White (9)</option>
+                </select>
+                <label for="second-digit-select" text-id="191">Second digit</label>
+            </div>
+
+            <div class="form-floating mt-2 d-none" id="third-digit-div">
+                <select class="form-select" id="third-digit-select">
+                    <option value="0" text-id="180" selected>Black (0)</option>
+                    <option value="1" text-id="181">Brown (1)</option>
+                    <option value="2" text-id="182">Red (2)</option>
+                    <option value="3" text-id="183">Orange (3)</option>
+                    <option value="4" text-id="184">Yellow (4)</option>
+                    <option value="5" text-id="185">Green (5)</option>
+                    <option value="6" text-id="186">Blue (6)</option>
+                    <option value="7" text-id="187">Violet (7)</option>
+                    <option value="8" text-id="188">Gray (8)</option>
+                    <option value="9" text-id="189">White (9)</option>
+                </select>
+                <label for="third-digit-select" text-id="192">Third digit</label>
+            </div>
+
+            <div class="form-floating mt-2">
+                <select class="form-select" id="multiplier-select">
+                    <option value="1" text-id="196" selected>Black (1)</option>
+                    <option value="10" text-id="197">Brown (10)</option>
+                    <option value="100" text-id="198">Red (100)</option>
+                    <option value="1000" text-id="199">Orange (1k)</option>
+                    <option value="10000" text-id="200">Yellow (10k)</option>
+                    <option value="100000" text-id="201">Green (100k)</option>
+                    <option value="1000000" text-id="202">Blue (1M)</option>
+                    <option value="10000000" text-id="203">Violet (10M)</option>
+                    <option value="0.1" text-id="204">Gold (0.1)</option>
+                    <option value="0.01" text-id="205">Silver (0.01)</option>
+                </select>
+                <label for="multiplier-select" text-id="193">Multiplier</label>
+            </div>
+
+            <div class="form-floating mt-2">
+                <select class="form-select" id="tolerance-select">
+                    <option value="1" text-id="206" selected>Brown (&#177;1%)</option>
+                    <option value="2" text-id="207">Red (&#177;2%)</option>
+                    <option value="0.5" text-id="208">Green (&#177;0.5%)</option>
+                    <option value="0.25" text-id="209">Blue (&#177;0.25%)</option>
+                    <option value="0.1" text-id="210">Violet (&#177;0.1%)</option>
+                    <option value="0.05" text-id="211">Gray (&#177;0.05%)</option>
+                    <option value="5" text-id="212">Gold (&#177;5%)</option>
+                    <option value="10" text-id="213">Silver (&#177;10%)</option>
+                </select>
+                <label for="tolerance-select" text-id="194">Tolerance</label>
+            </div>
+
+            <div class="form-floating mt-2 d-none" id="temperature-coefficient-div">
+                <select class="form-select" id="temperature-coefficient-select">
+                    <option value="250" text-id="214" selected>Black (250 ppm/K)</option>
+                    <option value="100" text-id="215">Brown (100 ppm/K)</option>
+                    <option value="50" text-id="216">Red (50 ppm/K)</option>
+                    <option value="25" text-id="217">Yellow (25 ppm/K)</option>
+                    <option value="20" text-id="218">Green (20 ppm/K)</option>
+                    <option value="10" text-id="219">Blue (10 ppm/K)</option>
+                    <option value="5" text-id="220">Violet (5 ppm/K)</option>
+                    <option value="1" text-id="221">Gray (1 ppm/K)</option>
+                </select>
+                <label for="temperature-coefficient-select" text-id="195">Temperature coefficient</label>
+            </div>
+        </div>
+
+        <div>
+            <div class="form-floating mt-4">
+                <input type="number" class="form-control" id="resistance-output" placeholder="Resistance">
+                <label for="resistance-output" text-id="222">Resistance</label>
+            </div>
+
+            <div class="form-floating mt-2">
+                <input type="number" class="form-control" id="tolerance-output" placeholder="Tolerance">
+                <label for="tolerance-output" text-id="194">Tolerance</label>
+            </div>
+
+            <div class="form-floating mt-2 d-none" id="temperature-coefficient-output-div">
+                <input type="number" class="form-control" id="temperature-coefficient-output" placeholder="Temperature coefficient">
+                <label for="temperature-coefficient-output" text-id="195">Temperature coefficient</label>
+            </div>
+        </div>
+    </div>
+
+    <script src="/tools/js/topbar.js"></script>
+    <script src="/tools/js/theme.js"></script>
+    <script src="/tools/js/translate.js"></script>
+    <script src="/tools/js/error.js"></script>
+    
+    <script src="/tools/js/resistor.js"></script>
+
+    <script>
+        var reg;
+        // Register the service worker
+        if ('serviceWorker' in navigator) {
+            // Wait for the 'load' event to not block other work
+            window.addEventListener('load', async () => {
+                // Try to register the service worker.
+                try {
+                    reg = await navigator.serviceWorker.register('/tools/sw.js');
+                    console.log('Service worker registered! 😎', reg);
+                } catch (err) {
+                    console.log('😥 Service worker registration failed: ', err);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

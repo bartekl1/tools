@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Calculator</title>
+
+    <meta name="description" content="Calculator - Website with math and IT tools">
+    <meta name="keywords" content="Tools, Narzędzia, Calculator">
+    <meta name="author" content="Bartek L">
+
+    <link rel="stylesheet" href="/tools/css/style.css">
+
+    <link rel="stylesheet" href="/tools/css/modules/bootstrap.min.css">
+    <link rel="stylesheet" href="/tools/css/modules/bootstrap-icons/bootstrap-icons.min.css">
+
+    <link rel="manifest" href="/tools/manifest.json">
+
+    <link rel="shortcut icon" href="/tools/img/icons/icon.ico">
+    <link rel="apple-touch-icon" href="/tools/img/icons/icon_x192.png">
+
+    <!-- Standard browsers -->
+    <meta name="theme-color" content="#0d6efd"/>
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#0d6efd">
+
+    <meta name="google-site-verification" content="iVUlsObmmSNWRLIdT7hypTIqcRhdZ8_IYMZGz8CvlPE" />
+</head>
+<body class="px-3 pt-2">
+    <div class="top-bar">
+        <div class="float-start top-bar-buttons">
+            <button class="top-bar-button" onclick="window.location.reload()">
+                <i class="bi bi-arrow-clockwise"></i>
+            </button>
+            <a class="top-bar-button" href="/tools/">
+                <i class="bi bi-house"></i>
+            </a>
+        </div>
+        <div class="input-group top-bar-search-group">
+            <span class="input-group-text top-bar-search-text"><i class="bi bi-search"></i></span>
+            <input type="text" class="form-control top-bar-search" placeholder="Search">
+        </div>
+    </div>
+
+    <div class="text-light-emphasis h2 text-center">
+        <a href="/tools/" class="home-link">
+            <span text-id="0">Tools</span>
+            <i class="bi bi-tools"></i>
+        </a>
+    </div>
+
+    <div class="h3">
+        <i class="bi bi-calculator"></i>
+        <span text-id="7">Calculator</span>
+    </div>
+
+    <div id="tool-page">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="calculator-icon">
+                <i class="bi bi-calculator"></i>
+            </span>
+            <div class="form-floating">
+                <select class="form-select" id="calculator-select">
+                    <option value="standard" text-id="17">Standard</option>
+                    <!-- <option value="science" text-id="18">Science</option>
+                    <option value="programmer" text-id="19">Programmer</option> -->
+                </select>
+                <label for="calculator-select" text-id="20">Calculator type</label>
+            </div>
+        </div>
+
+        <div id="standard-calculator">
+            <div class="calc-operation standard-calc"></div>
+            <div class="calc-result standard-calc">0</div>
+            <table>
+                <tr>
+                    <td>
+                        <button class="btn btn-secondary calc-btn standard-calc calc-percent">%</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-secondary calc-btn standard-calc calc-clear">CE</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-secondary calc-btn standard-calc calc-clear-all">C</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-secondary calc-btn standard-calc calc-delete"><i class="bi bi-x-circle"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button class="btn btn-secondary calc-btn standard-calc calc-fraction"><sup>1</sup>/<sub>x</sub></button>
+                    </td>
+                    <td>
+                        <button class="btn btn-secondary calc-btn standard-calc calc-square">x<sup>2</sup></button>
+                    </td>
+                    <td>
+                        <button class="btn btn-secondary calc-btn standard-calc calc-square-root">&#x221a;</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-secondary calc-btn standard-calc calc-basic-operation">&#x00f7;</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button class="btn btn-primary calc-btn standard-calc calc-number">7</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary calc-btn standard-calc calc-number">8</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary calc-btn standard-calc calc-number">9</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-secondary calc-btn standard-calc calc-basic-operation">x</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button class="btn btn-primary calc-btn standard-calc calc-number">4</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary calc-btn standard-calc calc-number">5</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary calc-btn standard-calc calc-number">6</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-secondary calc-btn standard-calc calc-basic-operation">-</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button class="btn btn-primary calc-btn standard-calc calc-number">1</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary calc-btn standard-calc calc-number">2</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary calc-btn standard-calc calc-number">3</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-secondary calc-btn standard-calc calc-basic-operation">+</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button class="btn btn-primary calc-btn standard-calc calc-opposite"><sup>+</sup>/<sub>-</sub></button>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary calc-btn standard-calc calc-number">0</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary calc-btn standard-calc calc-comma">,</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-success calc-btn standard-calc calc-solve">=</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="science-calculator" class="d-none">
+            science
+        </div>
+
+        <div id="programmer-calculator" class="d-none">
+            programmer
+        </div>
+    </div>
+
+    <script src="/tools/js/topbar.js"></script>
+    <script src="/tools/js/theme.js"></script>
+    <script src="/tools/js/translate.js"></script>
+    <script src="/tools/js/error.js"></script>
+    
+    <script src="/tools/js/modules/bootstrap.bundle.min.js"></script>
+    
+    <script src="/tools/js/calculator.js"></script>
+
+    <script>
+        var reg;
+        // Register the service worker
+        if ('serviceWorker' in navigator) {
+            // Wait for the 'load' event to not block other work
+            window.addEventListener('load', async () => {
+                // Try to register the service worker.
+                try {
+                    reg = await navigator.serviceWorker.register('/tools/sw.js');
+                    console.log('Service worker registered! 😎', reg);
+                } catch (err) {
+                    console.log('😥 Service worker registration failed: ', err);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
