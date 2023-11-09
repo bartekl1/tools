@@ -1,4 +1,4 @@
-# Changelog
+# 🕑 Changelog
 
 ## 1.1
 

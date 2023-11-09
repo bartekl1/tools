@@ -1,4 +1,4 @@
-# Rejestr zmian
+# 🕑 Rejestr zmian
 
 ## 1.1
 

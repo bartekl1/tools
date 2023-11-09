@@ -7,10 +7,10 @@ Website with math and IT tools
 ![GitHub watchers](https://img.shields.io/github/watchers/bartekl1/tools?style=flat-square)
 ![GitHub forks](https://img.shields.io/github/forks/bartekl1/tools?style=flat-square)
 
-[🌐Website](https://bartekl1.github.io/tools)
-[🧾Changelog](CHANGELOG.md)
-[🎁Acknowledgements](ACKNOWLEDGEMENTS.md)
-[🇵🇱Polish version of README](README_PL.md)
+[🌐 Website](https://bartekl1.github.io/tools)
+[🕑 Changelog](CHANGELOG.md)
+[🎁 Acknowledgements](ACKNOWLEDGEMENTS.md)
+[🇵🇱 Polish version of README](README_PL.md)
 
 This website is a progressive web app (PWA), so it can be installed and you can use it without internet.
 
