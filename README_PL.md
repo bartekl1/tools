@@ -20,12 +20,18 @@ Ta strona jest progresywna aplikacją webową (PWA), więc może zostać zainsta
 - Kalkulator
 - Przelicznik jednostek
 - Przelicznik liczb rzymskich
+- Przelicznik współrzędnych geograficznych
 
 ### 💻 Informatyczne
 
 - Przelicznik systemów liczbowych
 - IP
 - User agent
+- JSON formatter
+- Markdown renderer
+- LaTeX renderer
+- ASCII
+- Unix timestamp
 
 ### 🔑 Zabezpieczenia
 
@@ -34,12 +40,16 @@ Ta strona jest progresywna aplikacją webową (PWA), więc może zostać zainsta
 
 ### 🕑 Data i czas
 
-- Unix timestamp
+- Czas na świecie
+- Obliczenia na czasie
+- Stoper
 
 ### 📄 Inne
 
 - Generator liczb losowych
 - GPS
+- Generator kodów QR
+- Kody paskowe rezystorów
 
 ## 👨‍💻 Uruchamianie lokalnie
 

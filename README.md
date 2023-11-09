@@ -21,12 +21,18 @@ This website is a progressive web app (PWA), so it can be installed and you can 
 - Calculator
 - Unit converter
 - Roman numeral converter
+- Geographical coordinates converter
 
 ### 💻 IT
 
 - Number system converter
 - IP
 - User agent
+- JSON formatter
+- Markdown renderer
+- LaTeX renderer
+- ASCII
+- Unix timestamp
 
 ### 🔑 Security
 
@@ -35,12 +41,16 @@ This website is a progressive web app (PWA), so it can be installed and you can 
 
 ### 🕑 Date and time
 
-- Unix timestamp
+- World time
+- Time calculations
+- Stopwatch
 
 ### 📄 Other
 
 - Random number generator
 - GPS
+- QR code generator
+- Resistor bar codes
 
 ## 👨‍💻 Running locally
 
