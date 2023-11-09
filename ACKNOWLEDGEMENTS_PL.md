@@ -1,6 +1,8 @@
-# Wykorzystane oprogramowanie
+# 🎁 Podziękowania
 
-## Biblioteki NPM
+## Wykorzystane oprogramowanie
+
+### Biblioteki NPM
 
 - [Bootstrap](https://getbootstrap.com/)
 - [Bootstrap Icons](https://icons.getbootstrap.com/)
@@ -16,11 +18,11 @@
 - [Moment.js](https://momentjs.com/)
 - [Moment Timezone](https://momentjs.com/timezone/)
 
-## Czcionki
+### Czcionki
 
 - [JetBrains Mono](https://www.jetbrains.com/lp/mono/)
 
-## Źródła danych
+### Wykorzystane źródła danych (API, itp.)
 
 - [ipapi](https://ipapi.co/)
 - [Mapy Google](https://maps.google.com/)

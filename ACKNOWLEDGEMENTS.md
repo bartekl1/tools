@@ -1,6 +1,8 @@
-# Used software
+# 🎁 Acknowledgements
 
-## NPM libraries
+## Used software
+
+### NPM libraries
 
 - [Bootstrap](https://getbootstrap.com/)
 - [Bootstrap Icons](https://icons.getbootstrap.com/)
@@ -16,11 +18,11 @@
 - [Moment.js](https://momentjs.com/)
 - [Moment Timezone](https://momentjs.com/timezone/)
 
-## Fonts
+### Fonts
 
 - [JetBrains Mono](https://www.jetbrains.com/lp/mono/)
 
-## Data sources
+### Used data sources (APIs, etc.)
 
 - [ipapi](https://ipapi.co/)
 - [Google Maps](https://maps.google.com/)
