@@ -6,6 +6,7 @@ const ignore = [
     "node_modules",
     "configs.json",
     ".git",
+    ".gitignore",
     ".github",
     "build.js",
     "app.js",
