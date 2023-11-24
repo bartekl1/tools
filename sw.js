@@ -1,4 +1,4 @@
-const version = "1.1";
+const version = "1.2";
 // Choose a cache name
 const cacheNamePrefix = "cache-tools";
 const cacheName = `${cacheNamePrefix}-v${version}`;
