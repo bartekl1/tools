@@ -22,7 +22,7 @@
 
 - [JetBrains Mono](https://www.jetbrains.com/lp/mono/)
 
-### Wykorzystane źródła danych (API, itp.)
+## Wykorzystane źródła danych (API, itp.)
 
 - [ipapi](https://ipapi.co/)
 - [Mapy Google](https://maps.google.com/)
