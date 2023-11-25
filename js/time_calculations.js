@@ -14,9 +14,9 @@ function calcDifference() {
         document.querySelector("#difference-months").value = Math.abs(
             duration.months()
         );
-        document.querySelector("#difference-weeks").value = Math.abs(
-            duration.weeks()
-        );
+        // document.querySelector("#difference-weeks").value = Math.abs(
+        //     duration.weeks()
+        // );
         document.querySelector("#difference-days").value = Math.abs(
             duration.days()
         );
