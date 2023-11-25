@@ -246,6 +246,7 @@ const textTranslations = [
     "Stoper",
     "Czas",
     "Czas trwania",
+    "Geograficzne",
 ];
 
 const titleTranslations = {

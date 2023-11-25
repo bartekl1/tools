@@ -31,16 +31,6 @@ const tools = [
     },
     {
         name: {
-            english: "Geographical coordinates converter",
-            polish: "Przelicznik współrzędnych geograficznych",
-        },
-        icon: "bi-globe-europe-africa",
-        href: "/tools/geographical_coordinates_converter.html",
-        color: "blue",
-        offline: true,
-    },
-    {
-        name: {
             english: "Number system converter",
             polish: "Przelicznik systemów liczbowych",
         },
@@ -181,12 +171,12 @@ const tools = [
     },
     {
         name: {
-            english: "Random number generator",
-            polish: "Generator liczb losowych",
+            english: "Geographical coordinates converter",
+            polish: "Przelicznik współrzędnych geograficznych",
         },
-        icon: "bi-dice-5",
-        href: "/tools/random_numbers.html",
-        color: "gray",
+        icon: "bi-globe-europe-africa",
+        href: "/tools/geographical_coordinates_converter.html",
+        color: "red",
         offline: true,
     },
     {
@@ -196,6 +186,16 @@ const tools = [
         },
         icon: "bi-geo-alt-fill",
         href: "/tools/gps.html",
+        color: "red",
+        offline: true,
+    },
+    {
+        name: {
+            english: "Random number generator",
+            polish: "Generator liczb losowych",
+        },
+        icon: "bi-dice-5",
+        href: "/tools/random_numbers.html",
         color: "gray",
         offline: true,
     },
