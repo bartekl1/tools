@@ -191,21 +191,19 @@ try {
 
 var package = fse.readJsonSync("package.json");
 
-if (
-    configs["google-site-verification"] !== "" &&
-    configs["google-site-verification"] !== undefined
-) {
-    fse.readdirSync("./dist").forEach((e) => {
-        if (e.endsWith(".html")) {
-            var file = fse.readFileSync(`./dist/${e}`, "utf-8");
-            file = file.replace(
-                "<google-site-verification></google-site-verification>",
-                `<meta name="google-site-verification" content="${configs["google-site-verification"]}" />`
-            );
-            fse.writeFileSync(`./dist/${e}`, file, "utf-8");
-        }
-    });
-}
+fse.readdirSync("./dist").forEach((e) => {
+    if (e.endsWith(".html")) {
+        var file = fse.readFileSync(`./dist/${e}`, "utf-8");
+        file = file.replace(
+            '<meta name="google-site-verification">',
+            configs["google-site-verification"] !== "" &&
+                configs["google-site-verification"] !== undefined
+                ? `<meta name="google-site-verification" content="${configs["google-site-verification"]}" />`
+                : ""
+        );
+        fse.writeFileSync(`./dist/${e}`, file, "utf-8");
+    }
+});
 
 var file = fse.readFileSync("./dist/info.html", "utf-8");
 file = file.replace(
