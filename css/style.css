@@ -284,6 +284,8 @@ html[data-bs-theme="dark"] {
     background-color: transparent;
 
     color: #ffffff;
+
+    text-decoration: none;
 }
 
 .top-bar-buttons {
@@ -309,7 +311,7 @@ html[data-bs-theme="dark"] {
     width: 400px !important;
     position: absolute;
     left: 50%;
-    transform: translate(-30%, 0);
+    transform: translate(-40%, 0);
 }
 
 .center {

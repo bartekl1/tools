@@ -352,3 +352,29 @@ addEventListener("keypress", (evt) => {
         document.querySelector(".top-bar-search").focus();
     }
 });
+
+if (navigator.canShare) {
+    document.querySelector("#top-bar-share").addEventListener("click", () => {
+        var name;
+        if (new URL(window.location.href).pathname === "/tools/") {
+            name =
+                window.navigator.language.split("-")[0] == "pl"
+                    ? "Narzędzia"
+                    : "Tools";
+        } else {
+            var title = document.querySelector("title").innerHTML;
+            name =
+                window.navigator.language.split("-")[0] == "pl"
+                    ? `${title} - Narzędzia`
+                    : `${title} - Tools`;
+        }
+        navigator.share({
+            title: name,
+            text:
+                window.navigator.language.split("-")[0] == "pl"
+                    ? "Strona z narzędziami matematycznymi i informatycznymi"
+                    : "Website with math and IT tools",
+            url: window.location.href,
+        });
+    });
+}
