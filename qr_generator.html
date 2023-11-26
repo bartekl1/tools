@@ -99,6 +99,33 @@
         </a>
     </div>
 
+    <button class="btn btn-primary py-2 dropdown-toggle d-flex align-items-center position-fixed bottom-0 end-0 m-2" id="theme-button" type="button" data-bs-toggle="dropdown" data-bs-target="theme-dropdown">
+        
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end shadow" id="theme-dropdown">
+        <li>
+            <button type="button" class="dropdown-item d-flex align-items-center theme-button" theme-value="auto">
+                <i class="bi bi-circle-half me-2 opacity-75"></i>
+                Auto
+                <i class="bi bi-check2 ms-auto d-none"></i>
+            </button>
+        </li>
+        <li>
+            <button type="button" class="dropdown-item d-flex align-items-center theme-button" theme-value="light">
+                <i class="bi bi-sun-fill me-2 opacity-75"></i>
+                <span text-id="248">Light</span>
+                <i class="bi bi-check2 ms-auto d-none"></i>
+            </button>
+        </li>
+        <li>
+            <button type="button" class="dropdown-item d-flex align-items-center theme-button" theme-value="dark">
+                <i class="bi bi-moon-stars-fill me-2 opacity-75"></i>
+                <span text-id="249">Dark</span>
+                <i class="bi bi-check2 ms-auto d-none"></i>
+            </button>
+        </li>
+    </ul>
+
     <script src="/tools/js/topbar.js"></script>
     <script src="/tools/js/translate.js"></script>
     <script src="/tools/js/error.js"></script>

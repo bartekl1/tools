@@ -247,6 +247,8 @@ const textTranslations = [
     "Czas",
     "Czas trwania",
     "Geograficzne",
+    "Jasny",
+    "Ciemny",
 ];
 
 const titleTranslations = {
