@@ -250,6 +250,8 @@ const textTranslations = [
     "Jasny",
     "Ciemny",
     "Kierunek",
+    "Zanim zgłosisz błąd lub zaproponujesz nową funkcję proszę o przeczytanie",
+    "tych informacji",
 ];
 
 const titleTranslations = {
@@ -313,6 +315,11 @@ const alternativeTextTranslations = {};
 
 const elementsTitlesTranslations = {};
 
+const dataBSTranslations = {
+    Website: "Strona internetowa",
+    "GitHub profile": "Profil GitHub",
+};
+
 if (window.navigator.language.split("-")[0] == "pl") {
     document.querySelector("html").lang = "pl";
 
@@ -336,5 +343,12 @@ if (window.navigator.language.split("-")[0] == "pl") {
 
     document.querySelectorAll("[title]").forEach((e) => {
         e.title = elementsTitlesTranslations[e.title];
+    });
+
+    document.querySelectorAll("[data-bs-original-title]").forEach((e) => {
+        e.setAttribute(
+            "data-bs-original-title",
+            dataBSTranslations[e.getAttribute("data-bs-original-title")]
+        );
     });
 }
