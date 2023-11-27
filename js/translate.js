@@ -249,6 +249,7 @@ const textTranslations = [
     "Geograficzne",
     "Jasny",
     "Ciemny",
+    "Kierunek",
 ];
 
 const titleTranslations = {
@@ -305,6 +306,7 @@ const placeholdersTranslations = {
     Height: "Wysokość",
     Width: "Szerokość",
     Resistance: "Opór",
+    Heading: "Kierunek",
 };
 
 const alternativeTextTranslations = {};

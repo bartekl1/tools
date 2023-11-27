@@ -72,6 +72,17 @@ function localize() {
                 .classList.add("d-none");
         }
 
+        if (coords.heading !== null && coords.heading !== NaN) {
+            document.querySelector("#heading").value = coords.heading;
+            document
+                .querySelector(".input-group:has(#heading)")
+                .classList.remove("d-none");
+        } else {
+            document
+                .querySelector(".input-group:has(#heading)")
+                .classList.add("d-none");
+        }
+
         if (coords.latitude !== null && coords.longitude !== null) {
             document.querySelector(
                 "#google-maps"
@@ -92,7 +103,10 @@ function localize() {
         throw new Error(error.message);
     }
 
-    navigator.geolocation.getCurrentPosition(success, error);
+    navigator.geolocation.getCurrentPosition(success, error, {
+        enableHighAccuracy: true,
+        maximumAge: 0,
+    });
 }
 
 if (!navigator.geolocation) {
