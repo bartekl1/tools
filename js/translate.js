@@ -252,6 +252,7 @@ const textTranslations = [
     "Kierunek",
     "Zanim zgłosisz błąd lub zaproponujesz nową funkcję proszę o przeczytanie",
     "tych informacji",
+    "Posortuj",
 ];
 
 const titleTranslations = {

@@ -43,16 +43,19 @@ document.querySelector("#generate").addEventListener("click", () => {
 
     document.querySelector("#numbers").value = "";
 
+    var randomNumbers = [];
+
     for (var i = 0; i < numbers; i++) {
-        if (document.querySelector("#numbers").value !== "") {
-            document.querySelector("#numbers").value += "\n";
-        }
-        document.querySelector("#numbers").value += genRand(
-            minimum,
-            maximum,
-            decimals
-        );
+        randomNumbers.push(genRand(minimum, maximum, decimals));
     }
+
+    if (document.querySelector("#sort").checked) {
+        randomNumbers.sort((a, b) => {
+            return a - b;
+        });
+    }
+
+    document.querySelector("#numbers").value = randomNumbers.join("\n");
 
     document.querySelector("#generating").classList.add("d-none");
     document.querySelector("#generate").classList.remove("d-none");
