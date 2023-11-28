@@ -46,6 +46,7 @@
         "minimist": ">=1.2.8",
         "moment-timezone": ">=0.5.43",
         "qrcode": ">=1.5.3",
+        "random-js": ">=2.1.0",
         "showdown": ">=2.1.0"
     },
     "scripts": {

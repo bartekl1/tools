@@ -158,6 +158,28 @@ fse.copySync("./build/moment.bundle.js", "./js/modules/moment.js", {
     overwrite: true,
 });
 
+console.log("Building random-js and copying files ...");
+
+fse.writeFileSync(
+    "./build/random.js",
+    `const random = require("random-js");
+global.random = random;
+`
+);
+
+execSync(
+    "browserify ./build/random.js -o ./build/random.bundle.js",
+    (err, stdout, stderr) => {
+        if (err) {
+            process.exit();
+        }
+    }
+);
+
+fse.copySync("./build/random.bundle.js", "./js/modules/random.js", {
+    overwrite: true,
+});
+
 console.log("Cleaning up ...");
 
 fse.removeSync("./build", { recursive: true, force: true });

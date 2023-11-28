@@ -1,5 +1,12 @@
+var r = new random.Random();
+
 function genRand(min, max, decimalPlaces) {
-    var rand = Math.random() * (max - min) + min;
+    var rand;
+    if (decimalPlaces > 0) {
+        rand = r.real(min, max, true);
+    } else {
+        rand = r.integer(min, max);
+    }
     var power = Math.pow(10, decimalPlaces);
     return Math.floor(rand * power) / power;
 }
