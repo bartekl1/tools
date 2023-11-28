@@ -45,8 +45,15 @@ document.querySelector("#generate").addEventListener("click", () => {
 
     var randomNumbers = [];
 
-    for (var i = 0; i < numbers; i++) {
-        randomNumbers.push(genRand(minimum, maximum, decimals));
+    while (randomNumbers.length != numbers) {
+        var num = genRand(minimum, maximum, decimals);
+        if (document.querySelector("#unique").checked) {
+            if (!randomNumbers.includes(num)) {
+                randomNumbers.push(num);
+            }
+        } else {
+            randomNumbers.push(num);
+        }
     }
 
     if (document.querySelector("#sort").checked) {
