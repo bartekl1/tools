@@ -17,6 +17,7 @@
 - [qrcode](https://github.com/soldair/node-qrcode)
 - [Moment.js](https://momentjs.com/)
 - [Moment Timezone](https://momentjs.com/timezone/)
+- [random-js](https://github.com/ckknight/random-js)
 
 ### Fonts
 
