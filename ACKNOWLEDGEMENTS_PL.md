@@ -19,6 +19,9 @@
 - [Moment Timezone](https://momentjs.com/timezone/)
 - [random-js](https://github.com/ckknight/random-js)
 
+Lista wszystkich bibliotek łącznie z ich zależnościami dostępna jest
+[tutaj](https://github.com/bartekl1/tools/network/dependencies).
+
 ### Czcionki
 
 - [JetBrains Mono](https://www.jetbrains.com/lp/mono/)
