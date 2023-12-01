@@ -525,3 +525,7 @@ td.value {
     max-width: 100%;
     height: unset !important;
 }
+
+.font-size-22px {
+    font-size: 22px;
+}
