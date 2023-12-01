@@ -180,6 +180,28 @@ fse.copySync("./build/random.bundle.js", "./js/modules/random.js", {
     overwrite: true,
 });
 
+console.log("Building csv and copying files ...");
+
+fse.writeFileSync(
+    "./build/csv.js",
+    `const csv = require("csv");
+global.csv = csv;
+`
+);
+
+execSync(
+    "browserify ./build/csv.js -o ./build/csv.bundle.js",
+    (err, stdout, stderr) => {
+        if (err) {
+            process.exit();
+        }
+    }
+);
+
+fse.copySync("./build/csv.bundle.js", "./js/modules/csv.js", {
+    overwrite: true,
+});
+
 console.log("Cleaning up ...");
 
 fse.removeSync("./build", { recursive: true, force: true });

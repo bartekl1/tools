@@ -488,7 +488,8 @@ select#custom-time-timezone {
 
 input#local-timezone,
 input#utc-timezone,
-select#custom-timezone {
+select#custom-timezone,
+select#custom-timezone-country {
     max-width: 523px;
 }
 

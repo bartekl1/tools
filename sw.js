@@ -99,6 +99,9 @@ const precacheResources = [
     "/tools/js/modules/latex/fonts/Typewriter%20Slanted/cmun-typewriter-slanted.css",
     "/tools/js/modules/latex/fonts/Serif/cmunrm.woff",
     "/tools/js/modules/qrcode.js",
+    "/tools/js/modules/random.js",
+    "/tools/js/modules/csv.js",
+    "/tools/db/countries.csv",
 ];
 
 // When the service worker is installing, open the cache and add the precache resources to it
