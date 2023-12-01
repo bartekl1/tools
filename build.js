@@ -249,6 +249,28 @@ fse.readdirSync("./dist").forEach((e) => {
     }
 });
 
+fse.readdirSync("./dist").forEach((e) => {
+    if (e.endsWith(".html")) {
+        var file = fse.readFileSync(`./dist/${e}`, "utf-8");
+        file = file.replace(
+            '<meta name="google-analytics">',
+            configs["google-analytics"] !== "" &&
+                configs["google-analytics"] !== undefined
+                ? `<!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=${configs["google-analytics"]}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', '${configs["google-analytics"]}');
+    </script>`
+                : ""
+        );
+        fse.writeFileSync(`./dist/${e}`, file, "utf-8");
+    }
+});
+
 var file = fse.readFileSync("./dist/info.html", "utf-8");
 file = file.replace(
     '<span id="version"></span>',
