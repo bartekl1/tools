@@ -267,6 +267,35 @@ fse.readdirSync("./dist").forEach((e) => {
     </script>`
                 : ""
         );
+
+        file = file.replace(
+            '<div id="cookies-info"></div>',
+            configs["google-analytics"] !== "" &&
+                configs["google-analytics"] !== undefined
+                ? `<div id="cookies-info" class="d-flex d-none position-fixed bottom-0 start-0 w-100 bg-body-secondary px-3 py-1">
+        <div class="cookie-icon">
+            <i class="bi bi-cookie"></i>
+        </div>
+        <div class="fs-5 ms-3 my-3">
+            <div text-id="255">Website uses cookies for statistical purposes.</div>
+            <!-- <div text-id="256">If you do not agree to their use, withdraw the website's permission to use them in your browser settings or use the tracking script blocker.</div> -->
+        </div>
+        <button type="button" class="btn-close my-3 me-1 m-auto" id="accept-cookies"></button>
+    </div>
+
+    <script>
+        if (localStorage.getItem('cookies-accepted') !== 'true') {
+            document.querySelector('#cookies-info').classList.remove('d-none');
+        }
+
+        document.querySelector('#accept-cookies').addEventListener('click', () => {
+            document.querySelector('#cookies-info').classList.add('d-none');
+            localStorage.setItem('cookies-accepted', 'true');
+        })
+    </script>`
+                : ""
+        );
+        
         fse.writeFileSync(`./dist/${e}`, file, "utf-8");
     }
 });

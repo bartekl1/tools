@@ -530,6 +530,10 @@ td.value {
     font-size: 22px;
 }
 
+#cookies-info {
+    z-index: 100;
+}
+
 .cookie-icon {
     font-size: 70px;
     color: sandybrown;
