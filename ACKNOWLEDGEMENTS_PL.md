@@ -18,6 +18,7 @@
 - [Moment.js](https://momentjs.com/)
 - [Moment Timezone](https://momentjs.com/timezone/)
 - [random-js](https://github.com/ckknight/random-js)
+- [csv](https://github.com/adaltas/node-csv)
 
 Lista wszystkich bibliotek łącznie z ich zależnościami dostępna jest
 [tutaj](https://github.com/bartekl1/tools/network/dependencies).
@@ -26,7 +27,13 @@ Lista wszystkich bibliotek łącznie z ich zależnościami dostępna jest
 
 - [JetBrains Mono](https://www.jetbrains.com/lp/mono/)
 
-## Wykorzystane źródła danych (API, itp.)
+## Wykorzystane źródła danych
+
+### API, itp.
 
 - [ipapi](https://ipapi.co/)
 - [Mapy Google](https://maps.google.com/)
+
+### Bazy danych
+
+- [List of all countries with their 2 digit codes (ISO 3166-1)](https://datahub.io/core/country-list)
