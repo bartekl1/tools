@@ -254,6 +254,8 @@ const textTranslations = [
     "tych informacji",
     "Posortuj",
     "Unikatowe",
+    "Strona wykorzystuje pliki cookies do celów statystycznych.",
+    "Jeśli nie wyrażasz zgody na ich użycie, wycofaj stronie uprawnienia na ich użycie w ustawieniach przeglądarki lub skorzystaj z blokady skryptów śledzących.",
 ];
 
 const titleTranslations = {
