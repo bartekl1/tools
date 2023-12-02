@@ -68,6 +68,7 @@
     <div id="tool-page">
         <select id="category" class="form-select mb-2">
             <option value="length" text-id="74">Length</option>
+            <option value="area" text-id="257">Area</option>
             <option value="weight" text-id="75">Weight</option>
             <option value="time" text-id="76">Time</option>
             <option value="temperature" text-id="77">Temperature</option>
@@ -266,6 +267,157 @@
                                 <td text-id="96">parsec</td>
                                 <td>pc</td>
                                 <td id="length-parsec" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="category-tab" id="area">
+                <div class="d-flex">
+                    <input type="number" step="any" class="form-control" id="area-input">
+                    <select id="area-unit" class="form-select w-50 ms-2">
+                        <option value="square-meter" text-id="258">square meter [m&#178;]</option>
+                        <option value="square-kilometer" text-id="259">square kilometer [km&#178;]</option>
+                        <option value="square-decimeter" text-id="260">square decimeter [dm&#178;]</option>
+                        <option value="square-centimeter" text-id="261">square centimeter [cm&#178;]</option>
+                        <option value="square-millimeter" text-id="262">square millimeter [mm&#178;]</option>
+                        <option value="are" text-id="263">are [a]</option>
+                        <option value="hectare" text-id="264">hectare [ha]</option>
+                        <option value="acre" text-id="265">acre [ac]</option>
+                        <option value="square-inch" text-id="266">square inch [in&#178;]</option>
+                        <option value="square-foot" text-id="267">square foot [ft&#178;]</option>
+                        <option value="square-yard" text-id="268">square yard [yd&#178;]</option>
+                    </select>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">
+                                    <span text-id="78">Name</span>
+                                </th>
+                                <th scope="col">
+                                    <span text-id="79">Symbol</span>
+                                </th>
+                                <th scope="col">
+                                    <span text-id="80">Value</span>
+                                </th>
+                                <th scope="col">
+                                    <span text-id="81">Copy</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td text-id="269">square meter</td>
+                                <td>m&#178;</td>
+                                <td id="area-square-meter" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="270">square kilometer</td>
+                                <td>km&#178;</td>
+                                <td id="area-square-kilometer" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="271">square decimeter</td>
+                                <td>dm&#178;</td>
+                                <td id="area-square-decimeter" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="272">square centimeter</td>
+                                <td>cm&#178;</td>
+                                <td id="area-square-centimeter" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="273">square millimeter</td>
+                                <td>mm&#178;</td>
+                                <td id="area-square-millimeter" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="274">are</td>
+                                <td>a</td>
+                                <td id="area-are" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="275">hectare</td>
+                                <td>ha</td>
+                                <td id="area-hectare" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="276">acre</td>
+                                <td>ac</td>
+                                <td id="area-acre" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="277">square inch</td>
+                                <td>in&#178;</td>
+                                <td id="area-square-inch" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="278">square foot</td>
+                                <td>ft&#178;</td>
+                                <td id="area-square-foot" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="279">square yard</td>
+                                <td>yd&#178;</td>
+                                <td id="area-square-yard" class="value"></td>
                                 <td>
                                     <button class="btn btn-secondary btn-sm copy">
                                         <i class="bi bi-clipboard"></i>

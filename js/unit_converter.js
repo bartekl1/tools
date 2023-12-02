@@ -138,7 +138,7 @@ function convertLength() {
         decimals
     );
     document.querySelector("#length-inch").innerHTML = round(
-        (meters / 25.4) * 1000,
+        meters * (1000 / 25.4),
         decimals
     );
     document.querySelector("#length-foot").innerHTML = round(
@@ -167,6 +167,112 @@ function convertLength() {
     );
     document.querySelector("#length-parsec").innerHTML = round(
         meters / (3.086 * 10 ** 16),
+        decimals
+    );
+}
+
+function convertArea() {
+    if (document.querySelector("#area-input").value === "") {
+        return;
+    }
+
+    if (document.querySelector("#area-input").checkValidity()) {
+        document.querySelector("#area-input").classList.remove("is-invalid");
+    } else {
+        document.querySelector("#area-input").classList.add("is-invalid");
+        return;
+    }
+
+    if (
+        document.querySelector("#decimals-count").checkValidity() &&
+        document.querySelector("#decimals-count").value !== ""
+    ) {
+        document
+            .querySelector("#decimals-count")
+            .classList.remove("is-invalid");
+        var decimals = parseInt(
+            document.querySelector("#decimals-count").value
+        );
+    } else {
+        document.querySelector("#decimals-count").classList.add("is-invalid");
+        return;
+    }
+
+    var squareMeters;
+
+    if (document.querySelector("#area-unit").value === "square-meter") {
+        squareMeters = parseFloat(document.querySelector("#area-input").value);
+    } else if (document.querySelector("#area-unit").value === "square-kilometer") {
+        squareMeters =
+            parseFloat(document.querySelector("#area-input").value) * (1000 ** 2);
+    } else if (document.querySelector("#area-unit").value === "square-decimeter") {
+        squareMeters = parseFloat(document.querySelector("#area-input").value) / (10 ** 2);
+    } else if (document.querySelector("#area-unit").value === "square-centimeter") {
+        squareMeters =
+            parseFloat(document.querySelector("#area-input").value) / (100 ** 2);
+    } else if (document.querySelector("#area-unit").value === "square-millimeter") {
+        squareMeters =
+            parseFloat(document.querySelector("#area-input").value) / (1000 ** 2);
+    } else if (document.querySelector("#area-unit").value === "are") {
+        squareMeters =
+            parseFloat(document.querySelector("#area-input").value) * 100;
+    } else if (document.querySelector("#area-unit").value === "hectare") {
+        squareMeters =
+            parseFloat(document.querySelector("#area-input").value) * 10_000;
+    } else if (document.querySelector("#area-unit").value === "acre") {
+        squareMeters =
+            parseFloat(document.querySelector("#area-input").value) * 4046.8564224;
+    } else if (document.querySelector("#area-unit").value === "square-inch") {
+        squareMeters =
+            parseFloat(document.querySelector("#area-input").value) / ((1000 / 25.4) ** 2);
+    } else if (document.querySelector("#area-unit").value === "square-foot") {
+        squareMeters =
+            parseFloat(document.querySelector("#area-input").value) * (0.3048 ** 2);
+    } else if (document.querySelector("#area-unit").value === "square-yard") {
+        squareMeters =
+            parseFloat(document.querySelector("#area-input").value) * (0.9144 ** 2);
+    }
+
+    document.querySelector("#area-square-meter").innerHTML = round(squareMeters, decimals);
+
+    document.querySelector("#area-square-kilometer").innerHTML = round(
+        squareMeters / (1000 ** 2),
+        decimals
+    );
+    document.querySelector("#area-square-decimeter").innerHTML = round(
+        squareMeters * (10 ** 2),
+        decimals
+    );
+    document.querySelector("#area-square-centimeter").innerHTML = round(
+        squareMeters * (100 ** 2),
+        decimals
+    );
+    document.querySelector("#area-square-millimeter").innerHTML = round(
+        squareMeters * (1000 ** 2),
+        decimals
+    );
+    document.querySelector("#area-are").innerHTML = round(
+        squareMeters / 100,
+        decimals
+    );
+    document.querySelector("#area-hectare").innerHTML = round(
+        squareMeters / 10_000,
+        decimals
+    );
+    document.querySelector("#area-acre").innerHTML = round(
+        squareMeters / 4046.8564224,
+        decimals
+    );
+    document.querySelector("#area-square-inch").innerHTML = round(
+        squareMeters * ((1000 / 25.4) ** 2),
+        decimals
+    );
+    document.querySelector("#area-square-foot").innerHTML = round(
+        squareMeters / (0.3048 ** 2),
+        decimals
+    );
+    document.querySelector("#area-square-yard").innerHTML = round(
+        squareMeters / (0.9144 ** 2),
         decimals
     );
 }
@@ -503,6 +609,16 @@ document
     .querySelector("#length-unit")
     .addEventListener("change", convertLength);
 
+    document
+    .querySelector("#area-input")
+    .addEventListener("keyup", convertArea);
+document
+    .querySelector("#area-input")
+    .addEventListener("change", convertArea);
+document
+    .querySelector("#area-unit")
+    .addEventListener("change", convertArea);
+
 document
     .querySelector("#weight-input")
     .addEventListener("keyup", convertWeight);
@@ -529,12 +645,14 @@ document
 
 document.querySelector("#decimals-count").addEventListener("keyup", () => {
     convertLength();
+    convertArea();
     convertWeight();
     convertTime();
     convertTemperature();
 });
 document.querySelector("#decimals-count").addEventListener("change", () => {
     convertLength();
+    convertArea();
     convertWeight();
     convertTime();
     convertTemperature();
