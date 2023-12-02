@@ -66,36 +66,22 @@
     </h2>
 
     <div id="tool-page">
-        <ul class="nav nav-pills mb-3" role="tablist">
-            <li class="nav-item" role="presentation">
-                <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#length" type="button" role="tab">
-                    <span text-id="74">Length</span>
-                </button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#weight" type="button" role="tab">
-                    <span text-id="75">Weight</span>
-                </button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#time" type="button" role="tab">
-                    <span text-id="76">Time</span>
-                </button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#temperature" type="button" role="tab">
-                    <span text-id="77">Temperature</span>
-                </button>
-            </li>
-        </ul>
+        <select id="category" class="form-select mb-2">
+            <option value="length" text-id="74">Length</option>
+            <option value="weight" text-id="75">Weight</option>
+            <option value="time" text-id="76">Time</option>
+            <option value="temperature" text-id="77">Temperature</option>
+        </select>
+
         <div>
             <div class="form-floating mb-2">
                 <input type="number" class="form-control" id="decimals-count" value="2">
                 <label for="decimals-count" text-id="171">Decimals count</label>
             </div>
         </div>
-        <div class="tab-content" id="pills-tabContent">
-            <div class="tab-pane fade show active" id="length" role="tabpanel" tabindex="0">
+
+        <div>
+            <div class="category-tab" id="length">
                 <div class="d-flex">
                     <input type="number" step="any" class="form-control" id="length-input">
                     <select id="length-unit" class="form-select w-50 ms-2">
@@ -290,7 +276,7 @@
                     </table>
                 </div>
             </div>
-            <div class="tab-pane fade" id="weight" role="tabpanel" tabindex="0">
+            <div class="category-tab d-none" id="weight">
                 <div class="d-flex">
                     <input type="number" step="any" class="form-control" id="weight-input">
                     <select id="weight-unit" class="form-select w-50 ms-2">
@@ -452,7 +438,7 @@
                     </table>
                 </div>
             </div>
-            <div class="tab-pane fade" id="time" role="tabpanel" tabindex="0">
+            <div class="category-tab d-none" id="time">
                 <div class="d-flex">
                     <input type="number" step="any" class="form-control" id="time-input">
                     <select id="time-unit" class="form-select w-50 ms-2">
@@ -636,7 +622,7 @@
                     </table>
                 </div>
             </div>
-            <div class="tab-pane fade" id="temperature" role="tabpanel" tabindex="0">
+            <div class="category-tab d-none" id="temperature">
                 <div class="d-flex">
                     <input type="number" step="any" class="form-control" id="temperature-input">
                     <select id="temperature-unit" class="form-select w-50 ms-2">

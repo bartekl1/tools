@@ -1,3 +1,27 @@
+function switchTab() {
+    if (window.location.hash !== "") {
+        try {
+            document
+                .querySelector(window.location.hash)
+                .classList.remove("d-none");
+            document
+                .querySelectorAll(`.category-tab:not(${window.location.hash})`)
+                .forEach((e) => {
+                    e.classList.add("d-none");
+                });
+            document.querySelector("#category").value =
+                window.location.hash.slice(1);
+        } catch {}
+    }
+}
+
+document.querySelector("#category").addEventListener("change", (evt) => {
+    window.location.hash = evt.currentTarget.value;
+});
+
+switchTab();
+addEventListener("hashchange", switchTab);
+
 function round(n, p) {
     return Math.round(n * 10 ** p) / 10 ** p;
 }
@@ -159,8 +183,10 @@ function convertWeight() {
         return;
     }
 
-    if (document.querySelector("#decimals-count").checkValidity() &&
-    document.querySelector("#decimals-count").value !== "") {
+    if (
+        document.querySelector("#decimals-count").checkValidity() &&
+        document.querySelector("#decimals-count").value !== ""
+    ) {
         document
             .querySelector("#decimals-count")
             .classList.remove("is-invalid");
@@ -282,8 +308,10 @@ function convertTime() {
         return;
     }
 
-    if (document.querySelector("#decimals-count").checkValidity() &&
-    document.querySelector("#decimals-count").value !== "") {
+    if (
+        document.querySelector("#decimals-count").checkValidity() &&
+        document.querySelector("#decimals-count").value !== ""
+    ) {
         document
             .querySelector("#decimals-count")
             .classList.remove("is-invalid");
@@ -411,8 +439,10 @@ function convertTemperature() {
         return;
     }
 
-    if (document.querySelector("#decimals-count").checkValidity() &&
-    document.querySelector("#decimals-count").value !== "") {
+    if (
+        document.querySelector("#decimals-count").checkValidity() &&
+        document.querySelector("#decimals-count").value !== ""
+    ) {
         document
             .querySelector("#decimals-count")
             .classList.remove("is-invalid");
