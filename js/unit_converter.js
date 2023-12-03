@@ -202,17 +202,26 @@ function convertArea() {
 
     if (document.querySelector("#area-unit").value === "square-meter") {
         squareMeters = parseFloat(document.querySelector("#area-input").value);
-    } else if (document.querySelector("#area-unit").value === "square-kilometer") {
+    } else if (
+        document.querySelector("#area-unit").value === "square-kilometer"
+    ) {
         squareMeters =
-            parseFloat(document.querySelector("#area-input").value) * (1000 ** 2);
-    } else if (document.querySelector("#area-unit").value === "square-decimeter") {
-        squareMeters = parseFloat(document.querySelector("#area-input").value) / (10 ** 2);
-    } else if (document.querySelector("#area-unit").value === "square-centimeter") {
+            parseFloat(document.querySelector("#area-input").value) * 1000 ** 2;
+    } else if (
+        document.querySelector("#area-unit").value === "square-decimeter"
+    ) {
         squareMeters =
-            parseFloat(document.querySelector("#area-input").value) / (100 ** 2);
-    } else if (document.querySelector("#area-unit").value === "square-millimeter") {
+            parseFloat(document.querySelector("#area-input").value) / 10 ** 2;
+    } else if (
+        document.querySelector("#area-unit").value === "square-centimeter"
+    ) {
         squareMeters =
-            parseFloat(document.querySelector("#area-input").value) / (1000 ** 2);
+            parseFloat(document.querySelector("#area-input").value) / 100 ** 2;
+    } else if (
+        document.querySelector("#area-unit").value === "square-millimeter"
+    ) {
+        squareMeters =
+            parseFloat(document.querySelector("#area-input").value) / 1000 ** 2;
     } else if (document.querySelector("#area-unit").value === "are") {
         squareMeters =
             parseFloat(document.querySelector("#area-input").value) * 100;
@@ -221,34 +230,41 @@ function convertArea() {
             parseFloat(document.querySelector("#area-input").value) * 10_000;
     } else if (document.querySelector("#area-unit").value === "acre") {
         squareMeters =
-            parseFloat(document.querySelector("#area-input").value) * 4046.8564224;
+            parseFloat(document.querySelector("#area-input").value) *
+            4046.8564224;
     } else if (document.querySelector("#area-unit").value === "square-inch") {
         squareMeters =
-            parseFloat(document.querySelector("#area-input").value) / ((1000 / 25.4) ** 2);
+            parseFloat(document.querySelector("#area-input").value) /
+            (1000 / 25.4) ** 2;
     } else if (document.querySelector("#area-unit").value === "square-foot") {
         squareMeters =
-            parseFloat(document.querySelector("#area-input").value) * (0.3048 ** 2);
+            parseFloat(document.querySelector("#area-input").value) *
+            0.3048 ** 2;
     } else if (document.querySelector("#area-unit").value === "square-yard") {
         squareMeters =
-            parseFloat(document.querySelector("#area-input").value) * (0.9144 ** 2);
+            parseFloat(document.querySelector("#area-input").value) *
+            0.9144 ** 2;
     }
 
-    document.querySelector("#area-square-meter").innerHTML = round(squareMeters, decimals);
+    document.querySelector("#area-square-meter").innerHTML = round(
+        squareMeters,
+        decimals
+    );
 
     document.querySelector("#area-square-kilometer").innerHTML = round(
-        squareMeters / (1000 ** 2),
+        squareMeters / 1000 ** 2,
         decimals
     );
     document.querySelector("#area-square-decimeter").innerHTML = round(
-        squareMeters * (10 ** 2),
+        squareMeters * 10 ** 2,
         decimals
     );
     document.querySelector("#area-square-centimeter").innerHTML = round(
-        squareMeters * (100 ** 2),
+        squareMeters * 100 ** 2,
         decimals
     );
     document.querySelector("#area-square-millimeter").innerHTML = round(
-        squareMeters * (1000 ** 2),
+        squareMeters * 1000 ** 2,
         decimals
     );
     document.querySelector("#area-are").innerHTML = round(
@@ -264,15 +280,15 @@ function convertArea() {
         decimals
     );
     document.querySelector("#area-square-inch").innerHTML = round(
-        squareMeters * ((1000 / 25.4) ** 2),
+        squareMeters * (1000 / 25.4) ** 2,
         decimals
     );
     document.querySelector("#area-square-foot").innerHTML = round(
-        squareMeters / (0.3048 ** 2),
+        squareMeters / 0.3048 ** 2,
         decimals
     );
     document.querySelector("#area-square-yard").innerHTML = round(
-        squareMeters / (0.9144 ** 2),
+        squareMeters / 0.9144 ** 2,
         decimals
     );
 }
@@ -599,6 +615,57 @@ function convertTemperature() {
     );
 }
 
+function convertSound() {
+    if (document.querySelector("#sound-input").value === "") {
+        return;
+    }
+
+    if (document.querySelector("#sound-input").checkValidity()) {
+        document.querySelector("#sound-input").classList.remove("is-invalid");
+    } else {
+        document.querySelector("#sound-input").classList.add("is-invalid");
+        return;
+    }
+
+    if (
+        document.querySelector("#decimals-count").checkValidity() &&
+        document.querySelector("#decimals-count").value !== ""
+    ) {
+        document
+            .querySelector("#decimals-count")
+            .classList.remove("is-invalid");
+        var decimals = parseInt(
+            document.querySelector("#decimals-count").value
+        );
+    } else {
+        document.querySelector("#decimals-count").classList.add("is-invalid");
+        return;
+    }
+
+    var bels;
+
+    if (document.querySelector("#sound-unit").value === "bel") {
+        bels = parseFloat(document.querySelector("#sound-input").value);
+    } else if (document.querySelector("#sound-unit").value === "decibel") {
+        bels = parseFloat(document.querySelector("#sound-input").value) / 10;
+    } else if (document.querySelector("#sound-unit").value === "neper") {
+        bels =
+            parseFloat(document.querySelector("#sound-input").value) /
+            (10 / (20 / Math.log(10)));
+    }
+
+    document.querySelector("#sound-bel").innerHTML = round(bels, decimals);
+
+    document.querySelector("#sound-decibel").innerHTML = round(
+        bels * 10,
+        decimals
+    );
+    document.querySelector("#sound-neper").innerHTML = round(
+        bels * (10 / (20 / Math.log(10))),
+        decimals
+    );
+}
+
 document
     .querySelector("#length-input")
     .addEventListener("keyup", convertLength);
@@ -609,15 +676,9 @@ document
     .querySelector("#length-unit")
     .addEventListener("change", convertLength);
 
-    document
-    .querySelector("#area-input")
-    .addEventListener("keyup", convertArea);
-document
-    .querySelector("#area-input")
-    .addEventListener("change", convertArea);
-document
-    .querySelector("#area-unit")
-    .addEventListener("change", convertArea);
+document.querySelector("#area-input").addEventListener("keyup", convertArea);
+document.querySelector("#area-input").addEventListener("change", convertArea);
+document.querySelector("#area-unit").addEventListener("change", convertArea);
 
 document
     .querySelector("#weight-input")
@@ -643,12 +704,17 @@ document
     .querySelector("#temperature-unit")
     .addEventListener("change", convertTemperature);
 
+document.querySelector("#sound-input").addEventListener("keyup", convertSound);
+document.querySelector("#sound-input").addEventListener("change", convertSound);
+document.querySelector("#sound-unit").addEventListener("change", convertSound);
+
 document.querySelector("#decimals-count").addEventListener("keyup", () => {
     convertLength();
     convertArea();
     convertWeight();
     convertTime();
     convertTemperature();
+    convertSound();
 });
 document.querySelector("#decimals-count").addEventListener("change", () => {
     convertLength();
@@ -656,6 +722,7 @@ document.querySelector("#decimals-count").addEventListener("change", () => {
     convertWeight();
     convertTime();
     convertTemperature();
+    convertSound();
 });
 
 document.querySelectorAll(".copy").forEach((e) => {

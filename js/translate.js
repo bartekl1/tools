@@ -279,6 +279,9 @@ const textTranslations = [
     "cal kwadratowy (square inch)",
     "stopa kwadratowy (square foot)",
     "jard kwadratowy (square yard)",
+    "Dźwięk",
+    "decybel [dB]",
+    "decybel (decibel)",
 ];
 
 const titleTranslations = {
