@@ -69,6 +69,7 @@
         <select id="category" class="form-select mb-2">
             <option value="length" text-id="74">Length</option>
             <option value="area" text-id="257">Area</option>
+            <option value="volume" text-id="283">Volume</option>
             <option value="weight" text-id="75">Weight</option>
             <option value="time" text-id="76">Time</option>
             <option value="temperature" text-id="77">Temperature</option>
@@ -419,6 +420,201 @@
                                 <td text-id="279">square yard</td>
                                 <td>yd&#178;</td>
                                 <td id="area-square-yard" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="category-tab" id="volume">
+                <div class="d-flex">
+                    <input type="number" step="any" class="form-control" id="volume-input">
+                    <select id="volume-unit" class="form-select w-50 ms-2">
+                        <option value="cubic-meter" text-id="299">cubic meter [m&#179;]</option>
+                        <option value="cubic-kilometer" text-id="300">cubic kilometer [km&#179;]</option>
+                        <option value="cubic-decimeter" text-id="301">cubic decimeter = liter [dm&#179; = l]</option>
+                        <option value="cubic-centimeter" text-id="302">cubic centimeter = milliliter [cm&#179; = ml]</option>
+                        <option value="cubic-millimeter" text-id="303">cubic millimeter [mm&#179;]</option>
+                        <option value="cubic-inch" text-id="304">cubic inch [in&#179;]</option>
+                        <option value="cubic-foot" text-id="305">cubic foot [ft&#179;]</option>
+                        <option value="cubic-yard" text-id="306">cubic yard [yd&#179;]</option>
+                        <option value="imperial-gallon" text-id="307">imperial gallon [imp gal]</option>
+                        <option value="us-liquid-gallon" text-id="308">US liquid gallon [US gal]</option>
+                        <option value="us-dry-gallon" text-id="309">US dry gallon [usdrygal]</option>
+                        <option value="imperial-bushel" text-id="310">imperial bushel [buUK]</option>
+                        <option value="us-bushel" text-id="311">US bushel [buUS]</option>
+                        <option value="oil-barrel" text-id="312">oil barrel [bbl]</option>
+                        <option value="imperial-barrel" text-id="313">imperial barrel [Imp.bl.]</option>
+                    </select>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">
+                                    <span text-id="78">Name</span>
+                                </th>
+                                <th scope="col">
+                                    <span text-id="79">Symbol</span>
+                                </th>
+                                <th scope="col">
+                                    <span text-id="80">Value</span>
+                                </th>
+                                <th scope="col">
+                                    <span text-id="81">Copy</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td text-id="284">cubic meter</td>
+                                <td>m&#179;</td>
+                                <td id="volume-cubic-meter" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="285">cubic kilometer</td>
+                                <td>km&#179;</td>
+                                <td id="volume-cubic-kilometer" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="286">cubic decimeter = liter</td>
+                                <td>dm&#179; = l</td>
+                                <td id="volume-cubic-decimeter" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="287">cubic centimeter = milliliter</td>
+                                <td>cm&#179; = ml</td>
+                                <td id="volume-cubic-centimeter" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="288">cubic millimeter</td>
+                                <td>mm&#179;</td>
+                                <td id="volume-cubic-millimeter" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="289">cubic inch</td>
+                                <td>in&#179;</td>
+                                <td id="volume-cubic-inch" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="290">cubic foot</td>
+                                <td>ft&#179;</td>
+                                <td id="volume-cubic-foot" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="291">cubic yard</td>
+                                <td>yd&#179;</td>
+                                <td id="volume-cubic-yard" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="292">imperial gallon</td>
+                                <td>imp gal</td>
+                                <td id="volume-imperial-gallon" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="293">US liquid gallon</td>
+                                <td>US gal</td>
+                                <td id="volume-us-liquid-gallon" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="294">US dry gallon</td>
+                                <td>usdrygal</td>
+                                <td id="volume-us-dry-gallon" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="295">imperial bushel</td>
+                                <td>buUK</td>
+                                <td id="volume-imperial-bushel" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="296">US bushel</td>
+                                <td>buUS</td>
+                                <td id="volume-us-bushel" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="297">oil barrel</td>
+                                <td>bbl</td>
+                                <td id="volume-oil-barrel" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="298">imperial barrel</td>
+                                <td>Imp.bl.</td>
+                                <td id="volume-imperial-barrel" class="value"></td>
                                 <td>
                                     <button class="btn btn-secondary btn-sm copy">
                                         <i class="bi bi-clipboard"></i>

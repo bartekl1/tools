@@ -293,6 +293,179 @@ function convertArea() {
     );
 }
 
+function convertVolume() {
+    if (document.querySelector("#volume-input").value === "") {
+        return;
+    }
+
+    if (document.querySelector("#volume-input").checkValidity()) {
+        document.querySelector("#volume-input").classList.remove("is-invalid");
+    } else {
+        document.querySelector("#volume-input").classList.add("is-invalid");
+        return;
+    }
+
+    if (
+        document.querySelector("#decimals-count").checkValidity() &&
+        document.querySelector("#decimals-count").value !== ""
+    ) {
+        document
+            .querySelector("#decimals-count")
+            .classList.remove("is-invalid");
+        var decimals = parseInt(
+            document.querySelector("#decimals-count").value
+        );
+    } else {
+        document.querySelector("#decimals-count").classList.add("is-invalid");
+        return;
+    }
+
+    var cubicMeters;
+
+    if (document.querySelector("#volume-unit").value === "cubic-meter") {
+        cubicMeters = parseFloat(document.querySelector("#volume-input").value);
+    } else if (
+        document.querySelector("#volume-unit").value === "cubic-kilometer"
+    ) {
+        cubicMeters =
+            parseFloat(document.querySelector("#volume-input").value) *
+            1000 ** 3;
+    } else if (
+        document.querySelector("#volume-unit").value === "cubic-decimeter"
+    ) {
+        cubicMeters =
+            parseFloat(document.querySelector("#volume-input").value) / 10 ** 3;
+    } else if (
+        document.querySelector("#volume-unit").value === "cubic-centimeter"
+    ) {
+        cubicMeters =
+            parseFloat(document.querySelector("#volume-input").value) /
+            100 ** 3;
+    } else if (
+        document.querySelector("#volume-unit").value === "cubic-millimeter"
+    ) {
+        cubicMeters =
+            parseFloat(document.querySelector("#volume-input").value) /
+            1000 ** 3;
+    } else if (document.querySelector("#volume-unit").value === "cubic-inch") {
+        cubicMeters =
+            parseFloat(document.querySelector("#volume-input").value) /
+            (1000 / 25.4) ** 3;
+    } else if (document.querySelector("#volume-unit").value === "cubic-foot") {
+        cubicMeters =
+            parseFloat(document.querySelector("#volume-input").value) *
+            0.3048 ** 3;
+    } else if (document.querySelector("#volume-unit").value === "cubic-yard") {
+        cubicMeters =
+            parseFloat(document.querySelector("#volume-input").value) *
+            0.9144 ** 3;
+    } else if (
+        document.querySelector("#volume-unit").value === "imperial-gallon"
+    ) {
+        cubicMeters =
+            (parseFloat(document.querySelector("#volume-input").value) / 1000) *
+            4.54609;
+    } else if (
+        document.querySelector("#volume-unit").value === "us-liquid-gallon"
+    ) {
+        cubicMeters =
+            (parseFloat(document.querySelector("#volume-input").value) / 1000) *
+            3.785411784;
+    } else if (
+        document.querySelector("#volume-unit").value === "us-dry-gallon"
+    ) {
+        cubicMeters =
+            (parseFloat(document.querySelector("#volume-input").value) / 1000) *
+            4.40488377086;
+    } else if (
+        document.querySelector("#volume-unit").value === "imperial-bushel"
+    ) {
+        cubicMeters =
+            (parseFloat(document.querySelector("#volume-input").value) / 1000) *
+            4.54609 *
+            8;
+    } else if (document.querySelector("#volume-unit").value === "us-bushel") {
+        cubicMeters =
+            (parseFloat(document.querySelector("#volume-input").value) / 1000) *
+            4.40488377086 *
+            8;
+    } else if (document.querySelector("#volume-unit").value === "oil-barrel") {
+        cubicMeters =
+            (parseFloat(document.querySelector("#volume-input").value) / 1000) *
+            3.785411784 *
+            42;
+    } else if (
+        document.querySelector("#volume-unit").value === "imperial-barrel"
+    ) {
+        cubicMeters =
+            (parseFloat(document.querySelector("#volume-input").value) / 1000) *
+            4.54609 *
+            36;
+    }
+
+    document.querySelector("#volume-cubic-meter").innerHTML = round(
+        cubicMeters,
+        decimals
+    );
+
+    document.querySelector("#volume-cubic-kilometer").innerHTML = round(
+        cubicMeters / 1000 ** 3,
+        decimals
+    );
+    document.querySelector("#volume-cubic-decimeter").innerHTML = round(
+        cubicMeters * 10 ** 3,
+        decimals
+    );
+    document.querySelector("#volume-cubic-centimeter").innerHTML = round(
+        cubicMeters * 100 ** 3,
+        decimals
+    );
+    document.querySelector("#volume-cubic-millimeter").innerHTML = round(
+        cubicMeters * 1000 ** 3,
+        decimals
+    );
+    document.querySelector("#volume-cubic-inch").innerHTML = round(
+        cubicMeters * (1000 / 25.4) ** 3,
+        decimals
+    );
+    document.querySelector("#volume-cubic-foot").innerHTML = round(
+        cubicMeters / 0.3048 ** 3,
+        decimals
+    );
+    document.querySelector("#volume-cubic-yard").innerHTML = round(
+        cubicMeters / 0.9144 ** 3,
+        decimals
+    );
+    document.querySelector("#volume-imperial-gallon").innerHTML = round(
+        (cubicMeters * 1000) / 4.54609,
+        decimals
+    );
+    document.querySelector("#volume-us-liquid-gallon").innerHTML = round(
+        (cubicMeters * 1000) / 3.785411784,
+        decimals
+    );
+    document.querySelector("#volume-us-dry-gallon").innerHTML = round(
+        (cubicMeters * 1000) / 4.40488377086,
+        decimals
+    );
+    document.querySelector("#volume-imperial-bushel").innerHTML = round(
+        (cubicMeters * 1000) / 4.54609 / 8,
+        decimals
+    );
+    document.querySelector("#volume-us-bushel").innerHTML = round(
+        (cubicMeters * 1000) / 4.40488377086 / 8,
+        decimals
+    );
+    document.querySelector("#volume-oil-barrel").innerHTML = round(
+        (cubicMeters * 1000) / 3.785411784 / 42,
+        decimals
+    );
+    document.querySelector("#volume-imperial-barrel").innerHTML = round(
+        (cubicMeters * 1000) / 4.54609 / 36,
+        decimals
+    );
+}
+
 function convertWeight() {
     if (document.querySelector("#weight-input").value === "") {
         return;
@@ -681,6 +854,16 @@ document.querySelector("#area-input").addEventListener("change", convertArea);
 document.querySelector("#area-unit").addEventListener("change", convertArea);
 
 document
+    .querySelector("#volume-input")
+    .addEventListener("keyup", convertVolume);
+document
+    .querySelector("#volume-input")
+    .addEventListener("change", convertVolume);
+document
+    .querySelector("#volume-unit")
+    .addEventListener("change", convertVolume);
+
+document
     .querySelector("#weight-input")
     .addEventListener("keyup", convertWeight);
 document
@@ -711,6 +894,7 @@ document.querySelector("#sound-unit").addEventListener("change", convertSound);
 document.querySelector("#decimals-count").addEventListener("keyup", () => {
     convertLength();
     convertArea();
+    convertVolume();
     convertWeight();
     convertTime();
     convertTemperature();
@@ -719,6 +903,7 @@ document.querySelector("#decimals-count").addEventListener("keyup", () => {
 document.querySelector("#decimals-count").addEventListener("change", () => {
     convertLength();
     convertArea();
+    convertVolume();
     convertWeight();
     convertTime();
     convertTemperature();
