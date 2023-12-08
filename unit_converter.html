@@ -73,6 +73,7 @@
             <option value="weight" text-id="75">Weight</option>
             <option value="time" text-id="76">Time</option>
             <option value="temperature" text-id="77">Temperature</option>
+            <option value="speed" text-id="314">Speed</option>
             <option value="sound" text-id="280">Sound</option>
         </select>
 
@@ -1024,6 +1025,102 @@
                                 <td text-id="170">degree Fahrenheit</td>
                                 <td>℉</td>
                                 <td id="temperature-fahrenheit" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="category-tab d-none" id="speed">
+                <div class="d-flex">
+                    <input type="number" step="any" class="form-control" id="speed-input">
+                    <select id="speed-unit" class="form-select w-50 ms-2">
+                        <option value="meter-per-second" text-id="321">meter per second [m/s]</option>
+                        <option value="kilometer-per-hour" text-id="322">kilometer per hour [km/h]</option>
+                        <option value="land-mile-per-hour" text-id="323">land mile per hour [mph]</option>
+                        <option value="knot" text-id="324">knot [kt]</option>
+                        <option value="mach">mach [ma]</option>
+                        <option value="speed-of-light" text-id="325">speed of light [c]</option>
+                    </select>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">
+                                    <span text-id="78">Name</span>
+                                </th>
+                                <th scope="col">
+                                    <span text-id="79">Symbol</span>
+                                </th>
+                                <th scope="col">
+                                    <span text-id="80">Value</span>
+                                </th>
+                                <th scope="col">
+                                    <span text-id="81">Copy</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td text-id="315">meter per second</td>
+                                <td>m/s</td>
+                                <td id="speed-meter-per-second" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="316">kilometer per hour</td>
+                                <td>km/h</td>
+                                <td id="speed-kilometer-per-hour" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="317">land mile per hour</td>
+                                <td>mph</td>
+                                <td id="speed-land-mile-per-hour" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="318">knot - nautical mile per hour</td>
+                                <td>kt</td>
+                                <td id="speed-knot" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="319">mach - speed of sound in air</td>
+                                <td>ma</td>
+                                <td id="speed-mach" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="320">speed of light</td>
+                                <td>c</td>
+                                <td id="speed-speed-of-light" class="value"></td>
                                 <td>
                                     <button class="btn btn-secondary btn-sm copy">
                                         <i class="bi bi-clipboard"></i>

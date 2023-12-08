@@ -788,6 +788,92 @@ function convertTemperature() {
     );
 }
 
+function convertSpeed() {
+    if (document.querySelector("#speed-input").value === "") {
+        return;
+    }
+
+    if (document.querySelector("#speed-input").checkValidity()) {
+        document.querySelector("#speed-input").classList.remove("is-invalid");
+    } else {
+        document.querySelector("#speed-input").classList.add("is-invalid");
+        return;
+    }
+
+    if (
+        document.querySelector("#decimals-count").checkValidity() &&
+        document.querySelector("#decimals-count").value !== ""
+    ) {
+        document
+            .querySelector("#decimals-count")
+            .classList.remove("is-invalid");
+        var decimals = parseInt(
+            document.querySelector("#decimals-count").value
+        );
+    } else {
+        document.querySelector("#decimals-count").classList.add("is-invalid");
+        return;
+    }
+
+    var meterPerSecond;
+
+    if (document.querySelector("#speed-unit").value === "meter-per-second") {
+        meterPerSecond = parseFloat(
+            document.querySelector("#speed-input").value
+        );
+    } else if (
+        document.querySelector("#speed-unit").value === "kilometer-per-hour"
+    ) {
+        meterPerSecond =
+            parseFloat(document.querySelector("#speed-input").value) / 3.6;
+    } else if (
+        document.querySelector("#speed-unit").value === "land-mile-per-hour"
+    ) {
+        meterPerSecond =
+            parseFloat(document.querySelector("#speed-input").value) /
+            (3600 / 1_609.344);
+    } else if (document.querySelector("#speed-unit").value === "knot") {
+        meterPerSecond =
+            parseFloat(document.querySelector("#speed-input").value) /
+            (3600 / 1852);
+    } else if (document.querySelector("#speed-unit").value === "mach") {
+        meterPerSecond =
+            parseFloat(document.querySelector("#speed-input").value) * 340.3;
+    } else if (
+        document.querySelector("#speed-unit").value === "speed-of-light"
+    ) {
+        meterPerSecond =
+            parseFloat(document.querySelector("#speed-input").value) *
+            299_792_458;
+    }
+
+    document.querySelector("#speed-meter-per-second").innerHTML = round(
+        meterPerSecond,
+        decimals
+    );
+
+    document.querySelector("#speed-kilometer-per-hour").innerHTML = round(
+        meterPerSecond * 3.6,
+        decimals
+    );
+    document.querySelector("#speed-land-mile-per-hour").innerHTML = round(
+        meterPerSecond * (3600 / 1_609.344),
+        decimals
+    );
+    document.querySelector("#speed-knot").innerHTML = round(
+        meterPerSecond * (3600 / 1852),
+        decimals
+    );
+    document.querySelector("#speed-mach").innerHTML = round(
+        meterPerSecond / 340.3,
+        decimals
+    );
+    document.querySelector("#speed-speed-of-light").innerHTML = round(
+        meterPerSecond / 299_792_458,
+        decimals
+    );
+}
+
 function convertSound() {
     if (document.querySelector("#sound-input").value === "") {
         return;
@@ -887,6 +973,10 @@ document
     .querySelector("#temperature-unit")
     .addEventListener("change", convertTemperature);
 
+document.querySelector("#speed-input").addEventListener("keyup", convertSpeed);
+document.querySelector("#speed-input").addEventListener("change", convertSpeed);
+document.querySelector("#speed-unit").addEventListener("change", convertSpeed);
+
 document.querySelector("#sound-input").addEventListener("keyup", convertSound);
 document.querySelector("#sound-input").addEventListener("change", convertSound);
 document.querySelector("#sound-unit").addEventListener("change", convertSound);
@@ -898,6 +988,7 @@ document.querySelector("#decimals-count").addEventListener("keyup", () => {
     convertWeight();
     convertTime();
     convertTemperature();
+    convertSpeed();
     convertSound();
 });
 document.querySelector("#decimals-count").addEventListener("change", () => {
@@ -907,6 +998,7 @@ document.querySelector("#decimals-count").addEventListener("change", () => {
     convertWeight();
     convertTime();
     convertTemperature();
+    convertSpeed();
     convertSound();
 });
 

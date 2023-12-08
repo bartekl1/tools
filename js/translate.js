@@ -313,6 +313,18 @@ const textTranslations = [
     "buszel amerykański [buUS]",
     "baryłka ropy naftowej [bbl]",
     "baryłka brytyjska [Imp.bl.]",
+    "Prędkość",
+    "metr na sekundę (meter per second)",
+    "kilometr na godzinę (kilometer per hour)",
+    "mila lądowa na godzinę (land mile per hour)",
+    "węzeł - mila morska na godzinę (knot - nautical mile per hour)",
+    "mach - prędkość dźwięku w powietrzu (mach - speed of sound in air)",
+    "prędkość światła (speed of light)",
+    "metr na sekundę [m/s]",
+    "kilometr na godzinę [km/h]",
+    "mila lądowa na godzinę [mph]",
+    "węzeł [kt]",
+    "prędkość światła [c]"
 ];
 
 const titleTranslations = {
