@@ -74,6 +74,7 @@
             <option value="time" text-id="76">Time</option>
             <option value="temperature" text-id="77">Temperature</option>
             <option value="speed" text-id="314">Speed</option>
+            <option value="acceleration" text-id="326">Acceleration</option>
             <option value="sound" text-id="280">Sound</option>
         </select>
 
@@ -1121,6 +1122,69 @@
                                 <td text-id="320">speed of light</td>
                                 <td>c</td>
                                 <td id="speed-speed-of-light" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="category-tab d-none" id="acceleration">
+                <div class="d-flex">
+                    <input type="number" step="any" class="form-control" id="acceleration-input">
+                    <select id="acceleration-unit" class="form-select w-50 ms-2">
+                        <option value="meter-per-square-second" text-id="329">meter per square second [m/s&#178;]</option>
+                        <option value="foot-per-square-second" text-id="330">kilometer per square hour [ft/s&#178;]</option>
+                        <option value="gal">gal [gal]</option>
+                    </select>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">
+                                    <span text-id="78">Name</span>
+                                </th>
+                                <th scope="col">
+                                    <span text-id="79">Symbol</span>
+                                </th>
+                                <th scope="col">
+                                    <span text-id="80">Value</span>
+                                </th>
+                                <th scope="col">
+                                    <span text-id="81">Copy</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td text-id="327">meter per square second</td>
+                                <td>m/s&#178;</td>
+                                <td id="acceleration-meter-per-square-second" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="328">foot per square second</td>
+                                <td>ft/s&#178;</td>
+                                <td id="acceleration-foot-per-square-second" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>gal</td>
+                                <td>gal</td>
+                                <td id="acceleration-gal" class="value"></td>
                                 <td>
                                     <button class="btn btn-secondary btn-sm copy">
                                         <i class="bi bi-clipboard"></i>

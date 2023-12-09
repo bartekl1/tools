@@ -874,6 +874,70 @@ function convertSpeed() {
     );
 }
 
+function convertAcceleration() {
+    if (document.querySelector("#acceleration-input").value === "") {
+        return;
+    }
+
+    if (document.querySelector("#acceleration-input").checkValidity()) {
+        document
+            .querySelector("#acceleration-input")
+            .classList.remove("is-invalid");
+    } else {
+        document
+            .querySelector("#acceleration-input")
+            .classList.add("is-invalid");
+        return;
+    }
+
+    if (
+        document.querySelector("#decimals-count").checkValidity() &&
+        document.querySelector("#decimals-count").value !== ""
+    ) {
+        document
+            .querySelector("#decimals-count")
+            .classList.remove("is-invalid");
+        var decimals = parseInt(
+            document.querySelector("#decimals-count").value
+        );
+    } else {
+        document.querySelector("#decimals-count").classList.add("is-invalid");
+        return;
+    }
+
+    var meterPerSquareSecond;
+
+    if (
+        document.querySelector("#acceleration-unit").value ===
+        "meter-per-square-second"
+    ) {
+        meterPerSquareSecond = parseFloat(
+            document.querySelector("#acceleration-input").value
+        );
+    } else if (
+        document.querySelector("#acceleration-unit").value ===
+        "foot-per-square-second"
+    ) {
+        meterPerSquareSecond =
+            parseFloat(document.querySelector("#acceleration-input").value) /
+            0.3048;
+    } else if (document.querySelector("#acceleration-unit").value === "gal") {
+        meterPerSquareSecond =
+            parseFloat(document.querySelector("#acceleration-input").value) /
+            0.01;
+    }
+
+    document.querySelector("#acceleration-meter-per-square-second").innerHTML =
+        round(meterPerSquareSecond, decimals);
+
+    document.querySelector("#acceleration-foot-per-square-second").innerHTML =
+        round(meterPerSquareSecond * 0.3048, decimals);
+    document.querySelector("#acceleration-gal").innerHTML = round(
+        meterPerSquareSecond * 0.01,
+        decimals
+    );
+}
+
 function convertSound() {
     if (document.querySelector("#sound-input").value === "") {
         return;
@@ -977,6 +1041,16 @@ document.querySelector("#speed-input").addEventListener("keyup", convertSpeed);
 document.querySelector("#speed-input").addEventListener("change", convertSpeed);
 document.querySelector("#speed-unit").addEventListener("change", convertSpeed);
 
+document
+    .querySelector("#acceleration-input")
+    .addEventListener("keyup", convertAcceleration);
+document
+    .querySelector("#acceleration-input")
+    .addEventListener("change", convertAcceleration);
+document
+    .querySelector("#acceleration-unit")
+    .addEventListener("change", convertAcceleration);
+
 document.querySelector("#sound-input").addEventListener("keyup", convertSound);
 document.querySelector("#sound-input").addEventListener("change", convertSound);
 document.querySelector("#sound-unit").addEventListener("change", convertSound);
@@ -989,6 +1063,7 @@ document.querySelector("#decimals-count").addEventListener("keyup", () => {
     convertTime();
     convertTemperature();
     convertSpeed();
+    convertAcceleration();
     convertSound();
 });
 document.querySelector("#decimals-count").addEventListener("change", () => {
@@ -999,6 +1074,7 @@ document.querySelector("#decimals-count").addEventListener("change", () => {
     convertTime();
     convertTemperature();
     convertSpeed();
+    convertAcceleration();
     convertSound();
 });
 

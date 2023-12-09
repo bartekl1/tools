@@ -324,7 +324,12 @@ const textTranslations = [
     "kilometr na godzinę [km/h]",
     "mila lądowa na godzinę [mph]",
     "węzeł [kt]",
-    "prędkość światła [c]"
+    "prędkość światła [c]",
+    "Przyspieszenie",
+    "metr na sekundę kwadrat (meter per square second)",
+    "stopa na sekundę kwadrat (foot per square second)",
+    "metr na sekundę kwadrat [m/s&#178;]",
+    "stopa na sekundę kwadrat [ft/s&#178;]",
 ];
 
 const titleTranslations = {
