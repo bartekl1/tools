@@ -75,6 +75,7 @@
             <option value="temperature" text-id="77">Temperature</option>
             <option value="speed" text-id="314">Speed</option>
             <option value="acceleration" text-id="326">Acceleration</option>
+            <option value="data" text-id="331">Data</option>
             <option value="sound" text-id="280">Sound</option>
         </select>
 
@@ -1185,6 +1186,146 @@
                                 <td>gal</td>
                                 <td>gal</td>
                                 <td id="acceleration-gal" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="category-tab d-none" id="data">
+                <div class="d-flex">
+                    <input type="number" step="any" class="form-control" id="data-input">
+                    <select id="data-unit" class="form-select w-50 ms-2">
+                        <option value="bit">bit [b]</option>
+                        <option value="byte" text-id="341">byte [B]</option>
+                        <option value="kilobyte" text-id="342">kilobyte [kB]</option>
+                        <option value="megabyte" text-id="343">megabyte [MB]</option>
+                        <option value="gigabyte" text-id="344">gigabyte [GB]</option>
+                        <option value="terabyte" text-id="345">terabyte [TB]</option>
+                        <option value="kibibyte" text-id="346">kibibyte [KiB]</option>
+                        <option value="mebibyte" text-id="347">mebibyte [MiB]</option>
+                        <option value="gibibyte" text-id="348">gibibyte [GiB]</option>
+                        <option value="tebibyte" text-id="349">tebibyte [TiB]</option>
+                    </select>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">
+                                    <span text-id="78">Name</span>
+                                </th>
+                                <th scope="col">
+                                    <span text-id="79">Symbol</span>
+                                </th>
+                                <th scope="col">
+                                    <span text-id="80">Value</span>
+                                </th>
+                                <th scope="col">
+                                    <span text-id="81">Copy</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>bit</td>
+                                <td>b</td>
+                                <td id="data-bit" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="332">byte</td>
+                                <td>B</td>
+                                <td id="data-byte" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="333">kilobyte</td>
+                                <td>kB</td>
+                                <td id="data-kilobyte" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="334">megabyte</td>
+                                <td>MB</td>
+                                <td id="data-megabyte" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="335">gigabyte</td>
+                                <td>GB</td>
+                                <td id="data-gigabyte" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="336">terabyte</td>
+                                <td>TB</td>
+                                <td id="data-terabyte" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="337">kibibyte</td>
+                                <td>KiB</td>
+                                <td id="data-kibibyte" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="338">mebibyte</td>
+                                <td>MiB</td>
+                                <td id="data-mebibyte" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="339">gibibyte</td>
+                                <td>GiB</td>
+                                <td id="data-gibibyte" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="340">tebibyte</td>
+                                <td>TiB</td>
+                                <td id="data-tebibyte" class="value"></td>
                                 <td>
                                     <button class="btn btn-secondary btn-sm copy">
                                         <i class="bi bi-clipboard"></i>

@@ -938,6 +938,110 @@ function convertAcceleration() {
     );
 }
 
+function convertData() {
+    if (document.querySelector("#data-input").value === "") {
+        return;
+    }
+
+    if (document.querySelector("#data-input").checkValidity()) {
+        document.querySelector("#data-input").classList.remove("is-invalid");
+    } else {
+        document.querySelector("#data-input").classList.add("is-invalid");
+        return;
+    }
+
+    if (
+        document.querySelector("#decimals-count").checkValidity() &&
+        document.querySelector("#decimals-count").value !== ""
+    ) {
+        document
+            .querySelector("#decimals-count")
+            .classList.remove("is-invalid");
+        var decimals = parseInt(
+            document.querySelector("#decimals-count").value
+        );
+    } else {
+        document.querySelector("#decimals-count").classList.add("is-invalid");
+        return;
+    }
+
+    var bit;
+
+    if (document.querySelector("#data-unit").value === "bit") {
+        bit = parseFloat(document.querySelector("#data-input").value);
+    } else if (document.querySelector("#data-unit").value === "byte") {
+        bit = parseFloat(document.querySelector("#data-input").value) * 8;
+    } else if (document.querySelector("#data-unit").value === "kilobyte") {
+        bit =
+            parseFloat(document.querySelector("#data-input").value) *
+            (8 * 10 ** 3);
+    } else if (document.querySelector("#data-unit").value === "megabyte") {
+        bit =
+            parseFloat(document.querySelector("#data-input").value) *
+            (8 * 10 ** 6);
+    } else if (document.querySelector("#data-unit").value === "gigabyte") {
+        bit =
+            parseFloat(document.querySelector("#data-input").value) *
+            (8 * 10 ** 9);
+    } else if (document.querySelector("#data-unit").value === "terabyte") {
+        bit =
+            parseFloat(document.querySelector("#data-input").value) *
+            (8 * 10 ** 12);
+    } else if (document.querySelector("#data-unit").value === "kibibyte") {
+        bit =
+            parseFloat(document.querySelector("#data-input").value) *
+            (8 * 2 ** 10);
+    } else if (document.querySelector("#data-unit").value === "mebibyte") {
+        bit =
+            parseFloat(document.querySelector("#data-input").value) *
+            (8 * 2 ** 20);
+    } else if (document.querySelector("#data-unit").value === "gibibyte") {
+        bit =
+            parseFloat(document.querySelector("#data-input").value) *
+            (8 * 2 ** 30);
+    } else if (document.querySelector("#data-unit").value === "tebibyte") {
+        bit =
+            parseFloat(document.querySelector("#data-input").value) *
+            (8 * 2 ** 40);
+    }
+
+    document.querySelector("#data-bit").innerHTML = round(bit, decimals);
+
+    document.querySelector("#data-byte").innerHTML = round(bit / 8, decimals);
+    document.querySelector("#data-kilobyte").innerHTML = round(
+        bit / (8 * 10 ** 3),
+        decimals
+    );
+    document.querySelector("#data-megabyte").innerHTML = round(
+        bit / (8 * 10 ** 6),
+        decimals
+    );
+    document.querySelector("#data-gigabyte").innerHTML = round(
+        bit / (8 * 10 ** 9),
+        decimals
+    );
+    document.querySelector("#data-terabyte").innerHTML = round(
+        bit / (8 * 10 ** 12),
+        decimals
+    );
+    document.querySelector("#data-kibibyte").innerHTML = round(
+        bit / (8 * 2 ** 10),
+        decimals
+    );
+    document.querySelector("#data-mebibyte").innerHTML = round(
+        bit / (8 * 2 ** 20),
+        decimals
+    );
+    document.querySelector("#data-gibibyte").innerHTML = round(
+        bit / (8 * 2 ** 30),
+        decimals
+    );
+    document.querySelector("#data-tebibyte").innerHTML = round(
+        bit / (8 * 2 ** 40),
+        decimals
+    );
+}
+
 function convertSound() {
     if (document.querySelector("#sound-input").value === "") {
         return;
@@ -1051,6 +1155,10 @@ document
     .querySelector("#acceleration-unit")
     .addEventListener("change", convertAcceleration);
 
+document.querySelector("#data-input").addEventListener("keyup", convertData);
+document.querySelector("#data-input").addEventListener("change", convertData);
+document.querySelector("#data-unit").addEventListener("change", convertData);
+
 document.querySelector("#sound-input").addEventListener("keyup", convertSound);
 document.querySelector("#sound-input").addEventListener("change", convertSound);
 document.querySelector("#sound-unit").addEventListener("change", convertSound);
@@ -1064,6 +1172,7 @@ document.querySelector("#decimals-count").addEventListener("keyup", () => {
     convertTemperature();
     convertSpeed();
     convertAcceleration();
+    convertData();
     convertSound();
 });
 document.querySelector("#decimals-count").addEventListener("change", () => {
@@ -1075,6 +1184,7 @@ document.querySelector("#decimals-count").addEventListener("change", () => {
     convertTemperature();
     convertSpeed();
     convertAcceleration();
+    convertData();
     convertSound();
 });
 
