@@ -349,6 +349,7 @@ const textTranslations = [
     "mebibajt [MiB]",
     "gibibajt [GiB]",
     "tebibajt [TiB]",
+    "Sumy kontrolne",
 ];
 
 const titleTranslations = {
@@ -377,6 +378,7 @@ const titleTranslations = {
     "World time": "Czas na świecie",
     "Time calculations": "Obliczenia na czasie",
     Stopwatch: "Stoper",
+    Checksums: "Sumy kontrolne",
 };
 
 const placeholdersTranslations = {

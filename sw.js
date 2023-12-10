@@ -66,6 +66,8 @@ const precacheResources = [
     "/tools/js/time_calculations.js",
     "/tools/stopwatch.html",
     "/tools/js/stopwatch.js",
+    "/tools/checksums.html",
+    "/tools/js/checksums.js",
     "/tools/img/resistor.svg",
     "/tools/fonts/JetBrainsMono-Regular.woff2",
     "/tools/js/modules/bowser.js",

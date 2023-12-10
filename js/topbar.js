@@ -141,6 +141,16 @@ const tools = [
     },
     {
         name: {
+            english: "Checksums",
+            polish: "Sumy kontrolne",
+        },
+        icon: "bi-file-earmark-check",
+        href: "/tools/checksums.html",
+        color: "yellow",
+        offline: true,
+    },
+    {
+        name: {
             english: "World time",
             polish: "Czas na świecie",
         },

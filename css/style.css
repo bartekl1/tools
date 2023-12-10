@@ -394,6 +394,7 @@ html[data-bs-theme="dark"] {
 }
 
 input#hash-input,
+input#file-input,
 input#md5,
 input#sha1,
 input#sha256,
