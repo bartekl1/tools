@@ -26,10 +26,24 @@ function generateTOTP() {
     }
 
     try {
-        var token = totp(document.querySelector("#secret-key").value, {
-            digits: parseInt(document.querySelector("#digits-number").value),
-            period: parseInt(document.querySelector("#token-period").value),
-        });
+        if (document.querySelector("#token-current-timestamp").checked) {
+            var token = totp(document.querySelector("#secret-key").value, {
+                digits: parseInt(
+                    document.querySelector("#digits-number").value
+                ),
+                period: parseInt(document.querySelector("#token-period").value),
+            });
+        } else {
+            var token = totp(document.querySelector("#secret-key").value, {
+                digits: parseInt(
+                    document.querySelector("#digits-number").value
+                ),
+                period: parseInt(document.querySelector("#token-period").value),
+                timestamp: Number(
+                    new Date(document.querySelector("#token-timestamp").value)
+                ),
+            });
+        }
 
         document.querySelector("#secret-key").classList.remove("is-invalid");
     } catch {
@@ -45,7 +59,16 @@ function generateTOTP() {
         var valid = period - (Math.floor(Date.now() / 1000) % period);
         document.querySelector("#totp-valid").value = valid;
     } else {
-        document.querySelector("#totp-valid").value = "";
+        var period = parseInt(document.querySelector("#token-period").value);
+        var valid =
+            period -
+            (Math.floor(
+                Number(
+                    new Date(document.querySelector("#token-timestamp").value)
+                ) / 1000
+            ) %
+                period);
+        document.querySelector("#totp-valid").value = valid;
     }
 }
 
@@ -59,6 +82,13 @@ document
     ])
     .forEach((e) => {
         e.addEventListener("change", generateTOTP);
+    });
+
+document
+    .querySelector("#token-current-timestamp")
+    .addEventListener("change", (evt) => {
+        document.querySelector("#token-timestamp").disabled =
+            evt.currentTarget.checked;
     });
 
 setInterval(generateTOTP, 500);
