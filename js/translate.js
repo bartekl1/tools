@@ -350,7 +350,13 @@ const textTranslations = [
     "gibibajt [GiB]",
     "tebibajt [TiB]",
     "Sumy kontrolne",
-    "Zweryfikuj"
+    "Zweryfikuj",
+    "Klucz tajny",
+    "Ilość cyfr",
+    "Okres",
+    "Czas",
+    "Bieżący czas",
+    "Ważny",
 ];
 
 const titleTranslations = {
@@ -380,6 +386,7 @@ const titleTranslations = {
     "Time calculations": "Obliczenia na czasie",
     Stopwatch: "Stoper",
     Checksums: "Sumy kontrolne",
+    "TOTP generator": "TOTP generator",
 };
 
 const placeholdersTranslations = {
@@ -409,6 +416,9 @@ const placeholdersTranslations = {
     Width: "Szerokość",
     Resistance: "Opór",
     Heading: "Kierunek",
+    "Secret key": "Klucz tajny",
+    "Number of digits": "Ilość cyfr",
+    Period: "Okres",
 };
 
 const alternativeTextTranslations = {};

@@ -68,6 +68,8 @@ const precacheResources = [
     "/tools/js/stopwatch.js",
     "/tools/checksums.html",
     "/tools/js/checksums.js",
+    "/tools/totp_generator.html",
+    "/tools/js/totp_generator.js",
     "/tools/img/resistor.svg",
     "/tools/fonts/JetBrainsMono-Regular.woff2",
     "/tools/js/modules/bowser.js",

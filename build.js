@@ -202,6 +202,32 @@ fse.copySync("./build/csv.bundle.js", "./js/modules/csv.js", {
     overwrite: true,
 });
 
+console.log("Building totp-generator and copying files ...");
+
+fse.writeFileSync(
+    "./build/totp_generator.js",
+    `const totp = require("totp-generator");
+global.totp = totp;
+`
+);
+
+execSync(
+    "browserify ./build/totp_generator.js -o ./build/totp_generator.bundle.js",
+    (err, stdout, stderr) => {
+        if (err) {
+            process.exit();
+        }
+    }
+);
+
+fse.copySync(
+    "./build/totp_generator.bundle.js",
+    "./js/modules/totp_generator.js",
+    {
+        overwrite: true,
+    }
+);
+
 console.log("Cleaning up ...");
 
 fse.removeSync("./build", { recursive: true, force: true });
@@ -295,7 +321,7 @@ fse.readdirSync("./dist").forEach((e) => {
     </script>`
                 : ""
         );
-        
+
         fse.writeFileSync(`./dist/${e}`, file, "utf-8");
     }
 });

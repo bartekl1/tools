@@ -151,6 +151,16 @@ const tools = [
     },
     {
         name: {
+            english: "TOTP generator",
+            polish: "TOTP generator",
+        },
+        icon: "bi-shield-lock",
+        href: "/tools/totp_generator.html",
+        color: "yellow",
+        offline: true,
+    },
+    {
+        name: {
             english: "World time",
             polish: "Czas na świecie",
         },
