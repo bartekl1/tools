@@ -105,6 +105,7 @@ const precacheResources = [
     "/tools/js/modules/qrcode.js",
     "/tools/js/modules/random.js",
     "/tools/js/modules/csv.js",
+    "/tools/js/modules/totp_generator.js",
     "/tools/db/countries.csv",
 ];
 
