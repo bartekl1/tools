@@ -19,6 +19,7 @@
 - [Moment Timezone](https://momentjs.com/timezone/)
 - [random-js](https://github.com/ckknight/random-js)
 - [csv](https://github.com/adaltas/node-csv)
+- [totp-generator](https://github.com/bellstrand/totp-generator)
 
 Lista wszystkich bibliotek łącznie z ich zależnościami dostępna jest
 [tutaj](https://github.com/bartekl1/tools/network/dependencies).
