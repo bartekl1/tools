@@ -494,6 +494,14 @@ select#custom-timezone-country {
     max-width: 523px;
 }
 
+select#verify-checksum-type {
+    max-width: 140px;
+}
+
+input#verify-checksum {
+    max-width: 360px;
+}
+
 iframe.google-maps {
     max-width: 100%;
     width: 700px;

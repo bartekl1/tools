@@ -1,4 +1,24 @@
-document.querySelector("#file-input").addEventListener("change", (evt) => {
+function verifyChecksum() {
+    document.querySelector("#verify-checksum").classList.remove("bg-success");
+    document.querySelector("#verify-checksum").classList.remove("bg-danger");
+
+    if (
+        document.querySelector("#verify-checksum").value !== "" &&
+        document.querySelector("#file-input").files.length === 1
+    ) {
+        document.querySelector(
+            `#${document.querySelector("#verify-checksum-type").value}`
+        ).value === document.querySelector("#verify-checksum").value
+            ? document
+                  .querySelector("#verify-checksum")
+                  .classList.add("bg-success")
+            : document
+                  .querySelector("#verify-checksum")
+                  .classList.add("bg-danger");
+    }
+}
+
+document.querySelector("#file-input").addEventListener("change", () => {
     var input = document.querySelector("#file-input");
 
     if (input.files.length === 1) {
@@ -23,6 +43,8 @@ document.querySelector("#file-input").addEventListener("change", (evt) => {
                 CryptoJS.SHA3(text).toString();
             document.querySelector("#ripemd160").value =
                 CryptoJS.RIPEMD160(text).toString();
+
+            verifyChecksum();
         };
 
         reader.readAsBinaryString(input.files[0]);
@@ -36,7 +58,16 @@ document.querySelector("#file-input").addEventListener("change", (evt) => {
         document.querySelector("#sha3").value = "";
         document.querySelector("#ripemd160").value = "";
     }
+
+    verifyChecksum();
 });
+
+document
+    .querySelector("#verify-checksum")
+    .addEventListener("change", verifyChecksum);
+document
+    .querySelector("#verify-checksum-type")
+    .addEventListener("change", verifyChecksum);
 
 document.querySelectorAll(".copy").forEach((e) => {
     e.addEventListener("click", (evt) => {

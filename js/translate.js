@@ -350,6 +350,7 @@ const textTranslations = [
     "gibibajt [GiB]",
     "tebibajt [TiB]",
     "Sumy kontrolne",
+    "Zweryfikuj"
 ];
 
 const titleTranslations = {

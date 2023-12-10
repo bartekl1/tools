@@ -70,6 +70,26 @@
             <input type="file" class="form-control" id="file-input">
         </div>
 
+        <div class="mb-4">
+            <label for="verify" class="form-label h4">
+                <i class="bi bi-check-lg"></i>
+                <span text-id="351">Verify</span>
+            </label>
+            <div class="input-group">
+                <select id="verify-checksum-type" class="form-select">
+                    <option value="md5">MD5</option>
+                    <option value="sha1">SHA1</option>
+                    <option value="sha256">SHA256</option>
+                    <option value="sha224">SHA224</option>
+                    <option value="sha512">SHA512</option>
+                    <option value="sha384">SHA384</option>
+                    <option value="sha3">SHA3</option>
+                    <option value="ripemd160">RIPEMD160</option>
+                </select>
+                <input type="text" class="form-control" id="verify-checksum">
+            </div>
+        </div>
+
         <div class="mb-2">
             <label for="md5" class="form-label h4">MD5</label>
             <div class="input-group">
