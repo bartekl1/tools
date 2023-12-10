@@ -54,3 +54,19 @@ document
     });
 
 setInterval(generateTOTP, 500);
+
+document.querySelectorAll(".copy").forEach((e) => {
+    e.addEventListener("click", (evt) => {
+        navigator.clipboard.writeText(document.querySelector("#totp").value);
+
+        evt.currentTarget.innerHTML = '<i class="bi bi-clipboard-check"></i>';
+
+        setTimeout(
+            (el) => {
+                el.innerHTML = '<i class="bi bi-clipboard"></i>';
+            },
+            2000,
+            evt.currentTarget
+        );
+    });
+});
