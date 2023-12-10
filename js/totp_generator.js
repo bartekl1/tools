@@ -25,10 +25,18 @@ function generateTOTP() {
         return;
     }
 
-    var token = totp(document.querySelector("#secret-key").value, {
-        digits: parseInt(document.querySelector("#digits-number").value),
-        period: parseInt(document.querySelector("#token-period").value),
-    });
+    try {
+        var token = totp(document.querySelector("#secret-key").value, {
+            digits: parseInt(document.querySelector("#digits-number").value),
+            period: parseInt(document.querySelector("#token-period").value),
+        });
+
+        document.querySelector("#secret-key").classList.remove("is-invalid");
+    } catch {
+        document.querySelector("#secret-key").classList.add("is-invalid");
+
+        return;
+    }
 
     document.querySelector("#totp").value = token;
 
