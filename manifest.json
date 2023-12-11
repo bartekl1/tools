@@ -102,5 +102,37 @@
     "categories": ["productivity", "utilities"],
     "edge_side_panel": {
         "preferred_width": 400
-    }
+    },
+    "screenshots": [
+        {
+            "src": "/tools/img/screenshots/windows_en.png",
+            "sizes": "1599x974",
+            "type": "image/png",
+            "form_factor": "wide",
+            "label": "Home screen on Windows (English version)",
+            "platform": "windows"
+        },
+        {
+            "src": "/tools/img/screenshots/windows_pl.png",
+            "sizes": "1599x974",
+            "type": "image/png",
+            "form_factor": "wide",
+            "label": "Home screen on Windows (Polish version)",
+            "platform": "windows"
+        },
+        {
+            "src": "/tools/img/screenshots/mobile_en.png",
+            "sizes": "696x1688",
+            "type": "image/png",
+            "form_factor": "narrow",
+            "label": "Home screen on mobile device (English version)"
+        },
+        {
+            "src": "/tools/img/screenshots/mobile_pl.png",
+            "sizes": "696x1688",
+            "type": "image/png",
+            "form_factor": "narrow",
+            "label": "Home screen on mobile device (Polish version)"
+        }
+    ]
 }
