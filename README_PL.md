@@ -20,7 +20,6 @@ Ta strona jest progresywna aplikacją webową (PWA), więc może zostać zainsta
 - Kalkulator
 - Przelicznik jednostek
 - Przelicznik liczb rzymskich
-- Przelicznik współrzędnych geograficznych
 
 ### 💻 Informatyczne
 
@@ -37,6 +36,8 @@ Ta strona jest progresywna aplikacją webową (PWA), więc może zostać zainsta
 
 - Generator haseł
 - Generator hashy
+- Sumy kontrolne
+- TOTP generator
 
 ### 🕑 Data i czas
 
@@ -44,10 +45,15 @@ Ta strona jest progresywna aplikacją webową (PWA), więc może zostać zainsta
 - Obliczenia na czasie
 - Stoper
 
+### 🌍 Geograficzne
+
+- Przelicznik współrzędnych geograficznych
+- GPS
+- Miernik prędkości
+
 ### 📄 Inne
 
 - Generator liczb losowych
-- GPS
 - Generator kodów QR
 - Kody paskowe rezystorów
 
