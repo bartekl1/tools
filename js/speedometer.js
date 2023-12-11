@@ -21,6 +21,10 @@ document.querySelector("#start-speedometer").addEventListener("click", () => {
                 } else if (speedUnit === "mph") {
                     speed *= 3600 / 1_609.344;
                 }
+
+                speed = Math.round(speed);
+
+                document.querySelector("#speed").innerHTML = speed;
             }
 
             document.querySelector("#speed-unit").innerHTML = speedUnit;
