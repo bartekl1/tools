@@ -333,4 +333,20 @@ file = file.replace(
 );
 fse.writeFileSync("./dist/info.html", file, "utf-8");
 
+if (configs["website-url"] !== "" && configs["website-url"] !== undefined) {
+    var file1 = fse.readFileSync("./dist/sitemap.xml", "utf-8");
+    file1 = file1.replaceAll(
+        /<loc>(.*)<\/loc>/g,
+        `<loc>${configs["website-url"]}$1</loc>`
+    );
+    fse.writeFileSync("./dist/sitemap.xml", file1, "utf-8");
+
+    var file2 = fse.readFileSync("./dist/robots.txt", "utf-8");
+    file2 = file2.replaceAll(
+        /Sitemap: (.*)/g,
+        `Sitemap: ${configs["website-url"]}$1`
+    );
+    fse.writeFileSync("./dist/robots.txt", file2, "utf-8");
+}
+
 console.log("\nDone!");
