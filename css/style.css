@@ -547,3 +547,15 @@ td.value {
     font-size: 70px;
     color: sandybrown;
 }
+
+#speed {
+    font-size: 200px;
+}
+
+#speed-unit {
+    font-size: 70px;
+}
+
+#start-speedometer {
+    font-size: 50px;
+}

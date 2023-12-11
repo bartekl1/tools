@@ -211,6 +211,16 @@ const tools = [
     },
     {
         name: {
+            english: "Speedometer",
+            polish: "Miernik prędkości",
+        },
+        icon: "bi-speedometer2",
+        href: "/tools/speedometer.html",
+        color: "red",
+        offline: true,
+    },
+    {
+        name: {
             english: "Random number generator",
             polish: "Generator liczb losowych",
         },

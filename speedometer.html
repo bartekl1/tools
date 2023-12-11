@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="google-analytics">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Speedometer</title>
+
+    <meta name="description" content="Speedometer - Website with math and IT tools">
+    <meta name="keywords" content="Tools, Narzędzia, Speedometer">
+    <meta name="author" content="Bartek L">
+
+    <link rel="stylesheet" href="/tools/css/style.css">
+
+    <link rel="stylesheet" href="/tools/css/modules/bootstrap.min.css">
+    <link rel="stylesheet" href="/tools/css/modules/bootstrap-icons/bootstrap-icons.min.css">
+
+    <script src="/tools/js/theme.js"></script>
+
+    <link rel="manifest" href="/tools/manifest.json">
+
+    <link rel="shortcut icon" href="/tools/img/icons/icon.ico">
+    <link rel="apple-touch-icon" href="/tools/img/icons/icon_x192.png">
+
+    <!-- Standard browsers -->
+    <meta name="theme-color" content="#0d6efd"/>
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#0d6efd">
+
+    <meta name="google-site-verification">
+</head>
+<body class="px-3 pt-2">
+    <div class="top-bar">
+        <div class="float-start top-bar-buttons">
+            <button class="top-bar-button" onclick="window.location.reload()">
+                <i class="bi bi-arrow-clockwise"></i>
+            </button>
+            <a class="top-bar-button" href="/tools/">
+                <i class="bi bi-house"></i>
+            </a>
+            <button class="top-bar-button" id="top-bar-share">
+                <i class="bi bi-share-fill"></i>
+            </button>
+        </div>
+        <div class="input-group top-bar-search-group">
+            <span class="input-group-text top-bar-search-text"><i class="bi bi-search"></i></span>
+            <input type="text" class="form-control top-bar-search" placeholder="Search">
+        </div>
+    </div>
+
+    <h1 class="text-light-emphasis h2 text-center">
+        <a href="/tools/" class="home-link">
+            <span text-id="0">Tools</span>
+            <i class="bi bi-tools"></i>
+        </a>
+    </h1>
+
+    <h2 class="h3">
+        <i class="bi bi-speedometer2"></i>
+        <span text-id="358">Speedometer</span>
+    </h2>
+
+    <div id="tool-page">
+        <div class="alert alert-danger d-none" id="gps-not-supported">
+            <span text-id="49">GPS is not supported.</span>
+        </div>
+        
+        <div class="alert alert-danger d-none" id="gps-blocked">
+            <span text-id="50">GPS is blocked.</span>
+        </div>
+
+        <div id="start-speedometer-div" class="d-flex align-items-center flex-column mt-5">
+            <button class="btn btn-primary btn-lg" id="start-speedometer">START</button>
+        </div>
+
+        <div id="speedometer-div" class="d-flex align-items-center align-self-center flex-column d-none">
+            <div id="speed">--</div>
+            <div id="speed-unit">km/h</div>
+
+            <div class="btn-group mt-3">
+                <input type="radio" class="btn-check" name="speed-unit-radio" id="kmh" checked>
+                <label class="btn btn-primary speed-unit-label" for="kmh">km/h</label>
+              
+                <input type="radio" class="btn-check" name="speed-unit-radio" id="ms">
+                <label class="btn btn-secondary speed-unit-label" for="ms">m/s</label>
+              
+                <input type="radio" class="btn-check" name="speed-unit-radio" id="mph">
+                <label class="btn btn-secondary speed-unit-label" for="mph">mph</label>
+              </div>
+        </div>
+    </div>
+
+    <button class="btn btn-primary py-2 dropdown-toggle d-flex align-items-center position-fixed bottom-0 end-0 m-2" id="theme-button" type="button" data-bs-toggle="dropdown" data-bs-target="theme-dropdown">
+        
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end shadow" id="theme-dropdown">
+        <li>
+            <button type="button" class="dropdown-item d-flex align-items-center theme-button" theme-value="auto">
+                <i class="bi bi-circle-half me-2 opacity-75"></i>
+                Auto
+                <i class="bi bi-check2 ms-auto d-none"></i>
+            </button>
+        </li>
+        <li>
+            <button type="button" class="dropdown-item d-flex align-items-center theme-button" theme-value="light">
+                <i class="bi bi-sun-fill me-2 opacity-75"></i>
+                <span text-id="248">Light</span>
+                <i class="bi bi-check2 ms-auto d-none"></i>
+            </button>
+        </li>
+        <li>
+            <button type="button" class="dropdown-item d-flex align-items-center theme-button" theme-value="dark">
+                <i class="bi bi-moon-stars-fill me-2 opacity-75"></i>
+                <span text-id="249">Dark</span>
+                <i class="bi bi-check2 ms-auto d-none"></i>
+            </button>
+        </li>
+    </ul>
+
+    <div id="cookies-info"></div>
+
+    <script src="/tools/js/topbar.js"></script>
+    <script src="/tools/js/translate.js"></script>
+    <script src="/tools/js/error.js"></script>
+    
+    <script src="/tools/js/modules/bootstrap.bundle.min.js"></script>
+    
+    <script src="/tools/js/speedometer.js"></script>
+
+    <script>
+        var reg;
+        // Register the service worker
+        if ('serviceWorker' in navigator) {
+            // Wait for the 'load' event to not block other work
+            window.addEventListener('load', async () => {
+                // Try to register the service worker.
+                try {
+                    reg = await navigator.serviceWorker.register('/tools/sw.js');
+                    console.log('Service worker registered! 😎', reg);
+                } catch (err) {
+                    console.log('😥 Service worker registration failed: ', err);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

@@ -357,6 +357,7 @@ const textTranslations = [
     "Czas",
     "Bieżący czas",
     "Ważny",
+    "Miernik prędkości",
 ];
 
 const titleTranslations = {
@@ -387,6 +388,7 @@ const titleTranslations = {
     Stopwatch: "Stoper",
     Checksums: "Sumy kontrolne",
     "TOTP generator": "TOTP generator",
+    Speedometer: "Miernik prędkości",
 };
 
 const placeholdersTranslations = {
