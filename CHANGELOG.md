@@ -1,5 +1,26 @@
 # 🕑 Changelog
 
+## 1.2
+
+- New tools
+    - Checksums
+    - TOTP generator
+    - Speedometer
+- Improvements in existing tools
+    - Added option to generate unique numbers in random number generator.
+    - Added option to sort numbers in random number generator.
+    - Added area, volume, sound, data, speed and acceleration units to unit converter.
+    - Added option to filter timezones by countries in world time tool.
+- Other new features
+    - Added option to change theme.
+    - Added share current tool button to window control overlay (top bar in PWA).
+- Bug fixes
+    - Improved the display of long tool names on the home page.
+    - Improved rendering of changelog and acknowledgements.
+    - Improved dark theme loading.
+        The theme is loaded earlier so the screen does not blink when loading the page.
+- Other fixes and improvements
+
 ## 1.1
 
 - New tools
@@ -21,4 +42,4 @@
 
 ## 1.0
 
-**First version**
+First version

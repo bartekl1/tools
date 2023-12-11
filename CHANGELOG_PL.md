@@ -1,5 +1,26 @@
 # 🕑 Rejestr zmian
 
+## 1.2
+
+- Nowe narzędzia
+    - Sumy kontrolne
+    - TOTP generator
+    - Miernik prędkości
+- Poprawki w istniejących narzędziach
+    - Dodano opcję generowania unikatowych liczb w generatorze liczb losowych.
+    - Dodano opcję sortowania liczb w generatorze liczb losowych.
+    - Dodano jednostki powierzchni, objętości, dźwięku, danych, prędkości i przyspieszenia do przelicznika jednostek.
+    - Dodano opcję filtrowania stref czasowych według państw w narzędziu czas na świecie.
+- Inne nowe funkcje
+    - Dodano możliwość zmiany motywu.
+    - Dodano przycisk udostępniania bieżącego narzędzia do window control overlay (górny pasek w PWA).
+- Poprawki błędów
+    - Poprawiono wyświetlanie długich nazw narzędzi na stronie głównej.
+    - Poprawiono renderowanie rejestru zmian i podziękowań.
+    - Poprawiono ładowanie ciemnego motywu.
+        Motyw jest ładowany wcześniej dzięki czemu ekran nie mruga podczas ładowania strony.
+- Inne poprawki i ulepszenia
+
 ## 1.1
 
 - Nowe narzędzia
@@ -21,4 +42,4 @@
 
 ## 1.0
 
-**Pierwsza wersja**
+Pierwsza wersja
