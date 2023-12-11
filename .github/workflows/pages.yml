@@ -20,7 +20,7 @@ jobs:
 
             - name: Create configs
               run: |
-                  echo '{ "google-site-verification": "${{ secrets.GOOGLE_SITE_VERIFICATION }}", "google-analytics": "${{ secrets.GOOGLE_ANALYTICS }}" }' > configs.json
+                  echo '{ "google-site-verification": "${{ secrets.GOOGLE_SITE_VERIFICATION }}", "google-analytics": "${{ secrets.GOOGLE_ANALYTICS }}", "website-url": "${{ secrets.WEBSITE_URL }}" }' > configs.json
             - name: Install Dependencies
               run: npm install
             - name: Build Project
