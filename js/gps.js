@@ -83,7 +83,7 @@ function localize() {
                 .classList.add("d-none");
         }
 
-        if (coords.latitude !== null && coords.longitude !== null) {
+        if (coords.latitude !== null && coords.longitude !== null && navigator.onLine) {
             document.querySelector(
                 "#google-maps"
             ).innerHTML = `<iframe class="google-maps" src="https://maps.google.com/maps?q=${coords.latitude},${coords.longitude}&z=14&amp;output=embed"></iframe>`;
