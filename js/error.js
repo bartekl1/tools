@@ -1,4 +1,10 @@
-window.onerror = function (error) {
+window.addEventListener('error', (evt) => {
+    var error = evt.error.stack;
+    // console.log(error)
+    error = error.replaceAll(/(http.*\/(.*\.js))\:(\d+):(\d+)/gm, "<a href=\"$1\" target=\"_blank\" class=\"alert-link\">$2<a>:$3:$4")
+    error = error.replaceAll('\n', '<br>')
+    error = error.replaceAll('    ', '&emsp;')
+    
     if (document.querySelector("#errors") === null) {
         var div = document.createElement("div");
         div.id = "errors";
@@ -11,7 +17,8 @@ window.onerror = function (error) {
         "alert-danger",
         "alert-dismissible",
         "fade",
-        "show"
+        "show",
+        "d-flex"
     );
     errorAlert.setAttribute("role", "alert");
 
@@ -30,4 +37,4 @@ window.onerror = function (error) {
     errorAlert.append(errorClose);
 
     document.querySelector("#errors").append(errorAlert);
-};
+});

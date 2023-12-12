@@ -246,6 +246,118 @@ const textTranslations = [
     "Stoper",
     "Czas",
     "Czas trwania",
+    "Geograficzne",
+    "Jasny",
+    "Ciemny",
+    "Kierunek",
+    "Zanim zgłosisz błąd lub zaproponujesz nową funkcję proszę o przeczytanie",
+    "tych informacji",
+    "Posortuj",
+    "Unikatowe",
+    "Strona wykorzystuje pliki cookies do celów statystycznych.",
+    "Jeśli nie wyrażasz zgody na ich użycie, wycofaj stronie uprawnienia na ich użycie w ustawieniach przeglądarki lub skorzystaj z blokady skryptów śledzących.",
+    "Powierzchnia",
+    "metr kwadratowy [m&#178;]",
+    "kilometr kwadratowy [km&#178;]",
+    "decymetr kwadratowy [dm&#178;]",
+    "centymetr kwadratowy [cm&#178;]",
+    "milimetr kwadratowy [mm&#178;]",
+    "ar [a]",
+    "hektar [ha]",
+    "akr [ac]",
+    "cal kwadratowy [in&#178;]",
+    "stopa kwadratowy [ft&#178;]",
+    "jard kwadratowy [yd&#178;]",
+    "metr kwadratowy (square meter)",
+    "kilometr kwadratowy (square kilometer)",
+    "decymetr kwadratowy (square decimeter)",
+    "centymetr kwadratowy (square centimeter)",
+    "milimetr kwadratowy (square millimeter)",
+    "ar (are)",
+    "hektar (hectare)",
+    "akr (acre)",
+    "cal kwadratowy (square inch)",
+    "stopa kwadratowy (square foot)",
+    "jard kwadratowy (square yard)",
+    "Dźwięk",
+    "decybel [dB]",
+    "decybel (decibel)",
+    "Objętość",
+    "metr sześcienny (cubic meter)",
+    "kilometr sześcienny (cubic kilometer)",
+    "decymetr sześcienny = litr (cubic decimeter = liter)",
+    "centymetr sześcienny = mililitr (cubic centimeter = milliliter)",
+    "milimetr sześcienny (cubic millimeter)",
+    "cal sześcienny (cubic inch)",
+    "stopa sześcienna (cubic foot)",
+    "jard sześcienny (cubic yard)",
+    "galon angielski (imperial gallon)",
+    "galon amerykański dla płynów (US liquid gallon)",
+    "galon amerykański dla ciał sypkich (US dry gallon)",
+    "buszel angielski (imperial bushel)",
+    "buszel amerykański (US bushel)",
+    "baryłka ropy naftowej (oil barrel)",
+    "baryłka brytyjska (imperial barrel)",
+    "metr sześcienny [m&#179;]",
+    "kilometr sześcienny [km&#179;]",
+    "decymetr sześcienny = litr [dm&#179; = l]",
+    "centymetr sześcienny = mililitr [cm&#179; = ml]",
+    "milimetr sześcienny [mm&#179;]",
+    "cal sześcienny [in&#179;]",
+    "stopa sześcienna [ft&#179;]",
+    "jard sześcienny [yd&#179;]",
+    "galon angielski [imp gal]",
+    "galon amerykański dla płynów [US gal]",
+    "galon amerykański dla ciał sypkich [usdrygal]",
+    "buszel angielski [buUK]",
+    "buszel amerykański [buUS]",
+    "baryłka ropy naftowej [bbl]",
+    "baryłka brytyjska [Imp.bl.]",
+    "Prędkość",
+    "metr na sekundę (meter per second)",
+    "kilometr na godzinę (kilometer per hour)",
+    "mila lądowa na godzinę (land mile per hour)",
+    "węzeł - mila morska na godzinę (knot - nautical mile per hour)",
+    "mach - prędkość dźwięku w powietrzu (mach - speed of sound in air)",
+    "prędkość światła (speed of light)",
+    "metr na sekundę [m/s]",
+    "kilometr na godzinę [km/h]",
+    "mila lądowa na godzinę [mph]",
+    "węzeł [kt]",
+    "prędkość światła [c]",
+    "Przyspieszenie",
+    "metr na sekundę kwadrat (meter per square second)",
+    "stopa na sekundę kwadrat (foot per square second)",
+    "metr na sekundę kwadrat [m/s&#178;]",
+    "stopa na sekundę kwadrat [ft/s&#178;]",
+    "Dane",
+    "bajt (byte)",
+    "kilobajt (kilobyte)",
+    "megabajt (megabyte)",
+    "gigabajt (gigabyte)",
+    "terabajt (terabyte)",
+    "kibibajt (kibibyte)",
+    "mebibajt (mebibyte)",
+    "gibibajt (gibibyte)",
+    "tebibajt (tebibyte)",
+    "bajt [B]",
+    "kilobajt [kB]",
+    "megabajt [MB]",
+    "gigabajt [GB]",
+    "terabajt [TB]",
+    "kibibajt [KiB]",
+    "mebibajt [MiB]",
+    "gibibajt [GiB]",
+    "tebibajt [TiB]",
+    "Sumy kontrolne",
+    "Zweryfikuj",
+    "Klucz tajny",
+    "Ilość cyfr",
+    "Okres",
+    "Czas",
+    "Bieżący czas",
+    "Ważny",
+    "Miernik prędkości",
 ];
 
 const titleTranslations = {
@@ -274,6 +386,9 @@ const titleTranslations = {
     "World time": "Czas na świecie",
     "Time calculations": "Obliczenia na czasie",
     Stopwatch: "Stoper",
+    Checksums: "Sumy kontrolne",
+    "TOTP generator": "TOTP generator",
+    Speedometer: "Miernik prędkości",
 };
 
 const placeholdersTranslations = {
@@ -302,11 +417,20 @@ const placeholdersTranslations = {
     Height: "Wysokość",
     Width: "Szerokość",
     Resistance: "Opór",
+    Heading: "Kierunek",
+    "Secret key": "Klucz tajny",
+    "Number of digits": "Ilość cyfr",
+    Period: "Okres",
 };
 
 const alternativeTextTranslations = {};
 
 const elementsTitlesTranslations = {};
+
+const dataBSTranslations = {
+    Website: "Strona internetowa",
+    "GitHub profile": "Profil GitHub",
+};
 
 if (window.navigator.language.split("-")[0] == "pl") {
     document.querySelector("html").lang = "pl";
@@ -331,5 +455,12 @@ if (window.navigator.language.split("-")[0] == "pl") {
 
     document.querySelectorAll("[title]").forEach((e) => {
         e.title = elementsTitlesTranslations[e.title];
+    });
+
+    document.querySelectorAll("[data-bs-original-title]").forEach((e) => {
+        e.setAttribute(
+            "data-bs-original-title",
+            dataBSTranslations[e.getAttribute("data-bs-original-title")]
+        );
     });
 }

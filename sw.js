@@ -1,4 +1,4 @@
-const version = "1.1";
+const version = "1.2";
 // Choose a cache name
 const cacheNamePrefix = "cache-tools";
 const cacheName = `${cacheNamePrefix}-v${version}`;
@@ -66,6 +66,12 @@ const precacheResources = [
     "/tools/js/time_calculations.js",
     "/tools/stopwatch.html",
     "/tools/js/stopwatch.js",
+    "/tools/checksums.html",
+    "/tools/js/checksums.js",
+    "/tools/totp_generator.html",
+    "/tools/js/totp_generator.js",
+    "/tools/speedometer.html",
+    "/tools/js/speedometer.js",
     "/tools/img/resistor.svg",
     "/tools/fonts/JetBrainsMono-Regular.woff2",
     "/tools/js/modules/bowser.js",
@@ -99,6 +105,10 @@ const precacheResources = [
     "/tools/js/modules/latex/fonts/Typewriter%20Slanted/cmun-typewriter-slanted.css",
     "/tools/js/modules/latex/fonts/Serif/cmunrm.woff",
     "/tools/js/modules/qrcode.js",
+    "/tools/js/modules/random.js",
+    "/tools/js/modules/csv.js",
+    "/tools/js/modules/totp_generator.js",
+    "/tools/db/countries.csv",
 ];
 
 // When the service worker is installing, open the cache and add the precache resources to it

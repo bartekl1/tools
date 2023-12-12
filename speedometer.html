@@ -14,10 +14,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>World time</title>
+    <title>Speedometer</title>
 
-    <meta name="description" content="World time - Website with math and IT tools">
-    <meta name="keywords" content="Tools, Narzędzia, World time">
+    <meta name="description" content="Speedometer - Website with math and IT tools">
+    <meta name="keywords" content="Tools, Narzędzia, Speedometer">
     <meta name="author" content="Bartek L">
 
     <link rel="stylesheet" href="/tools/css/style.css">
@@ -69,55 +69,37 @@
     </h1>
 
     <h2 class="h3">
-        <i class="bi bi-clock"></i>
-        <span text-id="226">World time</span>
+        <i class="bi bi-speedometer2"></i>
+        <span text-id="358">Speedometer</span>
     </h2>
 
-    <div id="tool-loading">
-        <div class="d-flex justify-content-center">
-            <div class="spinner-border text-primary" role="status">
-                <span class="visually-hidden">Loading...</span>
-            </div>
+    <div id="tool-page">
+        <div class="alert alert-danger d-none" id="gps-not-supported">
+            <span text-id="49">GPS is not supported.</span>
         </div>
-    </div>
+        
+        <div class="alert alert-danger d-none" id="gps-blocked">
+            <span text-id="50">GPS is blocked.</span>
+        </div>
 
-    <div id="tool-page" class="d-none">
-        <!-- <div class="mb-2">
-            <div class="form-check">
-                <input class="form-check-input" type="radio" id="current-time" name="time-type" value="current-time" checked>
-                <label class="form-check-label" for="current-time" text-id="227">Current time</label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" id="select-time" name="time-type" value="select-time">
-                <div class="input-group">
-                    <input type="datetime-local" class="form-control" id="custom-input-time" step="1">
-                    <select id="custom-time-timezone" class="form-select"></select>
-                </div>
-            </div>
-        </div> -->
+        <div id="start-speedometer-div" class="d-flex align-items-center flex-column mt-5">
+            <button class="btn btn-primary btn-lg font-size-50px" id="start-speedometer">START</button>
+        </div>
 
-        <div>
-            <div class="mb-5">
-                <div class="fs-4" text-id="228">Local time</div>
-                <input type="text" class="form-control my-1" id="local-timezone" readonly>
-                <div class="fs-1" id="local-time"></div>
-                <div class="fs-3" id="local-date"></div>
-            </div>
-            
-            <div class="mb-5">
-                <div class="fs-4" text-id="229">Universal time</div>
-                <input type="text" class="form-control my-1" id="utc-timezone" readonly value="UTC">
-                <div class="fs-1" id="utc-time"></div>
-                <div class="fs-3" id="utc-date"></div>
-            </div>
-            
-            <div>
-                <div class="fs-4" text-id="230">Other timezone</div>
-                <select type="text" class="form-select mt-1 mb-2" id="custom-timezone-country"></select>
-                <select type="text" class="form-select mt-2 mb-1" id="custom-timezone"></select>
-                <div class="fs-1" id="custom-time"></div>
-                <div class="fs-3" id="custom-date"></div>
-            </div>
+        <div id="speedometer-div" class="d-flex align-items-center align-self-center flex-column d-none">
+            <div id="speed" class="font-size-200px">--</div>
+            <div id="speed-unit" class="font-size-70px">km/h</div>
+
+            <div class="btn-group mt-3">
+                <input type="radio" class="btn-check" name="speed-unit-radio" id="kmh" checked>
+                <label class="btn btn-primary speed-unit-label" for="kmh">km/h</label>
+              
+                <input type="radio" class="btn-check" name="speed-unit-radio" id="ms">
+                <label class="btn btn-secondary speed-unit-label" for="ms">m/s</label>
+              
+                <input type="radio" class="btn-check" name="speed-unit-radio" id="mph">
+                <label class="btn btn-secondary speed-unit-label" for="mph">mph</label>
+              </div>
         </div>
     </div>
 
@@ -175,10 +157,8 @@
     <script src="/tools/js/error.js"></script>
     
     <script src="/tools/js/modules/bootstrap.bundle.min.js"></script>
-    <script src="/tools/js/modules/moment.js"></script>
-    <script src="/tools/js/modules/csv.js"></script>
     
-    <script src="/tools/js/world_time.js"></script>
+    <script src="/tools/js/speedometer.js"></script>
 
     <script>
         var reg;

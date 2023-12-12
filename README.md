@@ -1,4 +1,4 @@
-# 🛠 Tools
+# ![Website icon](.github/img/icon_40.png) Tools
 
 Website with math and IT tools
 
@@ -21,7 +21,6 @@ This website is a progressive web app (PWA), so it can be installed and you can 
 - Calculator
 - Unit converter
 - Roman numeral converter
-- Geographical coordinates converter
 
 ### 💻 IT
 
@@ -38,6 +37,8 @@ This website is a progressive web app (PWA), so it can be installed and you can 
 
 - Password generator
 - Hash generator
+- Checksums
+- TOTP generator
 
 ### 🕑 Date and time
 
@@ -45,10 +46,15 @@ This website is a progressive web app (PWA), so it can be installed and you can 
 - Time calculations
 - Stopwatch
 
+### 🌍 Geographic
+
+- Geographical coordinates converter
+- GPS
+- Speedometer
+
 ### 📄 Other
 
 - Random number generator
-- GPS
 - QR code generator
 - Resistor bar codes
 

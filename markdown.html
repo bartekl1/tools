@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YVVRTFRG0K"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-YVVRTFRG0K');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -14,6 +24,8 @@
 
     <link rel="stylesheet" href="/tools/css/modules/bootstrap.min.css">
     <link rel="stylesheet" href="/tools/css/modules/bootstrap-icons/bootstrap-icons.min.css">
+
+    <script src="/tools/js/theme.js"></script>
 
     <link rel="manifest" href="/tools/manifest.json">
 
@@ -39,6 +51,9 @@
             <a class="top-bar-button" href="/tools/">
                 <i class="bi bi-house"></i>
             </a>
+            <button class="top-bar-button" id="top-bar-share">
+                <i class="bi bi-share-fill"></i>
+            </button>
         </div>
         <div class="input-group top-bar-search-group">
             <span class="input-group-text top-bar-search-text"><i class="bi bi-search"></i></span>
@@ -46,17 +61,17 @@
         </div>
     </div>
 
-    <div class="text-light-emphasis h2 text-center">
+    <h1 class="text-light-emphasis h2 text-center">
         <a href="/tools/" class="home-link">
             <span text-id="0">Tools</span>
             <i class="bi bi-tools"></i>
         </a>
-    </div>
+    </h1>
 
-    <div class="h3">
+    <h2 class="h3">
         <i class="bi bi-markdown"></i>
         <span>Markdown renderer</span>
-    </div>
+    </h2>
 
     <div id="tool-page">
         <div class="d-flex w-100 flex-column flex-sm-column flex-md-row flex-lg-row flex-xl-row flex-xxl-row">
@@ -68,8 +83,56 @@
         </div>
     </div>
 
+    <button class="btn btn-primary py-2 dropdown-toggle d-flex align-items-center position-fixed bottom-0 end-0 m-2" id="theme-button" type="button" data-bs-toggle="dropdown" data-bs-target="theme-dropdown">
+        
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end shadow" id="theme-dropdown">
+        <li>
+            <button type="button" class="dropdown-item d-flex align-items-center theme-button" theme-value="auto">
+                <i class="bi bi-circle-half me-2 opacity-75"></i>
+                Auto
+                <i class="bi bi-check2 ms-auto d-none"></i>
+            </button>
+        </li>
+        <li>
+            <button type="button" class="dropdown-item d-flex align-items-center theme-button" theme-value="light">
+                <i class="bi bi-sun-fill me-2 opacity-75"></i>
+                <span text-id="248">Light</span>
+                <i class="bi bi-check2 ms-auto d-none"></i>
+            </button>
+        </li>
+        <li>
+            <button type="button" class="dropdown-item d-flex align-items-center theme-button" theme-value="dark">
+                <i class="bi bi-moon-stars-fill me-2 opacity-75"></i>
+                <span text-id="249">Dark</span>
+                <i class="bi bi-check2 ms-auto d-none"></i>
+            </button>
+        </li>
+    </ul>
+
+    <div id="cookies-info" class="d-flex d-none position-fixed bottom-0 start-0 w-100 bg-body-secondary px-3 py-1">
+        <div class="cookie-icon">
+            <i class="bi bi-cookie"></i>
+        </div>
+        <div class="fs-5 ms-3 my-3">
+            <div text-id="255">Website uses cookies for statistical purposes.</div>
+            <!-- <div text-id="256">If you do not agree to their use, withdraw the website's permission to use them in your browser settings or use the tracking script blocker.</div> -->
+        </div>
+        <button type="button" class="btn-close my-3 me-1 m-auto" id="accept-cookies"></button>
+    </div>
+
+    <script>
+        if (localStorage.getItem('cookies-accepted') !== 'true') {
+            document.querySelector('#cookies-info').classList.remove('d-none');
+        }
+
+        document.querySelector('#accept-cookies').addEventListener('click', () => {
+            document.querySelector('#cookies-info').classList.add('d-none');
+            localStorage.setItem('cookies-accepted', 'true');
+        })
+    </script>
+
     <script src="/tools/js/topbar.js"></script>
-    <script src="/tools/js/theme.js"></script>
     <script src="/tools/js/translate.js"></script>
     <script src="/tools/js/error.js"></script>
     

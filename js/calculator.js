@@ -44,6 +44,9 @@ addEventListener("hashchange", switchCalculator);
 
 document.querySelectorAll(".calc-btn.standard-calc").forEach((e) => {
     e.addEventListener("click", (evt) => {
+        document
+            .querySelector(".calc-result.standard-calc")
+            .classList.remove("font-size-22px");
         if (evt.currentTarget.classList.contains("calc-number")) {
             if (
                 document
@@ -159,6 +162,9 @@ document.querySelectorAll(".calc-btn.standard-calc").forEach((e) => {
                     window.navigator.language.split("-")[0] == "pl"
                         ? "Nie można dzielić przez zero"
                         : "Can't divide by zero";
+                document
+                    .querySelector(".calc-result.standard-calc")
+                    .classList.add("font-size-22px");
             } else {
                 document.querySelector(".calc-result.standard-calc").innerHTML =
                     eval(mathOperation);
@@ -207,6 +213,9 @@ document.querySelectorAll(".calc-btn.standard-calc").forEach((e) => {
                     window.navigator.language.split("-")[0] == "pl"
                         ? "Liczba musi być większa lub równa zero"
                         : "Number must be greater or equal to zero";
+                document
+                    .querySelector(".calc-result.standard-calc")
+                    .classList.add("font-size-22px");
             }
         } else if (evt.currentTarget.classList.contains("calc-fraction")) {
             var number = Number(
@@ -226,6 +235,9 @@ document.querySelectorAll(".calc-btn.standard-calc").forEach((e) => {
                     window.navigator.language.split("-")[0] == "pl"
                         ? "Nie można dzielić przez zero"
                         : "Can't divide by zero";
+                document
+                    .querySelector(".calc-result.standard-calc")
+                    .classList.add("font-size-22px");
             }
         } else if (evt.currentTarget.classList.contains("calc-opposite")) {
             var number = Number(

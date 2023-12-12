@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bartekl1.github.io/tools/sitemap.xml

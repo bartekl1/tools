@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YVVRTFRG0K"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-YVVRTFRG0K');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -14,6 +24,8 @@
 
     <link rel="stylesheet" href="/tools/css/modules/bootstrap.min.css">
     <link rel="stylesheet" href="/tools/css/modules/bootstrap-icons/bootstrap-icons.min.css">
+
+    <script src="/tools/js/theme.js"></script>
 
     <link rel="manifest" href="/tools/manifest.json">
 
@@ -39,6 +51,9 @@
             <a class="top-bar-button" href="/tools/">
                 <i class="bi bi-house"></i>
             </a>
+            <button class="top-bar-button" id="top-bar-share">
+                <i class="bi bi-share-fill"></i>
+            </button>
         </div>
         <div class="input-group top-bar-search-group">
             <span class="input-group-text top-bar-search-text"><i class="bi bi-search"></i></span>
@@ -46,49 +61,41 @@
         </div>
     </div>
 
-    <div class="text-light-emphasis h2 text-center">
+    <h1 class="text-light-emphasis h2 text-center">
         <a href="/tools/" class="home-link">
             <span text-id="0">Tools</span>
             <i class="bi bi-tools"></i>
         </a>
-    </div>
+    </h1>
 
-    <div class="h3">
+    <h2 class="h3">
         <i class="bi bi-arrow-repeat"></i>
         <span text-id="8">Unit converter</span>
-    </div>
+    </h2>
 
     <div id="tool-page">
-        <ul class="nav nav-pills mb-3" role="tablist">
-            <li class="nav-item" role="presentation">
-                <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#length" type="button" role="tab">
-                    <span text-id="74">Length</span>
-                </button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#weight" type="button" role="tab">
-                    <span text-id="75">Weight</span>
-                </button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#time" type="button" role="tab">
-                    <span text-id="76">Time</span>
-                </button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#temperature" type="button" role="tab">
-                    <span text-id="77">Temperature</span>
-                </button>
-            </li>
-        </ul>
+        <select id="category" class="form-select mb-2">
+            <option value="length" text-id="74">Length</option>
+            <option value="area" text-id="257">Area</option>
+            <option value="volume" text-id="283">Volume</option>
+            <option value="weight" text-id="75">Weight</option>
+            <option value="time" text-id="76">Time</option>
+            <option value="temperature" text-id="77">Temperature</option>
+            <option value="speed" text-id="314">Speed</option>
+            <option value="acceleration" text-id="326">Acceleration</option>
+            <option value="data" text-id="331">Data</option>
+            <option value="sound" text-id="280">Sound</option>
+        </select>
+
         <div>
             <div class="form-floating mb-2">
                 <input type="number" class="form-control" id="decimals-count" value="2">
                 <label for="decimals-count" text-id="171">Decimals count</label>
             </div>
         </div>
-        <div class="tab-content" id="pills-tabContent">
-            <div class="tab-pane fade show active" id="length" role="tabpanel" tabindex="0">
+
+        <div>
+            <div class="category-tab" id="length">
                 <div class="d-flex">
                     <input type="number" step="any" class="form-control" id="length-input">
                     <select id="length-unit" class="form-select w-50 ms-2">
@@ -283,7 +290,353 @@
                     </table>
                 </div>
             </div>
-            <div class="tab-pane fade" id="weight" role="tabpanel" tabindex="0">
+            <div class="category-tab d-none" id="area">
+                <div class="d-flex">
+                    <input type="number" step="any" class="form-control" id="area-input">
+                    <select id="area-unit" class="form-select w-50 ms-2">
+                        <option value="square-meter" text-id="258">square meter [m&#178;]</option>
+                        <option value="square-kilometer" text-id="259">square kilometer [km&#178;]</option>
+                        <option value="square-decimeter" text-id="260">square decimeter [dm&#178;]</option>
+                        <option value="square-centimeter" text-id="261">square centimeter [cm&#178;]</option>
+                        <option value="square-millimeter" text-id="262">square millimeter [mm&#178;]</option>
+                        <option value="are" text-id="263">are [a]</option>
+                        <option value="hectare" text-id="264">hectare [ha]</option>
+                        <option value="acre" text-id="265">acre [ac]</option>
+                        <option value="square-inch" text-id="266">square inch [in&#178;]</option>
+                        <option value="square-foot" text-id="267">square foot [ft&#178;]</option>
+                        <option value="square-yard" text-id="268">square yard [yd&#178;]</option>
+                    </select>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">
+                                    <span text-id="78">Name</span>
+                                </th>
+                                <th scope="col">
+                                    <span text-id="79">Symbol</span>
+                                </th>
+                                <th scope="col">
+                                    <span text-id="80">Value</span>
+                                </th>
+                                <th scope="col">
+                                    <span text-id="81">Copy</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td text-id="269">square meter</td>
+                                <td>m&#178;</td>
+                                <td id="area-square-meter" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="270">square kilometer</td>
+                                <td>km&#178;</td>
+                                <td id="area-square-kilometer" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="271">square decimeter</td>
+                                <td>dm&#178;</td>
+                                <td id="area-square-decimeter" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="272">square centimeter</td>
+                                <td>cm&#178;</td>
+                                <td id="area-square-centimeter" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="273">square millimeter</td>
+                                <td>mm&#178;</td>
+                                <td id="area-square-millimeter" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="274">are</td>
+                                <td>a</td>
+                                <td id="area-are" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="275">hectare</td>
+                                <td>ha</td>
+                                <td id="area-hectare" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="276">acre</td>
+                                <td>ac</td>
+                                <td id="area-acre" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="277">square inch</td>
+                                <td>in&#178;</td>
+                                <td id="area-square-inch" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="278">square foot</td>
+                                <td>ft&#178;</td>
+                                <td id="area-square-foot" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="279">square yard</td>
+                                <td>yd&#178;</td>
+                                <td id="area-square-yard" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="category-tab d-none" id="volume">
+                <div class="d-flex">
+                    <input type="number" step="any" class="form-control" id="volume-input">
+                    <select id="volume-unit" class="form-select w-50 ms-2">
+                        <option value="cubic-meter" text-id="299">cubic meter [m&#179;]</option>
+                        <option value="cubic-kilometer" text-id="300">cubic kilometer [km&#179;]</option>
+                        <option value="cubic-decimeter" text-id="301">cubic decimeter = liter [dm&#179; = l]</option>
+                        <option value="cubic-centimeter" text-id="302">cubic centimeter = milliliter [cm&#179; = ml]</option>
+                        <option value="cubic-millimeter" text-id="303">cubic millimeter [mm&#179;]</option>
+                        <option value="cubic-inch" text-id="304">cubic inch [in&#179;]</option>
+                        <option value="cubic-foot" text-id="305">cubic foot [ft&#179;]</option>
+                        <option value="cubic-yard" text-id="306">cubic yard [yd&#179;]</option>
+                        <option value="imperial-gallon" text-id="307">imperial gallon [imp gal]</option>
+                        <option value="us-liquid-gallon" text-id="308">US liquid gallon [US gal]</option>
+                        <option value="us-dry-gallon" text-id="309">US dry gallon [usdrygal]</option>
+                        <option value="imperial-bushel" text-id="310">imperial bushel [buUK]</option>
+                        <option value="us-bushel" text-id="311">US bushel [buUS]</option>
+                        <option value="oil-barrel" text-id="312">oil barrel [bbl]</option>
+                        <option value="imperial-barrel" text-id="313">imperial barrel [Imp.bl.]</option>
+                    </select>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">
+                                    <span text-id="78">Name</span>
+                                </th>
+                                <th scope="col">
+                                    <span text-id="79">Symbol</span>
+                                </th>
+                                <th scope="col">
+                                    <span text-id="80">Value</span>
+                                </th>
+                                <th scope="col">
+                                    <span text-id="81">Copy</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td text-id="284">cubic meter</td>
+                                <td>m&#179;</td>
+                                <td id="volume-cubic-meter" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="285">cubic kilometer</td>
+                                <td>km&#179;</td>
+                                <td id="volume-cubic-kilometer" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="286">cubic decimeter = liter</td>
+                                <td>dm&#179; = l</td>
+                                <td id="volume-cubic-decimeter" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="287">cubic centimeter = milliliter</td>
+                                <td>cm&#179; = ml</td>
+                                <td id="volume-cubic-centimeter" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="288">cubic millimeter</td>
+                                <td>mm&#179;</td>
+                                <td id="volume-cubic-millimeter" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="289">cubic inch</td>
+                                <td>in&#179;</td>
+                                <td id="volume-cubic-inch" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="290">cubic foot</td>
+                                <td>ft&#179;</td>
+                                <td id="volume-cubic-foot" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="291">cubic yard</td>
+                                <td>yd&#179;</td>
+                                <td id="volume-cubic-yard" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="292">imperial gallon</td>
+                                <td>imp gal</td>
+                                <td id="volume-imperial-gallon" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="293">US liquid gallon</td>
+                                <td>US gal</td>
+                                <td id="volume-us-liquid-gallon" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="294">US dry gallon</td>
+                                <td>usdrygal</td>
+                                <td id="volume-us-dry-gallon" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="295">imperial bushel</td>
+                                <td>buUK</td>
+                                <td id="volume-imperial-bushel" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="296">US bushel</td>
+                                <td>buUS</td>
+                                <td id="volume-us-bushel" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="297">oil barrel</td>
+                                <td>bbl</td>
+                                <td id="volume-oil-barrel" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="298">imperial barrel</td>
+                                <td>Imp.bl.</td>
+                                <td id="volume-imperial-barrel" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="category-tab d-none" id="weight">
                 <div class="d-flex">
                     <input type="number" step="any" class="form-control" id="weight-input">
                     <select id="weight-unit" class="form-select w-50 ms-2">
@@ -445,7 +798,7 @@
                     </table>
                 </div>
             </div>
-            <div class="tab-pane fade" id="time" role="tabpanel" tabindex="0">
+            <div class="category-tab d-none" id="time">
                 <div class="d-flex">
                     <input type="number" step="any" class="form-control" id="time-input">
                     <select id="time-unit" class="form-select w-50 ms-2">
@@ -629,7 +982,7 @@
                     </table>
                 </div>
             </div>
-            <div class="tab-pane fade" id="temperature" role="tabpanel" tabindex="0">
+            <div class="category-tab d-none" id="temperature">
                 <div class="d-flex">
                     <input type="number" step="any" class="form-control" id="temperature-input">
                     <select id="temperature-unit" class="form-select w-50 ms-2">
@@ -692,11 +1045,421 @@
                     </table>
                 </div>
             </div>
+            <div class="category-tab d-none" id="speed">
+                <div class="d-flex">
+                    <input type="number" step="any" class="form-control" id="speed-input">
+                    <select id="speed-unit" class="form-select w-50 ms-2">
+                        <option value="meter-per-second" text-id="321">meter per second [m/s]</option>
+                        <option value="kilometer-per-hour" text-id="322">kilometer per hour [km/h]</option>
+                        <option value="land-mile-per-hour" text-id="323">land mile per hour [mph]</option>
+                        <option value="knot" text-id="324">knot [kt]</option>
+                        <option value="mach">mach [ma]</option>
+                        <option value="speed-of-light" text-id="325">speed of light [c]</option>
+                    </select>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">
+                                    <span text-id="78">Name</span>
+                                </th>
+                                <th scope="col">
+                                    <span text-id="79">Symbol</span>
+                                </th>
+                                <th scope="col">
+                                    <span text-id="80">Value</span>
+                                </th>
+                                <th scope="col">
+                                    <span text-id="81">Copy</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td text-id="315">meter per second</td>
+                                <td>m/s</td>
+                                <td id="speed-meter-per-second" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="316">kilometer per hour</td>
+                                <td>km/h</td>
+                                <td id="speed-kilometer-per-hour" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="317">land mile per hour</td>
+                                <td>mph</td>
+                                <td id="speed-land-mile-per-hour" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="318">knot - nautical mile per hour</td>
+                                <td>kt</td>
+                                <td id="speed-knot" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="319">mach - speed of sound in air</td>
+                                <td>ma</td>
+                                <td id="speed-mach" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="320">speed of light</td>
+                                <td>c</td>
+                                <td id="speed-speed-of-light" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="category-tab d-none" id="acceleration">
+                <div class="d-flex">
+                    <input type="number" step="any" class="form-control" id="acceleration-input">
+                    <select id="acceleration-unit" class="form-select w-50 ms-2">
+                        <option value="meter-per-square-second" text-id="329">meter per square second [m/s&#178;]</option>
+                        <option value="foot-per-square-second" text-id="330">kilometer per square hour [ft/s&#178;]</option>
+                        <option value="gal">gal [gal]</option>
+                    </select>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">
+                                    <span text-id="78">Name</span>
+                                </th>
+                                <th scope="col">
+                                    <span text-id="79">Symbol</span>
+                                </th>
+                                <th scope="col">
+                                    <span text-id="80">Value</span>
+                                </th>
+                                <th scope="col">
+                                    <span text-id="81">Copy</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td text-id="327">meter per square second</td>
+                                <td>m/s&#178;</td>
+                                <td id="acceleration-meter-per-square-second" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="328">foot per square second</td>
+                                <td>ft/s&#178;</td>
+                                <td id="acceleration-foot-per-square-second" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>gal</td>
+                                <td>gal</td>
+                                <td id="acceleration-gal" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="category-tab d-none" id="data">
+                <div class="d-flex">
+                    <input type="number" step="any" class="form-control" id="data-input">
+                    <select id="data-unit" class="form-select w-50 ms-2">
+                        <option value="bit">bit [b]</option>
+                        <option value="byte" text-id="341">byte [B]</option>
+                        <option value="kilobyte" text-id="342">kilobyte [kB]</option>
+                        <option value="megabyte" text-id="343">megabyte [MB]</option>
+                        <option value="gigabyte" text-id="344">gigabyte [GB]</option>
+                        <option value="terabyte" text-id="345">terabyte [TB]</option>
+                        <option value="kibibyte" text-id="346">kibibyte [KiB]</option>
+                        <option value="mebibyte" text-id="347">mebibyte [MiB]</option>
+                        <option value="gibibyte" text-id="348">gibibyte [GiB]</option>
+                        <option value="tebibyte" text-id="349">tebibyte [TiB]</option>
+                    </select>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">
+                                    <span text-id="78">Name</span>
+                                </th>
+                                <th scope="col">
+                                    <span text-id="79">Symbol</span>
+                                </th>
+                                <th scope="col">
+                                    <span text-id="80">Value</span>
+                                </th>
+                                <th scope="col">
+                                    <span text-id="81">Copy</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>bit</td>
+                                <td>b</td>
+                                <td id="data-bit" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="332">byte</td>
+                                <td>B</td>
+                                <td id="data-byte" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="333">kilobyte</td>
+                                <td>kB</td>
+                                <td id="data-kilobyte" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="334">megabyte</td>
+                                <td>MB</td>
+                                <td id="data-megabyte" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="335">gigabyte</td>
+                                <td>GB</td>
+                                <td id="data-gigabyte" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="336">terabyte</td>
+                                <td>TB</td>
+                                <td id="data-terabyte" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="337">kibibyte</td>
+                                <td>KiB</td>
+                                <td id="data-kibibyte" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="338">mebibyte</td>
+                                <td>MiB</td>
+                                <td id="data-mebibyte" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="339">gibibyte</td>
+                                <td>GiB</td>
+                                <td id="data-gibibyte" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="340">tebibyte</td>
+                                <td>TiB</td>
+                                <td id="data-tebibyte" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="category-tab d-none" id="sound">
+                <div class="d-flex">
+                    <input type="number" step="any" class="form-control" id="sound-input">
+                    <select id="sound-unit" class="form-select w-50 ms-2">
+                        <option value="bel">bel [B]</option>
+                        <option value="decibel" text-id="281">decibel [dB]</option>
+                        <option value="neper">neper [Np]</option>
+                    </select>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">
+                                    <span text-id="78">Name</span>
+                                </th>
+                                <th scope="col">
+                                    <span text-id="79">Symbol</span>
+                                </th>
+                                <th scope="col">
+                                    <span text-id="80">Value</span>
+                                </th>
+                                <th scope="col">
+                                    <span text-id="81">Copy</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>bel</td>
+                                <td>B</td>
+                                <td id="sound-bel" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-id="282">decibel</td>
+                                <td>dB</td>
+                                <td id="sound-decibel" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>neper</td>
+                                <td>Np</td>
+                                <td id="sound-neper" class="value"></td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm copy">
+                                        <i class="bi bi-clipboard"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 
+    <button class="btn btn-primary py-2 dropdown-toggle d-flex align-items-center position-fixed bottom-0 end-0 m-2" id="theme-button" type="button" data-bs-toggle="dropdown" data-bs-target="theme-dropdown">
+        
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end shadow" id="theme-dropdown">
+        <li>
+            <button type="button" class="dropdown-item d-flex align-items-center theme-button" theme-value="auto">
+                <i class="bi bi-circle-half me-2 opacity-75"></i>
+                Auto
+                <i class="bi bi-check2 ms-auto d-none"></i>
+            </button>
+        </li>
+        <li>
+            <button type="button" class="dropdown-item d-flex align-items-center theme-button" theme-value="light">
+                <i class="bi bi-sun-fill me-2 opacity-75"></i>
+                <span text-id="248">Light</span>
+                <i class="bi bi-check2 ms-auto d-none"></i>
+            </button>
+        </li>
+        <li>
+            <button type="button" class="dropdown-item d-flex align-items-center theme-button" theme-value="dark">
+                <i class="bi bi-moon-stars-fill me-2 opacity-75"></i>
+                <span text-id="249">Dark</span>
+                <i class="bi bi-check2 ms-auto d-none"></i>
+            </button>
+        </li>
+    </ul>
+
+    <div id="cookies-info" class="d-flex d-none position-fixed bottom-0 start-0 w-100 bg-body-secondary px-3 py-1">
+        <div class="cookie-icon">
+            <i class="bi bi-cookie"></i>
+        </div>
+        <div class="fs-5 ms-3 my-3">
+            <div text-id="255">Website uses cookies for statistical purposes.</div>
+            <!-- <div text-id="256">If you do not agree to their use, withdraw the website's permission to use them in your browser settings or use the tracking script blocker.</div> -->
+        </div>
+        <button type="button" class="btn-close my-3 me-1 m-auto" id="accept-cookies"></button>
+    </div>
+
+    <script>
+        if (localStorage.getItem('cookies-accepted') !== 'true') {
+            document.querySelector('#cookies-info').classList.remove('d-none');
+        }
+
+        document.querySelector('#accept-cookies').addEventListener('click', () => {
+            document.querySelector('#cookies-info').classList.add('d-none');
+            localStorage.setItem('cookies-accepted', 'true');
+        })
+    </script>
+
     <script src="/tools/js/topbar.js"></script>
-    <script src="/tools/js/theme.js"></script>
     <script src="/tools/js/translate.js"></script>
     <script src="/tools/js/error.js"></script>
     

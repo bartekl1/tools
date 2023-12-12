@@ -1,3 +1,27 @@
+function switchTab() {
+    if (window.location.hash !== "") {
+        try {
+            document
+                .querySelector(window.location.hash)
+                .classList.remove("d-none");
+            document
+                .querySelectorAll(`.category-tab:not(${window.location.hash})`)
+                .forEach((e) => {
+                    e.classList.add("d-none");
+                });
+            document.querySelector("#category").value =
+                window.location.hash.slice(1);
+        } catch {}
+    }
+}
+
+document.querySelector("#category").addEventListener("change", (evt) => {
+    window.location.hash = evt.currentTarget.value;
+});
+
+switchTab();
+addEventListener("hashchange", switchTab);
+
 function round(n, p) {
     return Math.round(n * 10 ** p) / 10 ** p;
 }
@@ -114,7 +138,7 @@ function convertLength() {
         decimals
     );
     document.querySelector("#length-inch").innerHTML = round(
-        (meters / 25.4) * 1000,
+        meters * (1000 / 25.4),
         decimals
     );
     document.querySelector("#length-foot").innerHTML = round(
@@ -147,6 +171,301 @@ function convertLength() {
     );
 }
 
+function convertArea() {
+    if (document.querySelector("#area-input").value === "") {
+        return;
+    }
+
+    if (document.querySelector("#area-input").checkValidity()) {
+        document.querySelector("#area-input").classList.remove("is-invalid");
+    } else {
+        document.querySelector("#area-input").classList.add("is-invalid");
+        return;
+    }
+
+    if (
+        document.querySelector("#decimals-count").checkValidity() &&
+        document.querySelector("#decimals-count").value !== ""
+    ) {
+        document
+            .querySelector("#decimals-count")
+            .classList.remove("is-invalid");
+        var decimals = parseInt(
+            document.querySelector("#decimals-count").value
+        );
+    } else {
+        document.querySelector("#decimals-count").classList.add("is-invalid");
+        return;
+    }
+
+    var squareMeters;
+
+    if (document.querySelector("#area-unit").value === "square-meter") {
+        squareMeters = parseFloat(document.querySelector("#area-input").value);
+    } else if (
+        document.querySelector("#area-unit").value === "square-kilometer"
+    ) {
+        squareMeters =
+            parseFloat(document.querySelector("#area-input").value) * 1000 ** 2;
+    } else if (
+        document.querySelector("#area-unit").value === "square-decimeter"
+    ) {
+        squareMeters =
+            parseFloat(document.querySelector("#area-input").value) / 10 ** 2;
+    } else if (
+        document.querySelector("#area-unit").value === "square-centimeter"
+    ) {
+        squareMeters =
+            parseFloat(document.querySelector("#area-input").value) / 100 ** 2;
+    } else if (
+        document.querySelector("#area-unit").value === "square-millimeter"
+    ) {
+        squareMeters =
+            parseFloat(document.querySelector("#area-input").value) / 1000 ** 2;
+    } else if (document.querySelector("#area-unit").value === "are") {
+        squareMeters =
+            parseFloat(document.querySelector("#area-input").value) * 100;
+    } else if (document.querySelector("#area-unit").value === "hectare") {
+        squareMeters =
+            parseFloat(document.querySelector("#area-input").value) * 10_000;
+    } else if (document.querySelector("#area-unit").value === "acre") {
+        squareMeters =
+            parseFloat(document.querySelector("#area-input").value) *
+            4046.8564224;
+    } else if (document.querySelector("#area-unit").value === "square-inch") {
+        squareMeters =
+            parseFloat(document.querySelector("#area-input").value) /
+            (1000 / 25.4) ** 2;
+    } else if (document.querySelector("#area-unit").value === "square-foot") {
+        squareMeters =
+            parseFloat(document.querySelector("#area-input").value) *
+            0.3048 ** 2;
+    } else if (document.querySelector("#area-unit").value === "square-yard") {
+        squareMeters =
+            parseFloat(document.querySelector("#area-input").value) *
+            0.9144 ** 2;
+    }
+
+    document.querySelector("#area-square-meter").innerHTML = round(
+        squareMeters,
+        decimals
+    );
+
+    document.querySelector("#area-square-kilometer").innerHTML = round(
+        squareMeters / 1000 ** 2,
+        decimals
+    );
+    document.querySelector("#area-square-decimeter").innerHTML = round(
+        squareMeters * 10 ** 2,
+        decimals
+    );
+    document.querySelector("#area-square-centimeter").innerHTML = round(
+        squareMeters * 100 ** 2,
+        decimals
+    );
+    document.querySelector("#area-square-millimeter").innerHTML = round(
+        squareMeters * 1000 ** 2,
+        decimals
+    );
+    document.querySelector("#area-are").innerHTML = round(
+        squareMeters / 100,
+        decimals
+    );
+    document.querySelector("#area-hectare").innerHTML = round(
+        squareMeters / 10_000,
+        decimals
+    );
+    document.querySelector("#area-acre").innerHTML = round(
+        squareMeters / 4046.8564224,
+        decimals
+    );
+    document.querySelector("#area-square-inch").innerHTML = round(
+        squareMeters * (1000 / 25.4) ** 2,
+        decimals
+    );
+    document.querySelector("#area-square-foot").innerHTML = round(
+        squareMeters / 0.3048 ** 2,
+        decimals
+    );
+    document.querySelector("#area-square-yard").innerHTML = round(
+        squareMeters / 0.9144 ** 2,
+        decimals
+    );
+}
+
+function convertVolume() {
+    if (document.querySelector("#volume-input").value === "") {
+        return;
+    }
+
+    if (document.querySelector("#volume-input").checkValidity()) {
+        document.querySelector("#volume-input").classList.remove("is-invalid");
+    } else {
+        document.querySelector("#volume-input").classList.add("is-invalid");
+        return;
+    }
+
+    if (
+        document.querySelector("#decimals-count").checkValidity() &&
+        document.querySelector("#decimals-count").value !== ""
+    ) {
+        document
+            .querySelector("#decimals-count")
+            .classList.remove("is-invalid");
+        var decimals = parseInt(
+            document.querySelector("#decimals-count").value
+        );
+    } else {
+        document.querySelector("#decimals-count").classList.add("is-invalid");
+        return;
+    }
+
+    var cubicMeters;
+
+    if (document.querySelector("#volume-unit").value === "cubic-meter") {
+        cubicMeters = parseFloat(document.querySelector("#volume-input").value);
+    } else if (
+        document.querySelector("#volume-unit").value === "cubic-kilometer"
+    ) {
+        cubicMeters =
+            parseFloat(document.querySelector("#volume-input").value) *
+            1000 ** 3;
+    } else if (
+        document.querySelector("#volume-unit").value === "cubic-decimeter"
+    ) {
+        cubicMeters =
+            parseFloat(document.querySelector("#volume-input").value) / 10 ** 3;
+    } else if (
+        document.querySelector("#volume-unit").value === "cubic-centimeter"
+    ) {
+        cubicMeters =
+            parseFloat(document.querySelector("#volume-input").value) /
+            100 ** 3;
+    } else if (
+        document.querySelector("#volume-unit").value === "cubic-millimeter"
+    ) {
+        cubicMeters =
+            parseFloat(document.querySelector("#volume-input").value) /
+            1000 ** 3;
+    } else if (document.querySelector("#volume-unit").value === "cubic-inch") {
+        cubicMeters =
+            parseFloat(document.querySelector("#volume-input").value) /
+            (1000 / 25.4) ** 3;
+    } else if (document.querySelector("#volume-unit").value === "cubic-foot") {
+        cubicMeters =
+            parseFloat(document.querySelector("#volume-input").value) *
+            0.3048 ** 3;
+    } else if (document.querySelector("#volume-unit").value === "cubic-yard") {
+        cubicMeters =
+            parseFloat(document.querySelector("#volume-input").value) *
+            0.9144 ** 3;
+    } else if (
+        document.querySelector("#volume-unit").value === "imperial-gallon"
+    ) {
+        cubicMeters =
+            (parseFloat(document.querySelector("#volume-input").value) / 1000) *
+            4.54609;
+    } else if (
+        document.querySelector("#volume-unit").value === "us-liquid-gallon"
+    ) {
+        cubicMeters =
+            (parseFloat(document.querySelector("#volume-input").value) / 1000) *
+            3.785411784;
+    } else if (
+        document.querySelector("#volume-unit").value === "us-dry-gallon"
+    ) {
+        cubicMeters =
+            (parseFloat(document.querySelector("#volume-input").value) / 1000) *
+            4.40488377086;
+    } else if (
+        document.querySelector("#volume-unit").value === "imperial-bushel"
+    ) {
+        cubicMeters =
+            (parseFloat(document.querySelector("#volume-input").value) / 1000) *
+            4.54609 *
+            8;
+    } else if (document.querySelector("#volume-unit").value === "us-bushel") {
+        cubicMeters =
+            (parseFloat(document.querySelector("#volume-input").value) / 1000) *
+            4.40488377086 *
+            8;
+    } else if (document.querySelector("#volume-unit").value === "oil-barrel") {
+        cubicMeters =
+            (parseFloat(document.querySelector("#volume-input").value) / 1000) *
+            3.785411784 *
+            42;
+    } else if (
+        document.querySelector("#volume-unit").value === "imperial-barrel"
+    ) {
+        cubicMeters =
+            (parseFloat(document.querySelector("#volume-input").value) / 1000) *
+            4.54609 *
+            36;
+    }
+
+    document.querySelector("#volume-cubic-meter").innerHTML = round(
+        cubicMeters,
+        decimals
+    );
+
+    document.querySelector("#volume-cubic-kilometer").innerHTML = round(
+        cubicMeters / 1000 ** 3,
+        decimals
+    );
+    document.querySelector("#volume-cubic-decimeter").innerHTML = round(
+        cubicMeters * 10 ** 3,
+        decimals
+    );
+    document.querySelector("#volume-cubic-centimeter").innerHTML = round(
+        cubicMeters * 100 ** 3,
+        decimals
+    );
+    document.querySelector("#volume-cubic-millimeter").innerHTML = round(
+        cubicMeters * 1000 ** 3,
+        decimals
+    );
+    document.querySelector("#volume-cubic-inch").innerHTML = round(
+        cubicMeters * (1000 / 25.4) ** 3,
+        decimals
+    );
+    document.querySelector("#volume-cubic-foot").innerHTML = round(
+        cubicMeters / 0.3048 ** 3,
+        decimals
+    );
+    document.querySelector("#volume-cubic-yard").innerHTML = round(
+        cubicMeters / 0.9144 ** 3,
+        decimals
+    );
+    document.querySelector("#volume-imperial-gallon").innerHTML = round(
+        (cubicMeters * 1000) / 4.54609,
+        decimals
+    );
+    document.querySelector("#volume-us-liquid-gallon").innerHTML = round(
+        (cubicMeters * 1000) / 3.785411784,
+        decimals
+    );
+    document.querySelector("#volume-us-dry-gallon").innerHTML = round(
+        (cubicMeters * 1000) / 4.40488377086,
+        decimals
+    );
+    document.querySelector("#volume-imperial-bushel").innerHTML = round(
+        (cubicMeters * 1000) / 4.54609 / 8,
+        decimals
+    );
+    document.querySelector("#volume-us-bushel").innerHTML = round(
+        (cubicMeters * 1000) / 4.40488377086 / 8,
+        decimals
+    );
+    document.querySelector("#volume-oil-barrel").innerHTML = round(
+        (cubicMeters * 1000) / 3.785411784 / 42,
+        decimals
+    );
+    document.querySelector("#volume-imperial-barrel").innerHTML = round(
+        (cubicMeters * 1000) / 4.54609 / 36,
+        decimals
+    );
+}
+
 function convertWeight() {
     if (document.querySelector("#weight-input").value === "") {
         return;
@@ -159,8 +478,10 @@ function convertWeight() {
         return;
     }
 
-    if (document.querySelector("#decimals-count").checkValidity() &&
-    document.querySelector("#decimals-count").value !== "") {
+    if (
+        document.querySelector("#decimals-count").checkValidity() &&
+        document.querySelector("#decimals-count").value !== ""
+    ) {
         document
             .querySelector("#decimals-count")
             .classList.remove("is-invalid");
@@ -282,8 +603,10 @@ function convertTime() {
         return;
     }
 
-    if (document.querySelector("#decimals-count").checkValidity() &&
-    document.querySelector("#decimals-count").value !== "") {
+    if (
+        document.querySelector("#decimals-count").checkValidity() &&
+        document.querySelector("#decimals-count").value !== ""
+    ) {
         document
             .querySelector("#decimals-count")
             .classList.remove("is-invalid");
@@ -411,8 +734,10 @@ function convertTemperature() {
         return;
     }
 
-    if (document.querySelector("#decimals-count").checkValidity() &&
-    document.querySelector("#decimals-count").value !== "") {
+    if (
+        document.querySelector("#decimals-count").checkValidity() &&
+        document.querySelector("#decimals-count").value !== ""
+    ) {
         document
             .querySelector("#decimals-count")
             .classList.remove("is-invalid");
@@ -463,6 +788,311 @@ function convertTemperature() {
     );
 }
 
+function convertSpeed() {
+    if (document.querySelector("#speed-input").value === "") {
+        return;
+    }
+
+    if (document.querySelector("#speed-input").checkValidity()) {
+        document.querySelector("#speed-input").classList.remove("is-invalid");
+    } else {
+        document.querySelector("#speed-input").classList.add("is-invalid");
+        return;
+    }
+
+    if (
+        document.querySelector("#decimals-count").checkValidity() &&
+        document.querySelector("#decimals-count").value !== ""
+    ) {
+        document
+            .querySelector("#decimals-count")
+            .classList.remove("is-invalid");
+        var decimals = parseInt(
+            document.querySelector("#decimals-count").value
+        );
+    } else {
+        document.querySelector("#decimals-count").classList.add("is-invalid");
+        return;
+    }
+
+    var meterPerSecond;
+
+    if (document.querySelector("#speed-unit").value === "meter-per-second") {
+        meterPerSecond = parseFloat(
+            document.querySelector("#speed-input").value
+        );
+    } else if (
+        document.querySelector("#speed-unit").value === "kilometer-per-hour"
+    ) {
+        meterPerSecond =
+            parseFloat(document.querySelector("#speed-input").value) / 3.6;
+    } else if (
+        document.querySelector("#speed-unit").value === "land-mile-per-hour"
+    ) {
+        meterPerSecond =
+            parseFloat(document.querySelector("#speed-input").value) /
+            (3600 / 1_609.344);
+    } else if (document.querySelector("#speed-unit").value === "knot") {
+        meterPerSecond =
+            parseFloat(document.querySelector("#speed-input").value) /
+            (3600 / 1852);
+    } else if (document.querySelector("#speed-unit").value === "mach") {
+        meterPerSecond =
+            parseFloat(document.querySelector("#speed-input").value) * 340.3;
+    } else if (
+        document.querySelector("#speed-unit").value === "speed-of-light"
+    ) {
+        meterPerSecond =
+            parseFloat(document.querySelector("#speed-input").value) *
+            299_792_458;
+    }
+
+    document.querySelector("#speed-meter-per-second").innerHTML = round(
+        meterPerSecond,
+        decimals
+    );
+
+    document.querySelector("#speed-kilometer-per-hour").innerHTML = round(
+        meterPerSecond * 3.6,
+        decimals
+    );
+    document.querySelector("#speed-land-mile-per-hour").innerHTML = round(
+        meterPerSecond * (3600 / 1_609.344),
+        decimals
+    );
+    document.querySelector("#speed-knot").innerHTML = round(
+        meterPerSecond * (3600 / 1852),
+        decimals
+    );
+    document.querySelector("#speed-mach").innerHTML = round(
+        meterPerSecond / 340.3,
+        decimals
+    );
+    document.querySelector("#speed-speed-of-light").innerHTML = round(
+        meterPerSecond / 299_792_458,
+        decimals
+    );
+}
+
+function convertAcceleration() {
+    if (document.querySelector("#acceleration-input").value === "") {
+        return;
+    }
+
+    if (document.querySelector("#acceleration-input").checkValidity()) {
+        document
+            .querySelector("#acceleration-input")
+            .classList.remove("is-invalid");
+    } else {
+        document
+            .querySelector("#acceleration-input")
+            .classList.add("is-invalid");
+        return;
+    }
+
+    if (
+        document.querySelector("#decimals-count").checkValidity() &&
+        document.querySelector("#decimals-count").value !== ""
+    ) {
+        document
+            .querySelector("#decimals-count")
+            .classList.remove("is-invalid");
+        var decimals = parseInt(
+            document.querySelector("#decimals-count").value
+        );
+    } else {
+        document.querySelector("#decimals-count").classList.add("is-invalid");
+        return;
+    }
+
+    var meterPerSquareSecond;
+
+    if (
+        document.querySelector("#acceleration-unit").value ===
+        "meter-per-square-second"
+    ) {
+        meterPerSquareSecond = parseFloat(
+            document.querySelector("#acceleration-input").value
+        );
+    } else if (
+        document.querySelector("#acceleration-unit").value ===
+        "foot-per-square-second"
+    ) {
+        meterPerSquareSecond =
+            parseFloat(document.querySelector("#acceleration-input").value) /
+            0.3048;
+    } else if (document.querySelector("#acceleration-unit").value === "gal") {
+        meterPerSquareSecond =
+            parseFloat(document.querySelector("#acceleration-input").value) /
+            0.01;
+    }
+
+    document.querySelector("#acceleration-meter-per-square-second").innerHTML =
+        round(meterPerSquareSecond, decimals);
+
+    document.querySelector("#acceleration-foot-per-square-second").innerHTML =
+        round(meterPerSquareSecond * 0.3048, decimals);
+    document.querySelector("#acceleration-gal").innerHTML = round(
+        meterPerSquareSecond * 0.01,
+        decimals
+    );
+}
+
+function convertData() {
+    if (document.querySelector("#data-input").value === "") {
+        return;
+    }
+
+    if (document.querySelector("#data-input").checkValidity()) {
+        document.querySelector("#data-input").classList.remove("is-invalid");
+    } else {
+        document.querySelector("#data-input").classList.add("is-invalid");
+        return;
+    }
+
+    if (
+        document.querySelector("#decimals-count").checkValidity() &&
+        document.querySelector("#decimals-count").value !== ""
+    ) {
+        document
+            .querySelector("#decimals-count")
+            .classList.remove("is-invalid");
+        var decimals = parseInt(
+            document.querySelector("#decimals-count").value
+        );
+    } else {
+        document.querySelector("#decimals-count").classList.add("is-invalid");
+        return;
+    }
+
+    var bit;
+
+    if (document.querySelector("#data-unit").value === "bit") {
+        bit = parseFloat(document.querySelector("#data-input").value);
+    } else if (document.querySelector("#data-unit").value === "byte") {
+        bit = parseFloat(document.querySelector("#data-input").value) * 8;
+    } else if (document.querySelector("#data-unit").value === "kilobyte") {
+        bit =
+            parseFloat(document.querySelector("#data-input").value) *
+            (8 * 10 ** 3);
+    } else if (document.querySelector("#data-unit").value === "megabyte") {
+        bit =
+            parseFloat(document.querySelector("#data-input").value) *
+            (8 * 10 ** 6);
+    } else if (document.querySelector("#data-unit").value === "gigabyte") {
+        bit =
+            parseFloat(document.querySelector("#data-input").value) *
+            (8 * 10 ** 9);
+    } else if (document.querySelector("#data-unit").value === "terabyte") {
+        bit =
+            parseFloat(document.querySelector("#data-input").value) *
+            (8 * 10 ** 12);
+    } else if (document.querySelector("#data-unit").value === "kibibyte") {
+        bit =
+            parseFloat(document.querySelector("#data-input").value) *
+            (8 * 2 ** 10);
+    } else if (document.querySelector("#data-unit").value === "mebibyte") {
+        bit =
+            parseFloat(document.querySelector("#data-input").value) *
+            (8 * 2 ** 20);
+    } else if (document.querySelector("#data-unit").value === "gibibyte") {
+        bit =
+            parseFloat(document.querySelector("#data-input").value) *
+            (8 * 2 ** 30);
+    } else if (document.querySelector("#data-unit").value === "tebibyte") {
+        bit =
+            parseFloat(document.querySelector("#data-input").value) *
+            (8 * 2 ** 40);
+    }
+
+    document.querySelector("#data-bit").innerHTML = round(bit, decimals);
+
+    document.querySelector("#data-byte").innerHTML = round(bit / 8, decimals);
+    document.querySelector("#data-kilobyte").innerHTML = round(
+        bit / (8 * 10 ** 3),
+        decimals
+    );
+    document.querySelector("#data-megabyte").innerHTML = round(
+        bit / (8 * 10 ** 6),
+        decimals
+    );
+    document.querySelector("#data-gigabyte").innerHTML = round(
+        bit / (8 * 10 ** 9),
+        decimals
+    );
+    document.querySelector("#data-terabyte").innerHTML = round(
+        bit / (8 * 10 ** 12),
+        decimals
+    );
+    document.querySelector("#data-kibibyte").innerHTML = round(
+        bit / (8 * 2 ** 10),
+        decimals
+    );
+    document.querySelector("#data-mebibyte").innerHTML = round(
+        bit / (8 * 2 ** 20),
+        decimals
+    );
+    document.querySelector("#data-gibibyte").innerHTML = round(
+        bit / (8 * 2 ** 30),
+        decimals
+    );
+    document.querySelector("#data-tebibyte").innerHTML = round(
+        bit / (8 * 2 ** 40),
+        decimals
+    );
+}
+
+function convertSound() {
+    if (document.querySelector("#sound-input").value === "") {
+        return;
+    }
+
+    if (document.querySelector("#sound-input").checkValidity()) {
+        document.querySelector("#sound-input").classList.remove("is-invalid");
+    } else {
+        document.querySelector("#sound-input").classList.add("is-invalid");
+        return;
+    }
+
+    if (
+        document.querySelector("#decimals-count").checkValidity() &&
+        document.querySelector("#decimals-count").value !== ""
+    ) {
+        document
+            .querySelector("#decimals-count")
+            .classList.remove("is-invalid");
+        var decimals = parseInt(
+            document.querySelector("#decimals-count").value
+        );
+    } else {
+        document.querySelector("#decimals-count").classList.add("is-invalid");
+        return;
+    }
+
+    var bels;
+
+    if (document.querySelector("#sound-unit").value === "bel") {
+        bels = parseFloat(document.querySelector("#sound-input").value);
+    } else if (document.querySelector("#sound-unit").value === "decibel") {
+        bels = parseFloat(document.querySelector("#sound-input").value) / 10;
+    } else if (document.querySelector("#sound-unit").value === "neper") {
+        bels =
+            parseFloat(document.querySelector("#sound-input").value) /
+            (10 / (20 / Math.log(10)));
+    }
+
+    document.querySelector("#sound-bel").innerHTML = round(bels, decimals);
+
+    document.querySelector("#sound-decibel").innerHTML = round(
+        bels * 10,
+        decimals
+    );
+    document.querySelector("#sound-neper").innerHTML = round(
+        bels * (10 / (20 / Math.log(10))),
+        decimals
+    );
+}
+
 document
     .querySelector("#length-input")
     .addEventListener("keyup", convertLength);
@@ -472,6 +1102,20 @@ document
 document
     .querySelector("#length-unit")
     .addEventListener("change", convertLength);
+
+document.querySelector("#area-input").addEventListener("keyup", convertArea);
+document.querySelector("#area-input").addEventListener("change", convertArea);
+document.querySelector("#area-unit").addEventListener("change", convertArea);
+
+document
+    .querySelector("#volume-input")
+    .addEventListener("keyup", convertVolume);
+document
+    .querySelector("#volume-input")
+    .addEventListener("change", convertVolume);
+document
+    .querySelector("#volume-unit")
+    .addEventListener("change", convertVolume);
 
 document
     .querySelector("#weight-input")
@@ -497,17 +1141,51 @@ document
     .querySelector("#temperature-unit")
     .addEventListener("change", convertTemperature);
 
+document.querySelector("#speed-input").addEventListener("keyup", convertSpeed);
+document.querySelector("#speed-input").addEventListener("change", convertSpeed);
+document.querySelector("#speed-unit").addEventListener("change", convertSpeed);
+
+document
+    .querySelector("#acceleration-input")
+    .addEventListener("keyup", convertAcceleration);
+document
+    .querySelector("#acceleration-input")
+    .addEventListener("change", convertAcceleration);
+document
+    .querySelector("#acceleration-unit")
+    .addEventListener("change", convertAcceleration);
+
+document.querySelector("#data-input").addEventListener("keyup", convertData);
+document.querySelector("#data-input").addEventListener("change", convertData);
+document.querySelector("#data-unit").addEventListener("change", convertData);
+
+document.querySelector("#sound-input").addEventListener("keyup", convertSound);
+document.querySelector("#sound-input").addEventListener("change", convertSound);
+document.querySelector("#sound-unit").addEventListener("change", convertSound);
+
 document.querySelector("#decimals-count").addEventListener("keyup", () => {
     convertLength();
+    convertArea();
+    convertVolume();
     convertWeight();
     convertTime();
     convertTemperature();
+    convertSpeed();
+    convertAcceleration();
+    convertData();
+    convertSound();
 });
 document.querySelector("#decimals-count").addEventListener("change", () => {
     convertLength();
+    convertArea();
+    convertVolume();
     convertWeight();
     convertTime();
     convertTemperature();
+    convertSpeed();
+    convertAcceleration();
+    convertData();
+    convertSound();
 });
 
 document.querySelectorAll(".copy").forEach((e) => {

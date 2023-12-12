@@ -31,16 +31,6 @@ const tools = [
     },
     {
         name: {
-            english: "Geographical coordinates converter",
-            polish: "Przelicznik współrzędnych geograficznych",
-        },
-        icon: "bi-globe-europe-africa",
-        href: "/tools/geographical_coordinates_converter.html",
-        color: "blue",
-        offline: true,
-    },
-    {
-        name: {
             english: "Number system converter",
             polish: "Przelicznik systemów liczbowych",
         },
@@ -151,6 +141,26 @@ const tools = [
     },
     {
         name: {
+            english: "Checksums",
+            polish: "Sumy kontrolne",
+        },
+        icon: "bi-file-earmark-check",
+        href: "/tools/checksums.html",
+        color: "yellow",
+        offline: true,
+    },
+    {
+        name: {
+            english: "TOTP generator",
+            polish: "TOTP generator",
+        },
+        icon: "bi-shield-lock",
+        href: "/tools/totp_generator.html",
+        color: "yellow",
+        offline: true,
+    },
+    {
+        name: {
             english: "World time",
             polish: "Czas na świecie",
         },
@@ -181,12 +191,12 @@ const tools = [
     },
     {
         name: {
-            english: "Random number generator",
-            polish: "Generator liczb losowych",
+            english: "Geographical coordinates converter",
+            polish: "Przelicznik współrzędnych geograficznych",
         },
-        icon: "bi-dice-5",
-        href: "/tools/random_numbers.html",
-        color: "gray",
+        icon: "bi-globe-europe-africa",
+        href: "/tools/geographical_coordinates_converter.html",
+        color: "red",
         offline: true,
     },
     {
@@ -196,6 +206,26 @@ const tools = [
         },
         icon: "bi-geo-alt-fill",
         href: "/tools/gps.html",
+        color: "red",
+        offline: true,
+    },
+    {
+        name: {
+            english: "Speedometer",
+            polish: "Miernik prędkości",
+        },
+        icon: "bi-speedometer2",
+        href: "/tools/speedometer.html",
+        color: "red",
+        offline: true,
+    },
+    {
+        name: {
+            english: "Random number generator",
+            polish: "Generator liczb losowych",
+        },
+        icon: "bi-dice-5",
+        href: "/tools/random_numbers.html",
         color: "gray",
         offline: true,
     },
@@ -352,3 +382,29 @@ addEventListener("keypress", (evt) => {
         document.querySelector(".top-bar-search").focus();
     }
 });
+
+if (navigator.canShare) {
+    document.querySelector("#top-bar-share").addEventListener("click", () => {
+        var name;
+        if (new URL(window.location.href).pathname === "/tools/") {
+            name =
+                window.navigator.language.split("-")[0] == "pl"
+                    ? "Narzędzia"
+                    : "Tools";
+        } else {
+            var title = document.querySelector("title").innerHTML;
+            name =
+                window.navigator.language.split("-")[0] == "pl"
+                    ? `${title} - Narzędzia`
+                    : `${title} - Tools`;
+        }
+        navigator.share({
+            title: name,
+            text:
+                window.navigator.language.split("-")[0] == "pl"
+                    ? "Strona z narzędziami matematycznymi i informatycznymi"
+                    : "Website with math and IT tools",
+            url: window.location.href,
+        });
+    });
+}

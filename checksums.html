@@ -14,10 +14,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>World time</title>
+    <title>Checksums</title>
 
-    <meta name="description" content="World time - Website with math and IT tools">
-    <meta name="keywords" content="Tools, Narzędzia, World time">
+    <meta name="description" content="Checksums - Website with math and IT tools">
+    <meta name="keywords" content="Tools, Narzędzia, Checksums">
     <meta name="author" content="Bartek L">
 
     <link rel="stylesheet" href="/tools/css/style.css">
@@ -69,54 +69,112 @@
     </h1>
 
     <h2 class="h3">
-        <i class="bi bi-clock"></i>
-        <span text-id="226">World time</span>
+        <i class="bi bi-file-earmark-check"></i>
+        <span text-id="350">Checksums</span>
     </h2>
 
-    <div id="tool-loading">
-        <div class="d-flex justify-content-center">
-            <div class="spinner-border text-primary" role="status">
-                <span class="visually-hidden">Loading...</span>
+    <div id="tool-page">
+        <div class="mb-4 mt-2">
+            <input type="file" class="form-control" id="file-input">
+        </div>
+
+        <div class="mb-4">
+            <label for="verify" class="form-label h4">
+                <i class="bi bi-check-lg"></i>
+                <span text-id="351">Verify</span>
+            </label>
+            <div class="input-group">
+                <select id="verify-checksum-type" class="form-select">
+                    <option value="md5">MD5</option>
+                    <option value="sha1">SHA1</option>
+                    <option value="sha256">SHA256</option>
+                    <option value="sha224">SHA224</option>
+                    <option value="sha512">SHA512</option>
+                    <option value="sha384">SHA384</option>
+                    <option value="sha3">SHA3</option>
+                    <option value="ripemd160">RIPEMD160</option>
+                </select>
+                <input type="text" class="form-control" id="verify-checksum">
             </div>
         </div>
-    </div>
 
-    <div id="tool-page" class="d-none">
-        <!-- <div class="mb-2">
-            <div class="form-check">
-                <input class="form-check-input" type="radio" id="current-time" name="time-type" value="current-time" checked>
-                <label class="form-check-label" for="current-time" text-id="227">Current time</label>
+        <div class="mb-2">
+            <label for="md5" class="form-label h4">MD5</label>
+            <div class="input-group">
+                <input type="text" class="form-control" id="md5" readonly>
+                <button class="btn btn-outline-primary copy">
+                    <i class="bi bi-clipboard"></i>
+                </button>
             </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" id="select-time" name="time-type" value="select-time">
-                <div class="input-group">
-                    <input type="datetime-local" class="form-control" id="custom-input-time" step="1">
-                    <select id="custom-time-timezone" class="form-select"></select>
-                </div>
-            </div>
-        </div> -->
+        </div>
 
-        <div>
-            <div class="mb-5">
-                <div class="fs-4" text-id="228">Local time</div>
-                <input type="text" class="form-control my-1" id="local-timezone" readonly>
-                <div class="fs-1" id="local-time"></div>
-                <div class="fs-3" id="local-date"></div>
+        <div class="mb-2">
+            <label for="sha1" class="form-label h4">SHA1</label>
+            <div class="input-group">
+                <input type="text" class="form-control" id="sha1" readonly>
+                <button class="btn btn-outline-primary copy">
+                    <i class="bi bi-clipboard"></i>
+                </button>
             </div>
-            
-            <div class="mb-5">
-                <div class="fs-4" text-id="229">Universal time</div>
-                <input type="text" class="form-control my-1" id="utc-timezone" readonly value="UTC">
-                <div class="fs-1" id="utc-time"></div>
-                <div class="fs-3" id="utc-date"></div>
+        </div>
+
+        <div class="mb-2">
+            <label for="sha256" class="form-label h4">SHA256</label>
+            <div class="input-group">
+                <input type="text" class="form-control" id="sha256" readonly>
+                <button class="btn btn-outline-primary copy">
+                    <i class="bi bi-clipboard"></i>
+                </button>
             </div>
-            
-            <div>
-                <div class="fs-4" text-id="230">Other timezone</div>
-                <select type="text" class="form-select mt-1 mb-2" id="custom-timezone-country"></select>
-                <select type="text" class="form-select mt-2 mb-1" id="custom-timezone"></select>
-                <div class="fs-1" id="custom-time"></div>
-                <div class="fs-3" id="custom-date"></div>
+        </div>
+
+        <div class="mb-2">
+            <label for="sha224" class="form-label h4">SHA224</label>
+            <div class="input-group">
+                <input type="text" class="form-control" id="sha224" readonly>
+                <button class="btn btn-outline-primary copy">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="mb-2">
+            <label for="sha512" class="form-label h4">SHA512</label>
+            <div class="input-group">
+                <input type="text" class="form-control" id="sha512" readonly>
+                <button class="btn btn-outline-primary copy">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="mb-2">
+            <label for="sha384" class="form-label h4">SHA384</label>
+            <div class="input-group">
+                <input type="text" class="form-control" id="sha384" readonly>
+                <button class="btn btn-outline-primary copy">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="mb-2">
+            <label for="sha3" class="form-label h4">SHA3</label>
+            <div class="input-group">
+                <input type="text" class="form-control" id="sha3" readonly>
+                <button class="btn btn-outline-primary copy">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="mb-2">
+            <label for="ripemd160" class="form-label h4">RIPEMD160</label>
+            <div class="input-group">
+                <input type="text" class="form-control" id="ripemd160" readonly>
+                <button class="btn btn-outline-primary copy">
+                    <i class="bi bi-clipboard"></i>
+                </button>
             </div>
         </div>
     </div>
@@ -175,10 +233,19 @@
     <script src="/tools/js/error.js"></script>
     
     <script src="/tools/js/modules/bootstrap.bundle.min.js"></script>
-    <script src="/tools/js/modules/moment.js"></script>
-    <script src="/tools/js/modules/csv.js"></script>
     
-    <script src="/tools/js/world_time.js"></script>
+    <script src="/tools/js/modules/crypto-js/core.js"></script>
+    <script src="/tools/js/modules/crypto-js/x64-core.js"></script>
+    <script src="/tools/js/modules/crypto-js/md5.js"></script>
+    <script src="/tools/js/modules/crypto-js/sha1.js"></script>
+    <script src="/tools/js/modules/crypto-js/sha256.js"></script>
+    <script src="/tools/js/modules/crypto-js/sha224.js"></script>
+    <script src="/tools/js/modules/crypto-js/sha512.js"></script>
+    <script src="/tools/js/modules/crypto-js/sha384.js"></script>
+    <script src="/tools/js/modules/crypto-js/sha3.js"></script>
+    <script src="/tools/js/modules/crypto-js/ripemd160.js"></script>
+
+    <script src="/tools/js/checksums.js"></script>
 
     <script>
         var reg;

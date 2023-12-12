@@ -17,12 +17,24 @@
 - [qrcode](https://github.com/soldair/node-qrcode)
 - [Moment.js](https://momentjs.com/)
 - [Moment Timezone](https://momentjs.com/timezone/)
+- [random-js](https://github.com/ckknight/random-js)
+- [csv](https://github.com/adaltas/node-csv)
+- [totp-generator](https://github.com/bellstrand/totp-generator)
+
+List of all libraries with their dependencies is available
+[here](https://github.com/bartekl1/tools/network/dependencies).
 
 ### Fonts
 
 - [JetBrains Mono](https://www.jetbrains.com/lp/mono/)
 
-### Used data sources (APIs, etc.)
+## Used data sources
+
+### APIs, etc.
 
 - [ipapi](https://ipapi.co/)
 - [Google Maps](https://maps.google.com/)
+
+### Databases
+
+- [List of all countries with their 2 digit codes (ISO 3166-1)](https://datahub.io/core/country-list)
