@@ -536,7 +536,17 @@ td.value {
 }
 
 .font-size-22px {
-    font-size: 22px;
+    font-size: 22px !important;
+}
+
+.font-size-50px {
+    font-size: 50px !important;
+}
+.font-size-70px {
+    font-size: 70px !important;
+}
+.font-size-200px {
+    font-size: 200px !important;
 }
 
 #cookies-info {
@@ -546,16 +556,4 @@ td.value {
 .cookie-icon {
     font-size: 70px;
     color: sandybrown;
-}
-
-#speed {
-    font-size: 200px;
-}
-
-#speed-unit {
-    font-size: 70px;
-}
-
-#start-speedometer {
-    font-size: 50px;
 }
