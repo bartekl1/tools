@@ -1,4 +1,4 @@
-# 🛠 Narzędzia
+# ![Ikona strony](.github/img/icon_40.png) Narzędzia
 
 Strona z narzędziami matematycznymi i informatycznymi
 

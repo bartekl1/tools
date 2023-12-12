@@ -1,4 +1,4 @@
-# 🛠 Tools
+# ![Website icon](.github/img/icon_40.png) Tools
 
 Website with math and IT tools
 
